@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "resultData": {
+    "menu": [
+      {
+        "menuName": "Desktop",
+        "priority": "1",
+        "route": "/desktop",
+        "roleId": null,
+        "subMenu": [
+          {
+            "menuName": "Trouble Ticket",
+            "priority": "1",
+            "route": "#",
+            "roleId": ["026", "027", "028", "029", "031"],
+            "subMenu": [
+              {
+                "menuName": "Find Similar TT",
+                "priority": "1",
+                "route": "/tt/find-similar-tt",
+                "roleId": ["026", "027", "028", "029", "031"],
+                "subMenu": null
+              },
+              {
+                "menuName": "Create TT",
+                "priority": "2",
+                "route": "/tt/create",
+                "roleId": ["026", "027", "028", "029", "031"],
+                "subMenu": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "menuName": "Activity Calendar",
+        "priority": "3",
+        "route": "#",
+        "roleId": null,
+        "subMenu": null
+      },
+      {
+        "menuName": "Resource Management",
+        "priority": "6",
+        "route": "#",
+        "roleId": null,
+        "subMenu": null
+      },
+      {
+        "menuName": "Personalize",
+        "priority": "7",
+        "route": "#",
+        "roleId": null,
+        "subMenu": null
+      },
+      {
+        "menuName": "Help",
+        "priority": "10",
+        "route": "#",
+        "roleId": null,
+        "subMenu": null
+      }
+    ]
+  }
+}

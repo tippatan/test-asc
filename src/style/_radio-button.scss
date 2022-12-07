@@ -1,0 +1,25 @@
+@import "./variable";
+
+.p-radiobutton {
+  width: 17px !important;
+  height: 17px !important;
+  .p-radiobutton-box {
+    width: 17px !important;
+    height: 17px !important;
+    .p-radiobutton-icon {
+      width: 12px !important;
+      height: 12px !important;
+      transition-duration: 0.2s;
+      background-color: $primary-color !important;
+    }
+  }
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight {
+  border-color: lighten($primary-color, 10%) !important;
+}
+
+p-radiobutton {
+  vertical-align: middle !important;
+  display: flex;
+}

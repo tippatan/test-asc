@@ -1,0 +1,11 @@
+FROM dockerhub1.matador.ais.co.th/dna/tts-asc/node-asc-web:18-alpine as dependencies
+
+FROM dockerhub1.matador.ais.co.th/dna/tts-asc/node-asc-web:18-alpine
+
+WORKDIR /app
+
+COPY --from=dependencies /tmp/node_modules ./node_modules
+COPY . .
+RUN npm run build
+EXPOSE 3004
+CMD [ "node", "--max-old-space-size=4096", "app.js" ]

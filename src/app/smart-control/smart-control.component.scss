@@ -1,0 +1,537 @@
+.pdt10 {
+  padding-top: 10px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.text-green {
+  color: #89c43e;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.main {
+  text-align: center;
+  background-color: #f4f4f4;
+  height: 90%;
+}
+
+.btn-submit {
+  background-color: #cbed62;
+  color: #74a621;
+  border-color: #cbed62;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-content {
+  text-align: left;
+  padding: 30px;
+}
+
+.loginHeader {
+  font-weight: bold;
+  text-align: left;
+  color: #89c43e;
+  font-size: 1.5em;
+}
+
+.userLogo {
+  margin-top: 7px;
+  font-size: 1.2em;
+}
+
+.login-pnl {
+  margin-top: 5%;
+  /*height: 600px;
+      width: 500px;*/
+  background-color: #ffffff;
+  border-radius: 20px;
+  /*position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -250px;
+      margin-top: -300px;
+      */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.forgotPasspnl {
+  color: #89c43e;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.forgotPasspnl a {
+  color: #89c43e !important;
+  cursor: pointer;
+}
+
+.sublogo {
+  width: 25%;
+}
+
+.borderTop {
+  border-top: 1px solid #89c43e;
+  margin-left: 13px;
+  margin-right: 13px;
+  margin-bottom: 20px;
+}
+
+.profilelogo {
+  width: 40px;
+  margin-top: 15px;
+}
+
+.logoPnl {
+  max-width: 8.333333%;
+  text-align: left;
+}
+
+.navi {
+  background-color: #414141;
+  height: 30px;
+}
+
+.profileContent {
+  font-size: 1em;
+}
+
+.sideMenu {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 250px;
+  position: absolute;
+}
+
+.badge1 {
+  position: relative;
+  margin-top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.badge1[data-badge]:after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 0.7em;
+  background: red;
+  color: white;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px #333;
+}
+
+.notiTab {
+  background: #fff;
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  color: #1d2129;
+  overflow: visible;
+  position: absolute;
+  top: 93px;
+  right: 0;
+  width: 430px;
+  z-index: 9999;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  max-height: 500px;
+  min-height: 50px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.custom-dialog-container {
+  padding: 0px !important;
+  background-color: #00d06b !important;
+}
+
+::ng-deep .btn-mat-success {
+  background-color: #b2d235 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  font-size: 85% !important;
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-dis {
+  background-color: #b3b3b3 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  font-size: 85% !important;
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-warn {
+  background-color: #ffcd11 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  // font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif !important;
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0) !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-add {
+  background-color: #b4df56 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  font-size: 85% !important;
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-import {
+  background-color: #b4df56 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  /* font-size: 18px !important; */
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-reset {
+  background-color: #614d47 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  /* font-size: 18px !important; */
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-save {
+  background-color: #00d06b !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  /* font-size: 18px !important; */
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-reject {
+  background-color: #eb2227 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  /* font-size: 18px !important; */
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-back {
+  background-color: #c8c8c8 !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif !important;
+  /* font-size: 18px !important; */
+  color: white !important;
+  line-height: 30px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep .btn-mat-note {
+  background-color: #d4a373 !important;
+}
+::ng-deep .btn-mat-note:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+.btn-mat-note-edit {
+  background-color: cornflowerblue !important;
+}
+
+.btn-mat-note-edit:disabled {
+  background-color: cornflowerblue !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-noti {
+  background-color: #ff4d6d !important;
+}
+::ng-deep .btn-mat-noti:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-header {
+  background-color: #ffe8d6 !important;
+  width: 28px !important;
+  height: 27px !important;
+}
+::ng-deep .btn-mat-header:hover {
+  background-color: #ddbea9 !important;
+}
+::ng-deep .btn-mat-header:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-success:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-dis:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-warn:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-add:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-import:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-reset:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-save:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-reject:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .btn-mat-back:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .mat-button-toggle {
+  background-color: #e3eeb6 !important;
+  font-size: 0.8rem !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  /* font-size: 18px !important; */
+  color: #212529 !important;
+  line-height: 30px !important;
+}
+
+::ng-deep .mat-button-toggle-label-content {
+  line-height: 30px !important;
+}
+
+::ng-deep .mat-button-toggle-disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .mat-button-toggle-checked {
+  background-color: #b2d235 !important;
+}
+
+::ng-deep .btn-mat-toggle-succ:disabled {
+  background-color: #e0e0e0 !important;
+  color: #ababab !important;
+}
+
+::ng-deep .mat-card {
+  padding: 0;
+}
+
+::ng-deep .mat-card-custom {
+  padding: 5px !important;
+  /* border-radius: 3px !important; */
+  /* font-family: "DB Heavent Regular" !important; */
+  /* font-size: 18px !important; */
+}
+
+::ng-deep .mat-card-content,
+.mat-card-subtitle,
+.mat-card-title {
+  margin-bottom: 4px !important;
+}
+
+::ng-deep .mat-card-title {
+  padding-top: 5px !important;
+  margin-bottom: 4px !important;
+}
+
+.mat-card-title-inline {
+  display: inline;
+}
+
+.mat-card-title-left {
+  display: inline;
+  text-align: left;
+}
+
+.mat-card-title-right {
+  display: inline;
+  text-align: right;
+}
+
+::ng-deep .mat-card-header {
+  background-color: #95d5b2 !important;
+  /* border-radius: 5px 5px 0 0; */
+}
+
+::ng-deep .mat-card-header-text {
+  width: 100% !important;
+}
+
+::ng-deep .mat-card-actions {
+  margin: 0 auto !important;
+  padding: 0;
+  height: 35px;
+}
+
+::ng-deep .mat-card-footer {
+  margin: 0 auto !important;
+  padding: 0;
+}
+
+::ng-deep .mat-card-footer-bottom {
+  margin: 0 auto !important;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 25px;
+}
+
+::ng-deep .card-button-frame {
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+::ng-deep .mat-tab-group {
+  /* font-family: "DB Heavent Med"; */
+  /* font-size: 1em; */
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  /* color: #614e47; */
+  display: block;
+}
+
+::ng-deep .mat-tab-list {
+  background-color: #b7e4c7;
+  font-weight: 510;
+}
+
+::ng-deep .mat-tab-label {
+  height: 30px !important;
+}
+
+::ng-deep .mat-tab-label-active {
+  background-color: #52b788;
+}
+
+::ng-deep .mat-tab-body {
+  overflow: unset !important;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow: unset !important;
+}
+
+::ng-deep .mat-tab-body-active {
+  overflow: unset !important;
+}
+
+::ng-deep .mat-tab-body-custom {
+  overflow: unset !important;
+}
+
+.mat-expansion-panel-header {
+  background-color: #95d5b2 !important;
+}
+
+::ng-deep .multiselect-dropdown .dropdown-btn {
+  padding: 3px !important;
+}
+
+.reset-padding {
+  padding: 0 !important;
+}
+
+.input-checkbox {
+  padding-left: 35px !important;
+  margin-bottom: 12px !important;
+  cursor: pointer !important;
+  /* font-size: 22px !important; */
+}
+
+.txt-link {
+  cursor: pointer;
+}
+
+.txt-link :hover {
+  color: blue;
+  text-underline-offset: initial;
+}
+
+::ng-deep .mat-button-wrapper {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-card {
+  background-color: #fff;
+}

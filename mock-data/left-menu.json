@@ -1,0 +1,205 @@
+{
+  "status": "success",
+  "resultData": {
+    "menu": [
+      {
+        "menuName": "TT",
+        "childMenu": [
+          {
+            "menuCount": "$TT_ACTIVE_BOX:75:-:tt-list/tt-active-box",
+            "color": "",
+            "menuName": "Active",
+            "priority": 1
+          },
+          {
+            "menuCount": "$TT_INBOX:0:-:tt-list/tt-inbox",
+            "color": "",
+            "menuName": "Inbox",
+            "priority": 2
+          },
+          {
+            "menuCount": "$TT_OUT_BOX:0:-:tt-list/tt-outbox",
+            "color": "",
+            "menuName": "Outbox",
+            "priority": 3
+          }
+        ],
+        "priority": 1
+      },
+      {
+        "menuName": "PD",
+        "childMenu": [
+          {
+            "menuCount": "$PROJECT_DOCUMENT_APPROVE_LIST:0:-:pd/pd-approve-list",
+            "color": "",
+            "menuName": "Pool Approve",
+            "priority": 1
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_EXPAND_LIST:0:-:pd/pd-expand-list",
+            "color": "",
+            "menuName": "Pool Approve Expand",
+            "priority": 2
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_ACTIVE_LIST:0:-:pd/pd-active-list",
+            "color": "",
+            "menuName": "Active",
+            "priority": 3
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_REJECT_LIST:0:-:pd/pd-reject-list",
+            "color": "",
+            "menuName": "Reject",
+            "priority": 4
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_WAIT_APPROVE:0:-:pd/pd-wait-approve",
+            "color": "",
+            "menuName": "Wait for Approve",
+            "priority": 5
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_DRAFT:0:-:pd/pd-draft",
+            "color": "",
+            "menuName": "Draft",
+            "priority": 6
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_CA_POOL_LIST:0:-:pd/pd-ca-pool-list",
+            "color": "",
+            "menuName": "Pool CA",
+            "priority": 7
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_PA_POOL_LIST:0:-:pd/pd-pa-pool-list",
+            "color": "",
+            "menuName": "Pool PA",
+            "priority": 8
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/BKK",
+            "color": "",
+            "menuName": "Inbox BKK",
+            "priority": 9
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/NR",
+            "color": "",
+            "menuName": "Inbox NR",
+            "priority": 10
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/NER",
+            "color": "",
+            "menuName": "Inbox NER",
+            "priority": 11
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/ER",
+            "color": "",
+            "menuName": "Inbox ER",
+            "priority": 12
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/SR",
+            "color": "",
+            "menuName": "Inbox SR",
+            "priority": 13
+          },
+          {
+            "menuCount": "$PROJECT_DOCUMENT_INBOX:0:-:pd/pd-inbox/CR",
+            "color": "",
+            "menuName": "Inbox CR",
+            "priority": 14
+          }
+        ],
+        "priority": 2
+      },
+      {
+        "menuName": "CP EDS",
+        "childMenu": [
+          {
+            "menuCount": "$CP_ACTIVE:0:-:cp/active",
+            "color": "",
+            "menuName": "Active",
+            "priority": 1
+          },
+          {
+            "menuCount": "$CP_FORWARD:0:-:cp/forward-cp",
+            "color": "",
+            "menuName": "Forward",
+            "priority": 2
+          },
+          {
+            "menuCount": "$NO_TEMP_TIME:0:-:cp/no-temp-time",
+            "color": "",
+            "menuName": "No TempTime",
+            "priority": 3
+          },
+          {
+            "menuCount": "$ACTIVITY:0:-:cp/activity",
+            "color": "",
+            "menuName": "Activity",
+            "priority": 4
+          },
+          {
+            "menuCount": "$TOTAL_CP:0:-:cp/total-cp",
+            "color": "",
+            "menuName": "Total CP",
+            "priority": 5
+          },
+          {
+            "menuCount": "$SURVEILLANCE_MONITOR:0:-:cp/surveillance",
+            "color": "",
+            "menuName": "Surveillance Monitor",
+            "priority": 6
+          },
+          {
+            "menuCount": "$SENT_JOB:0:-:cp/sent-job",
+            "color": "",
+            "menuName": "Sent Job",
+            "priority": 7
+          }
+        ],
+        "priority": 3
+      },
+      {
+        "menuName": "WR",
+        "childMenu": [
+          {
+            "menuCount": "$WORK_REQUEST_AUTHORIZE_POOL:0:-:wr/wr-authorize-pool",
+            "color": "",
+            "menuName": "Pool Authorize",
+            "priority": 1
+          },
+          {
+            "menuCount": "$WORK_REQUEST_APPROVE_POOL_ACTM:0:-:wr/wr-approve-pool-actm",
+            "color": "",
+            "menuName": "Pool ACTM",
+            "priority": 2
+          },
+          {
+            "menuCount": "$WORK_REQUEST_SUBMIT_POOL:0:-:wr/wr-submit-pool",
+            "color": "",
+            "menuName": "Submit",
+            "priority": 3
+          },
+          {
+            "menuCount": "$WORK_REQUEST_ACTIVE_POOL:0:-:wr/wr-active-pool",
+            "color": "",
+            "menuName": "Active",
+            "priority": 4
+          },
+          {
+            "menuCount": "$WORK_REQUEST_REJECT_POOL:0:-:wr/wr-reject-pool",
+            "color": "",
+            "menuName": "Reject",
+            "priority": 5
+          }
+        ],
+        "priority": 99
+      }
+    ]
+  }
+}

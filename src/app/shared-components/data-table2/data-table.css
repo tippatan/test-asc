@@ -1,0 +1,24 @@
+th.table-action {
+  width: 4%;
+}
+
+button.btn-update {
+  padding: 0;
+}
+
+td.row-cursor {
+  cursor: pointer;
+}
+
+tr.row-cursor {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .clear-padding-right {
+    padding-right: 0px;
+  }
+  .clear-padding-left {
+    padding-left: 0px;
+  }
+}

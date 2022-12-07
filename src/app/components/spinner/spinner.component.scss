@@ -1,0 +1,45 @@
+@import "../../../style/variable";
+
+.spinner {
+  display: inline-block;
+  height: 100px;
+  margin: auto !important;
+  position: fixed !important;
+  width: 100px;
+  z-index: 999;
+  overflow: show;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: rotate 2s linear infinite;
+  & .path {
+    stroke: hsl(210, 70, 75);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke: $primary-color;
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke: $primary-color;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke: $primary-color;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

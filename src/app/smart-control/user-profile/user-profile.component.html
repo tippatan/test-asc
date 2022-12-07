@@ -1,0 +1,76 @@
+<!-- header popup -->
+<ng-container>
+  <div class="p-fluid p-formgrid p-grid" *ngIf="profile">
+    <div class="p-field p-col-12 p-md-12 p-lg-12">
+      <strong class="label-header">
+        <img
+          matTooltip="User Profile"
+          src="../../assets/images/buttons/USER_PROFILE.png"
+        />
+        {{ profile.firstname }}
+      </strong>
+    </div>
+
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Name : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left reset-padding">
+      {{ profile.firstname + " " + profile.lastname }}
+    </div>
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Status : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left reset-padding">
+      {{ profile.userStatus }}
+    </div>
+
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Email : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left reset-padding">
+      {{ profile.email }}
+    </div>
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Last login : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left reset-padding">
+      {{ this.userProfile.lastLogin }}
+    </div>
+
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Dept : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left reset-padding">
+      {{ profile.dept }}
+    </div>
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Sec : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-4 p-lg-4 text-left">
+      {{ profile.sec }}
+    </div>
+
+    <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+      <label class="label-name">Role : </label>
+    </div>
+    <div class="p-field p-col-12 p-md-10 p-lg-10 text-left reset-padding">
+      <div *ngFor="let roleGroup of this.listRoleGroup">
+        <p class="chip-btn">
+          {{ roleGroup }}
+        </p>
+      </div>
+      <!-- {{profile.roleGroup}}  -->
+    </div>
+
+    <div class="p-field p-col-12 p-md-12 p-lg-12 text-center">
+      <button
+        mat-raised-button
+        class="btn-mat-warn icon-margin"
+        (click)="onConfirmLogout()"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+        LOG OUT
+      </button>
+    </div>
+  </div>
+</ng-container>

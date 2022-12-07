@@ -1,0 +1,211 @@
+<app-spinner [loading]="loading"></app-spinner>
+<ng-container>
+  <p-panel *ngIf="titleHeader">
+    <ng-template pTemplate="header">
+      <span class="font-weight-bold" matTooltip="WR-ID : {{ wrId }}&nbsp;&nbsp;{{ titleHeader }}">
+        &nbsp;&nbsp;WR-ID : {{ wrId }}&nbsp;&nbsp;{{
+        titleHeader.length > 100
+        ? titleHeader.substr(0, 100).slice(0, -3) + "..."
+        : titleHeader
+        }}
+      </span>
+    </ng-template>
+    <ng-template pTemplate="icons">
+      <button pButton class="btn-save" type="button" label="Save" matTooltip="Save" (click)="onConfirmSave()"
+        [disabled]="
+          dataMaster.controlDetail &&
+          dataMaster.controlDetail.canSaveActivity == 'N'">
+      </button>
+      <button pButton class="btn-close" type="button" label="Close" matTooltip="Close"
+        (click)="onConfirmClose()"></button>
+      <!-- <button pButton class="p-panel-header-icon p-link" icon="pi" (click)="onConfirmSave()">
+                <i class="far fa-save"></i>
+            </button> -->
+      <!-- <button pButton class="p-panel-header-icon p-link" icon="pi" >
+                <i class="fas fa-sign-out-alt"></i>
+            </button> -->
+    </ng-template>
+    <div class="p-fluid p-formgrid p-grid" *ngIf="dataMaster.controlDetail">
+      <div class="p-col-12 p-md-9 p-lg-9">
+        <div class="p-grid margin-top-1">
+          <div class="p-field p-col-12 p-md-1 p-lg-1 p-2">
+            <label class="text-label"><b>Status : </b></label>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3 p-2">
+            <p-dropdown id="ddlStatus" dataKey="statusId" [(ngModel)]="selectStatus" [options]="listStatus"
+              optionLabel="statusDesc" placeholder="Select status" [disabled]="
+                dataMaster.controlDetail &&
+                dataMaster.controlDetail.canSaveActivity == 'N'
+              ">
+            </p-dropdown>
+          </div>
+          <div class="p-field p-col-12 p-md-1 p-lg-1 p-2">
+            <label class="text-label">Region : </label>
+          </div>
+          <div class="p-field p-col-12 p-md-2 p-lg-2 p-2">
+            {{ dataMaster.controlDetail.region }}
+          </div>
+          <div class="p-field-checkbox p-col-12 p-md-2 p-lg-2 p-d-inline padding-0">
+            <p-checkbox id="checkboxServiceAutoChk" name="autoAlarmChk"
+              [(ngModel)]="activityDetailObj.autoAlarmChecking" (change)="onChecker('alarm', $event.target.checked)"
+              binary="true" [disabled]="
+                (dataMaster.controlDetail &&
+                  dataMaster.controlDetail.canSaveActivity == 'N') ||
+                dataMaster.isDisableAutoAlarm == 'Y'
+              "></p-checkbox>
+            <label class="text-label margin-left-5" for="binary">Alarm Auto Check
+            </label>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3">
+            <p-calendar id="calendarAlarmAutoChk" [(ngModel)]="activityDetailObj.alarmCheckingDate" [showIcon]="true"
+              [dataType]="'string'" dateFormat="dd/mm/yy" [showTime]="true" [inputStyle]="{ cursor: 'pointer' }"
+              hourFormat="24" placeholder="dd/MM/yyyy HH:mm" [disabled]="
+                (dataMaster.controlDetail &&
+                  dataMaster.controlDetail.canSaveActivity == 'N') ||
+                dataMaster.isDisableAutoAlarm == 'Y'
+              ">
+            </p-calendar>
+          </div>
+
+          <!-- sec row-->
+          <div class="p-field p-col-12 p-md-1 p-lg-1 p-2">
+            <label class="text-label" style="white-space: nowrap">Time Plan :
+            </label>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3 p-2" style="white-space: nowrap">
+            {{ dataMaster.controlDetail.planStartDate }} -
+            {{ dataMaster.controlDetail.planFinishDate }}
+          </div>
+          <div class="p-field p-col-12 p-md-1 p-lg-1 p-2">
+            <label class="text-label" style="white-space: nowrap">Down Time :
+            </label>
+          </div>
+          <div class="p-field p-col-12 p-md-2 p-lg-2 p-2" style="white-space: nowrap">
+            <div *ngIf="
+                dataMaster.controlDetail &&
+                (!dataMaster.controlDetail.planDownTime_hr ||
+                  dataMaster.controlDetail.planDownTime_hr == '0') &&
+                  dataMaster.controlDetail.planDownTimeMin &&
+                    dataMaster.controlDetail.planDownTimeMin != '0'
+              ">
+              {{ dataMaster.controlDetail.planDownTimeMin }} Minutes
+            </div>
+            <div *ngIf="
+                dataMaster.controlDetail &&
+                dataMaster.controlDetail.planDownTime_hr &&
+                  dataMaster.controlDetail.planDownTime_hr != '0' &&
+                  (!dataMaster.controlDetail.planDownTimeMin ||
+                    dataMaster.controlDetail.planDownTimeMin == '0')
+              ">
+              {{ dataMaster.controlDetail.planDownTime_hr }} Hours
+            </div>
+            <div *ngIf="
+                dataMaster.controlDetail &&
+                dataMaster.controlDetail.planDownTime_hr &&
+                  dataMaster.controlDetail.planDownTime_hr != '0' &&
+                  dataMaster.controlDetail.planDownTimeMin &&
+                    dataMaster.controlDetail.planDownTimeMin != '0'
+              ">
+              {{ dataMaster.controlDetail.planDownTime_hr }} Hours
+              {{ dataMaster.controlDetail.planDownTimeMin }} Minutes
+            </div>
+          </div>
+          <div class="p-col-12 p-md-2 p-lg-2 p-d-inline padding-0">
+            <p-checkbox id="checkboxServiceAutoChk" name="autoServiceChk"
+              [(ngModel)]="activityDetailObj.autoServiceChecking" (change)="onChecker('service', $event.target.checked)"
+              binary="true" [disabled]="
+                (dataMaster.controlDetail &&
+                  dataMaster.controlDetail.canSaveActivity == 'N') ||
+                dataMaster.isDisableAutoService == 'Y'
+              "></p-checkbox>
+            <label class="text-label margin-left-5" for="binary">Service Auto Check</label>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3">
+            <p-calendar id="calendarServiceAutoChk" [(ngModel)]="activityDetailObj.serviceCheckingDate"
+              [showIcon]="true" [dataType]="'string'" dateFormat="dd/mm/yy" [showTime]="true"
+              [inputStyle]="{ cursor: 'pointer' }" hourFormat="24" placeholder="dd/MM/yyyy HH:mm" [disabled]="
+                (dataMaster.controlDetail &&
+                  dataMaster.controlDetail.canSaveActivity == 'N') ||
+                dataMaster.isDisableAutoService == 'Y'
+              ">
+            </p-calendar>
+          </div>
+        </div>
+      </div>
+      <div class="p-col-12 p-md-3 p-lg-3">
+        <textarea id="reasonTxt" *ngIf="selectStatus && selectStatus.statusId" [ngClass]="{
+            'border-color-red':
+              selectStatus.statusId != 'CONFIRM' &&
+              selectStatus.statusId != 'IN_PROGRESS' &&
+              selectStatus.statusId != 'TEST_MONITORING' &&
+              selectStatus.statusId != 'COMPLETE' &&
+              selectStatus.statusId != 'VERIFY' &&
+              dataMaster.controlDetail &&
+                dataMaster.controlDetail.canSaveActivity == 'Y'
+          }" class="textarea-size col-inline" [(ngModel)]="activityDetailObj.reason" placeholder="Reason" [disabled]="
+            dataMaster.controlDetail &&
+            dataMaster.controlDetail.canSaveActivity == 'N'
+          ">
+                    {{
+            activityDetailObj.reason == null ? "" : activityDetailObj.reason
+          }}
+                </textarea>
+      </div>
+    </div>
+  </p-panel>
+  <mat-tab-group [selectedIndex]="tabIndex" (selectedTabChange)="tabChanged($event)">
+    <mat-tab label="Detail">
+      <ng-template matTabContent>
+        <app-detail [activityDetailObj]="activityDetailObj" [dataMaster]="dataMaster" [uploadedFiles]="attachFileList" [loading]="loading"
+          (onCallBackAction)="onCallBackAction($event)"></app-detail>
+        <!-- Content 1 - Loaded: {{onTabLoaded(1) | date:'medium'}} -->
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Alarm">
+      <ng-template matTabContent>
+        <!-- Content 2 - Loaded: {{onTabLoaded(2) | date:'medium'}} -->
+        <app-alarm [activityDetailObj]="activityDetailObj" [dataMaster]="dataMaster"
+          (onCallBackAction)="onCallBackAction($event)"></app-alarm>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Service Enterprise">
+      <ng-template matTabContent>
+        <!-- Content 2 - Loaded: {{onTabLoaded(2) | date:'medium'}} -->
+        <app-service-enterprise [activityDetailObj]="activityDetailObj" [dataMaster]="dataMaster"
+          (onCallBackAction)="onCallBackAction($event)"></app-service-enterprise>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Service Fixed Broadband">
+      <ng-template matTabContent>
+        <!-- Content 2 - Loaded: {{onTabLoaded(2) | date:'medium'}} -->
+        <app-service-fbb [activityDetailObj]="activityDetailObj" [dataMaster]="dataMaster" [reload]="reload"
+          (onCallBackAction)="onCallBackAction($event)"></app-service-fbb>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>
+
+<p-toast position="bottom-right"></p-toast>
+
+
+<p-dialog
+  *ngIf="isAttachFileDialogDisplay"
+  [(visible)]="isAttachFileDialogDisplay"
+  [modal]="true"
+  [baseZIndex]="1000"
+  [style]="{ width: '80vw', 'z-index': '1001' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="true"
+>
+  <p-header> Attach File </p-header>
+  <app-file-upload-wr
+    id="fileupload"
+    #fileUploadComponent
+    [uploadedFiles]="uploadedFiles"
+    [maxFileSize]="5242880"
+    (onUploadEmitter)="getListFileUploadSuccess($event)"
+    (onDeleteEmitter)="deleteAttachFile($event)"
+  >
+  </app-file-upload-wr>
+</p-dialog>

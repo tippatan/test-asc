@@ -1,0 +1,46 @@
+<router-outlet></router-outlet>
+
+<p-confirmDialog
+  #cd
+  header="Confirmation"
+  key="confirmLogoutDialog"
+  icon="pi pi-exclamation-triangle"
+  maskStyleClass="p-dialog-warning"
+>
+  <p-footer>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-check"
+      label="LOGOUT"
+      (click)="cd.accept()"
+    ></button>
+    <p-button
+      type="button"
+      icon="pi pi-times"
+      styleClass="p-button-warning"
+      label="CANCEL"
+      (click)="cd.reject()"
+    ></p-button>
+  </p-footer>
+</p-confirmDialog>
+
+<p-confirmDialog
+  #cd
+  header="Warning"
+  key="warningDialog"
+  maskStyleClass="warningDialog"
+  icon="pi pi-exclamation-triangle"
+>
+</p-confirmDialog>
+
+<p-confirmDialog
+  #cd
+  header="Error"
+  key="errorDialog"
+  maskStyleClass="errorDialog"
+  icon="pi pi-exclamation-triangle"
+>
+</p-confirmDialog>
+
+<p-toast position="bottom-right" key="successMsg"></p-toast>

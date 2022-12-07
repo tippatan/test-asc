@@ -1,0 +1,126 @@
+.worker-tbl {
+  color: black;
+  background-color: white !important;
+}
+
+.worker-header {
+  background-color: #e9f5db;
+}
+
+.worker-job {
+  width: 20%;
+}
+
+.worker-name {
+  width: 20%;
+}
+
+.worker-mobile {
+  width: 15%;
+}
+
+.worker-team {
+  width: 15%;
+}
+
+.worker-remark {
+  width: 30%;
+}
+
+
+.worker-main {
+  background-color: skyblue !important;
+}
+
+.worker-actm {
+  background-color: palegreen !important;
+}
+
+/* .worker-font-size{
+    font-size: smaller;
+} */
+
+/* .table {
+    margin-bottom: 10px;
+    width: 100%;
+}
+  
+.table thead {
+    background-color: #e9f5db;
+    color: #614e47;
+}
+  
+.table thead th {
+    font-weight: bold;
+    cursor: pointer;
+    color: #614e47;
+    border: 1px solid #ddd;
+}
+  
+.table tbody {
+    color: #8c7f79;
+    border: 1px solid #ddd;
+}
+  
+.table p {
+    margin: 0 0 0px;
+}
+  
+.table-btn-action {
+    margin-top: 10px;
+}
+  
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 4px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr.highlight-warning {
+    background-color: #FBD2D2;
+}
+  
+.table>thead>tr>th>span {
+    font-size: small;
+} */
+
+.headerColumn {
+  vertical-align: inherit;
+  text-align: center;
+  padding: 5px;
+}
+
+.headerColumnNoCursor {
+  vertical-align: inherit;
+  text-align: center;
+  cursor: default !important;
+  padding: 5px;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background-color: #e9f5db;
+}
+
+.freeze {
+  max-height: 200px;
+  overflow: auto;
+}

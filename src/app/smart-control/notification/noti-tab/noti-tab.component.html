@@ -1,0 +1,52 @@
+<div class="p-fluid p-formgrid p-grid tooltip">
+  <!-- <div class="col-md-12 headerNoti">
+      Notification
+    </div> -->
+  <hr class="hrNoti" />
+</div>
+<div *ngIf="dataNoti">
+  <div
+    class="p-fluid p-formgrid p-grid tooltips"
+    *ngFor="let item of dataNoti; let i = index"
+  >
+    <div
+      class="p-field p-col-12 p-md-12 p-lg-12 tooltips"
+      (click)="clickAction(item, 'onClickNoti')"
+      matTooltip="{{ item.wrTitle }}"
+    >
+      <div class="p-fluid p-formgrid p-grid tooltips colNoti">
+        <div class="p-field p-col-12 p-md-3 p-lg-3 reset-padding">
+          <label class="label-norm">{{ item.wrId }}</label>
+        </div>
+        <div class="p-field p-col-12 p-md-8 p-lg-8 text-right">
+          <label class="label-norm">{{ item.notiDetail }}</label>
+        </div>
+        <div class="p-field p-col-12 p-md-1 p-lg-1 reset-padding">
+          <button
+            mat-mini-fab
+            color="primary"
+            class="acknowledge btn-mat-noti"
+            *ngIf="!item.ackDate"
+          ></button>
+        </div>
+
+        <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+          <label class="label-small">{{ item.wrTitle }}</label>
+        </div>
+        <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+          <label class="label-small">{{ item.createDate }}</label>
+        </div>
+      </div>
+
+      <!-- <span class="tooltiptext">
+          <div *ngIf="item.titleFull" [innerHTML]="item.titleFull"></div>
+        </span> -->
+      <hr class="line" />
+    </div>
+  </div>
+  <div class="row allNotiPoint">
+    <!-- <div class="col-md-12" (click)="onClickAllNoti($event)">
+        ดูทั้งหมด
+      </div> -->
+  </div>
+</div>

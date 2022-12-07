@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "resultData": {
+    "status": null,
+    "result": {
+      "jti": "1622549177478",
+      "pid": 7478,
+      "serv": "127.0.0.1:3000",
+      "name": "hansasae",
+      "fname": "Hansa Saensing",
+      "iat": 1622549174435,
+      "exp": 1622556374846,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNjIyNTQ5MTc3NDc4IiwicGlkIjo3NDc4LCJzZXJ2IjoiMTI3LjAuMC4xOjMwMDAiLCJuYW1lIjoiaGFuc2FzYWUiLCJmbmFtZSI6IkhhbnNhIFNhZW5zaW5nIiwiaWF0IjoxNjIyNTQ5MTc0NDM1LCJleHAiOjE2MjI1NTYzNzQ4NDZ9.1yCOV3sNlKz39LxkENoHUe7XTNg8UXFhT3jtGXuz7aE"
+    }
+  }
+}

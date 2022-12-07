@@ -1,0 +1,47 @@
+{
+  "appenders": {
+    "out": {
+      "type": "stdout",
+      "layout": {
+        "type": "pattern",
+        "pattern": "TIMESTAMP|%d{ISO8601}|LOGTYPE|%p|%m"
+      }
+    },
+    "access": {
+      "type": "dateFile",
+      "filename": "access/access.log",
+      "maxLogSize": 10485760,
+      "backups": 10,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%m"
+      },
+      "category": ["access"]
+    },
+    "application": {
+      "type": "dateFile",
+      "filename": "application/application.log",
+      "maxLogSize": 10485760,
+      "backups": 10,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%m"
+      },
+      "category": ["application"]
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["out", "access"],
+      "level": "INFO"
+    },
+    "access": {
+      "appenders": ["out", "access"],
+      "level": "INFO"
+    },
+    "application": {
+      "appenders": ["out", "application"],
+      "level": "DEBUG"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6 col-sm-3 col-xs-3">
+    <div class="row">
+      <div class="col-md-3">
+        <span class="ais-mynetwork-paginator-total" *ngIf="totalDisplay"
+          >Total: {{ total }}</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-9 col-xs-9">
+    <div class="row">
+      <div class="col-md-10 col-sm-10 col-xs-8 text-right">
+        <pagination-controls
+          id="{{ pagingControlId }}"
+          (pageChange)="onPageChange($event)"
+          class="ais-pagination"
+          previousLabel=""
+          nextLabel=""
+        ></pagination-controls>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-4 text-right">
+        <form [formGroup]="pagingForm">
+          <select class="form-control" formControlName="pageSizeMultiSelect">
+            <option *ngFor="let pageSize of pageSizeList" [ngValue]="pageSize">
+              {{ pageSize }}
+            </option>
+          </select>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

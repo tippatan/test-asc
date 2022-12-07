@@ -1,0 +1,95 @@
+.p-picklist-list-wrapper {
+  border: 1px solid $gray-color !important;
+  border-radius: 4px !important;
+  > .p-picklist-header {
+    text-align: center;
+    border: none !important;
+  }
+  > .p-picklist-filter-container {
+    border: none !important;
+  }
+  > .p-picklist-source,
+  .p-picklist-target {
+    border: none !important;
+  }
+}
+.p-picklist-target-wrapper {
+  > .p-picklist-header {
+    background-color: $greenblue-color !important;
+    color: white !important;
+  }
+}
+button[icon="pi pi-angle-double-left"],
+button[icon="pi pi-angle-double-right"] {
+  display: none !important;
+}
+.p-picklist-buttons {
+  button {
+    background-color: white;
+    color: $green-color-light;
+    border: 1px solid $gray-color-dark;
+    border-radius: 50%;
+    width: 45px !important;
+    height: 45px !important;
+    margin: 10px !important;
+  }
+}
+.p-picklist {
+  ul {
+    .p-picklist-item.p-highlight {
+      background: $primary-color !important;
+    }
+    list-style-type: none;
+    li.p-picklist-item {
+      margin: 0 10px 0 10px !important;
+      border: 1px solid $gray-color !important;
+      padding: 5px 0 !important;
+    }
+    .p-picklist-droppoint {
+      display: none !important;
+    }
+  }
+}
+
+#siteAccessPickList {
+  .p-picklist {
+    ul {
+      .p-picklist-item.p-highlight {
+        background: $primary-color !important;
+      }
+      list-style-type: none;
+      li.p-picklist-item {
+        margin: 0 10px 0 10px !important;
+        border: 1px solid $gray-color !important;
+        padding: 5px 0 !important;
+        ul {
+          padding: 0;
+        }
+      }
+      .p-picklist-droppoint {
+        display: none !important;
+      }
+    }
+  }
+}
+#siteSmsPickList {
+  .p-picklist {
+    ul {
+      .p-picklist-item.p-highlight {
+        background: $primary-color !important;
+      }
+      list-style-type: none;
+      li.p-picklist-item {
+        margin: 0 10px 0 10px !important;
+        border: 1px solid $gray-color !important;
+        padding: 5px 0 !important;
+        ul {
+          padding-left: 5px;
+        }
+      }
+      .p-picklist-droppoint {
+        display: none !important;
+      }
+    }
+  }
+}

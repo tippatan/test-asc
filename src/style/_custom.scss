@@ -1,0 +1,363 @@
+@import "./variable";
+
+*,
+body {
+  font-family: db_heavent_cond, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.space {
+  margin: 15px auto;
+  width: 80%;
+}
+
+hr {
+  background-color: #dedede;
+  color: #dedede;
+  vertical-align: middle;
+  border-style: solid;
+}
+
+span.require {
+  color: $danger-color;
+  margin-top: -20px;
+}
+
+.list-box {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0 0 20px 10px !important;
+}
+
+.problem-node-listbox {
+  li.p-listbox-item {
+    background-color: #d1d1d1;
+  }
+}
+
+.problem-node-listbox,
+.affected-node-listbox {
+  > div {
+    border: none;
+    > .p-listbox-list {
+      padding: 0.5rem 0.5rem;
+    }
+  }
+}
+
+.text-link {
+  color: $second-color;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover,
+  &:active,
+  &:visited {
+    color: lighten($second-color, 5%);
+  }
+}
+
+.text-danger {
+  color: $danger-color;
+}
+
+.required-field {
+  // text-align: center;
+  background-color: $color-red-light;
+  color: $color-red;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+// tt create
+.tt-create-listbox {
+  .p-listbox {
+    border: 1px solid $gray-color !important;
+  }
+  .p-listbox-list-wrapper {
+    &::-webkit-scrollbar {
+      width: 11px;
+      height: 11px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: grey;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #404040;
+      border-radius: 20px;
+    }
+  }
+}
+
+// ============== app component ==============
+.left-menu-items {
+  .p-panel-header {
+    margin-top: -1px !important;
+    border: none !important;
+    border-top: 1px solid $gray-color !important;
+    border-bottom: 1px solid $gray-color !important;
+    background: none !important;
+    border-radius: 2px 2px 0 0 !important;
+    .p-panel-icons {
+      .pi-minus::before {
+        content: "\e902";
+      }
+      .pi-plus::before {
+        content: "\e903";
+      }
+    }
+  }
+  .p-panel-title {
+    color: black;
+    font-size: larger;
+    margin: 10px 0px;
+  }
+  .p-panel-content {
+    border: none !important;
+  }
+}
+// ============== end app component ==============
+// ============== box list ==============
+.summary {
+  .p-panel {
+    .p-panel-header {
+      padding: 5px !important;
+      margin-top: 0 !important;
+    }
+    .p-panel-content {
+      padding: 10px !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+.description {
+  padding-top: 15px;
+  display: inline-block;
+  .p-panel {
+    width: fit-content;
+    .p-panel-header {
+      padding: 5px !important;
+      margin-top: 0 !important;
+    }
+    .p-panel-content {
+      padding: 15px !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+.remarkDescription {
+  .p-panel {
+    width: fit-content;
+    .p-panel-header {
+      padding: 5px !important;
+      margin-top: 20px !important;
+    }
+    .p-panel-content {
+      padding: 15px !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+// ============== end box list ==============
+// ============== panel ==============
+.p-panel-header {
+  margin-top: 0 !important;
+  font-size: 1rem !important;
+}
+// ============== end panel ==============
+
+.text-limit {
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.text-label {
+  text-align: right !important;
+  font-weight: bold;
+}
+
+.label-name {
+  font-weight: bold;
+}
+
+.t-bold-orange {
+  color: $orange-color;
+  font-weight: bold;
+}
+
+.t-bold-red {
+  color: $color-red;
+  font-weight: bold;
+}
+
+.fa-file-excel {
+  color: #1f7a3a;
+  font-size: 24px;
+}
+
+.excel-link {
+  text-decoration: underline;
+  color: $orange-color;
+  cursor: pointer;
+}
+
+.tb-status {
+  font-weight: bold;
+  color: $orange-color;
+}
+
+.tb-priority-cri {
+  color: $color-red;
+  font-weight: bold;
+}
+
+.region,
+.priority,
+.tt-overdue,
+.summary-content {
+  display: flex;
+  .content {
+    a {
+      span {
+        margin-right: 20px;
+        text-decoration: underline;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.calendar-footer-button {
+  padding: 5px 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-gray {
+  color: $gray-color-dark;
+}
+
+.color-blue {
+  color: $steel-blue-color;
+}
+
+.color-orange-red {
+  color: $orange-color-red;
+}
+
+.color-orange {
+  color: $orange-color;
+}
+
+.tag-open {
+  background-color: $orange-color !important;
+}
+
+.tag-close {
+  background-color: $disabled-color !important;
+}
+
+.fa-file-excel {
+  color: $greenblue-color;
+}
+
+.header-text {
+  margin-bottom: 5px;
+  label {
+    font-size: x-large;
+  }
+}
+
+.table-footer {
+  > .button-group {
+    > button {
+      margin-right: 6px;
+    }
+  }
+}
+
+.summary-active {
+  color: $green-color-dark;
+  font-weight: bold;
+  text-shadow: 0px 0px 0px black;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.highlight-id {
+  color: $steel-blue-color;
+  font-weight: bold;
+}
+
+.ttid-link {
+  text-decoration: underline;
+  color: $steel-blue-color;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.query-link {
+  text-decoration: underline;
+  color: $primary-color;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.child-card {
+  padding: 10px 20px;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 10px 0 20px 0;
+  min-width: -webkit-fill-available;
+}
+
+.header-topic {
+  font-size: 24px;
+  color: $green-color-dark;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.p-inputtext:disabled {
+  color: #000 !important;
+}
+
+#cinSMSEmail,
+#ninSMSEmail {
+  .p-confirm-dialog-message {
+    max-height: 90%;
+  }
+}
+
+.p-disabled,
+.p-disabled * {
+  color: #000 !important;
+  .p-checkbox-icon {
+    color: #555 !important;
+  }
+}

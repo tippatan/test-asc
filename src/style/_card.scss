@@ -1,0 +1,73 @@
+.card {
+  padding: 10px 20px;
+  border: 1px solid $gray-color-light;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 10px 0 20px 0;
+  font-size: 16px;
+  width: calc(100vw - 270px);
+
+  > .header {
+    font-weight: 500;
+    font-size: larger;
+    color: $green-color-dark;
+    label {
+      background-color: white;
+      padding-right: 15px;
+      font-size: 1.3rem;
+    }
+    hr {
+      margin-top: -11px;
+    }
+  }
+
+  > .header:first-of-type {
+    padding-top: 0;
+  }
+
+  > .pagination-block {
+    height: 60px;
+    > .pagination {
+      float: right;
+    }
+  }
+
+  > .pagination-block.offset-none {
+    margin-bottom: -20px;
+  }
+
+  div.form {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    > .sub-header {
+      padding: 11px;
+      font-weight: 600;
+      font-size: medium;
+      color: $primary-color;
+      width: 100%;
+      background-color: #f6f6f6;
+      border-radius: 5px;
+    }
+    > .content {
+      padding: 20px 10px 10px 10px;
+    }
+  }
+}
+
+.card:last-child {
+  margin: 10px 0 40px 0;
+}
+
+.card-overflow {
+  width: fit-content;
+}
+
+.card-overflow-table-form {
+  width: max-content;
+}
+
+.card-full-width {
+  width: 100%;
+}

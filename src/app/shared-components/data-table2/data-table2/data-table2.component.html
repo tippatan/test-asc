@@ -1,0 +1,178 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12" *ngIf="pagingControlShow">
+    <app-paginator [pagingControlId]="pagingControlId" [pageSizeList]="pageSizeList" [total]="rows?.length"
+      [totalDisplay]="true" (onSelectedPageSize)="onSelectedPageSize($event)"
+      (onPageChangeEvent)="onPageChangeEvent($event)" *ngIf="rows || (rows?.length > 0 && pagingControlShow)">
+    </app-paginator>
+  </div>
+  <div class="table-responsive col-md-12 col-sm-12 col-xs-12">
+    <ng-container *ngIf="customTable">
+      <app-smart-check-alarm-tbl *ngIf="customTable == 'app-smart-check-alarm-tbl'"
+        (onCallBackAction)="callBackAction($event)" [rows]="rows" [pagingControlId]="pagingControlId"
+        [selectedPageSize]="selectedPageSize" [currentPage]="currentPage" [total]="total"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-smart-check-alarm-tbl>
+      <app-smart-check-enterprise-tbl *ngIf="customTable == 'app-smart-check-enterprise-tbl'"
+        (onCallBackAction)="callBackAction($event)" [rows]="rows" [pagingControlId]="pagingControlId"
+        [selectedPageSize]="selectedPageSize" [currentPage]="currentPage" [total]="total"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-smart-check-enterprise-tbl>
+      <app-smart-check-fbb-tbl *ngIf="customTable == 'app-smart-check-fbb-tbl'"
+        (onCallBackAction)="callBackAction($event)" [rows]="rows" [pagingControlId]="pagingControlId"
+        [selectedPageSize]="selectedPageSize" [currentPage]="currentPage" [total]="total"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-smart-check-fbb-tbl>
+      <app-act-detail-alarm-tbl *ngIf="customTable == 'app-act-detail-alarm-tbl'"
+        (onTblCallBackAction)="callBackAction($event)" [rows]="rows" [dataRowsCustom]="dataValue"
+        [canSaveActivity]="dataValue.canSaveActivity" [pagingControlId]="pagingControlId"
+        [selectedPageSize]="selectedPageSize" [currentPage]="currentPage" [total]="total"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-act-detail-alarm-tbl>
+      <app-act-detail-enterprise-tbl *ngIf="customTable == 'app-act-detail-enterprise-tbl'"
+        (onTblCallBackAction)="callBackAction($event)" [rows]="rows" [canSaveActivity]="dataValue.canSaveActivity"
+        [limitEDS]="dataValue.limitEDS" [countServiceL3]="dataValue.countServiceL3" [pagingControlId]="pagingControlId" [selectedPageSize]="selectedPageSize"
+        [currentPage]="currentPage" [total]="total" [lastChkServiceEds]="dataValue.lastChkServiceEds"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-act-detail-enterprise-tbl>
+      <app-act-detail-fbb-tbl *ngIf="customTable == 'app-act-detail-fbb-tbl'"
+        (onTblCallBackAction)="callBackAction($event)" [rows]="rows" [canSaveActivity]="dataValue.canSaveActivity"
+        [smsType]="dataValue.smsType" [reload]="dataRefresh" [pagingControlId]="pagingControlId"
+        [selectedPageSize]="selectedPageSize" [currentPage]="currentPage" [total]="total" [lastChkServiceFbb]="dataValue.lastChkServiceFbb"
+        (onCustomSorting)="onCustomSorting($event)">
+      </app-act-detail-fbb-tbl>
+      <app-act-detail-worker-tbl *ngIf="customTable == 'act-detail-worker-tbl'" [rows]="rows"
+        [pagingControlId]="pagingControlId" [selectedPageSize]="selectedPageSize" [currentPage]="currentPage"
+        [total]="total">
+      </app-act-detail-worker-tbl>
+    </ng-container>
+    <ng-container *ngIf="!customTable">
+      <table class="table table-hover {{ tblStyle }}">
+        <thead class="{{ headerStyle }}">
+          <!-- Gen Header IconAction-->
+          <ng-container *ngIf="iconActionAble && iconAction?.length > 0">
+            <th class="headerColumnNoCursor">{{ iconAction[0].headerName }}</th>
+          </ng-container>
+
+          <!-- Gen Header -->
+          <ng-container *ngFor="let col of columns; let i = index">
+            <!-- Header with sorting -->
+            <th class="headerColumn" *ngIf="col.isSortingDisplay" (click)="onSorting(col, i)">
+              {{ col.headerName }}
+              <span>
+                <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="col.isSortingAsc == null"></i>
+                <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="col.isSortingAsc == true"></i>
+                <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="col.isSortingAsc == false"></i>
+              </span>
+            </th>
+
+            <!-- Header without sorting -->
+            <th class="headerColumnNoCursor" *ngIf="
+                !col.isSortingDisplay &&
+                col.tagComponent != 'app-request-order-site-summary-tbl' &&
+                col.tagComponent != 'app-act-detail-fbb-tbb-tbl'
+              ">
+              {{ col.headerName }}
+            </th>
+
+            <th class="headerColumnNoCursor w500" *ngIf="
+                !col.isSortingDisplay &&
+                col.tagComponent == 'app-request-order-site-summary-tbl'
+              ">
+              {{ col.headerName }}
+            </th>
+
+            <app-act-detail-fbb-tbb-tbl *ngIf="col.tagComponent == 'app-act-detail-fbb-tbb-tbl'" [isCheckAllFbb]="true"
+            (onCallBackAction)="callBackAction($event)" [dataRows]="row"></app-act-detail-fbb-tbb-tbl>
+          </ng-container>
+        </thead>
+        <tbody *ngIf="rows && rows?.length > 0">
+          <ng-container *ngFor="
+              let row of rows
+                | paginate
+                  : {
+                      id: pagingControlId,
+                      itemsPerPage: selectedPageSize,
+                      currentPage: currentPage,
+                      totalItems: total
+                    }
+            ">
+            <tr>
+              <!-- template iconAction -->
+              <ng-template [ngTemplateOutlet]="iconActionColumn" [ngTemplateOutletContext]="{ row: row }"></ng-template>
+
+              <!-- Gen Row -->
+              <ng-container *ngFor="let col of columns; let i = index">
+                <!-- Case rowClick-->
+                <td *ngIf="rowClickAble" class="{{ col.styleClass }} row-cursor cursorPoint"
+                  (click)="onRowClick(row, 'onRowClick')">
+                  <!-- template data output-->
+                  <ng-template [ngTemplateOutlet]="dataOutput" [ngTemplateOutletContext]="{ row: row, col: col }">
+                  </ng-template>
+                </td>
+                <!-- Case no rowClick-->
+                <td *ngIf="!rowClickAble" class="{{ col.styleClass }}">
+                  <ng-container *ngIf="col.isLinkClick">
+                    <a class="cursorPoint" (click)="onLinkClick(row, col.callBackAction)">
+                      <!-- template data output-->
+                      <ng-template [ngTemplateOutlet]="dataOutput" [ngTemplateOutletContext]="{ row: row, col: col }">
+                      </ng-template>
+                    </a>
+                  </ng-container>
+                  <ng-container *ngIf="!col.isLinkClick">
+                    <ng-template [ngTemplateOutlet]="dataOutput" [ngTemplateOutletContext]="{ row: row, col: col }">
+                    </ng-template>
+                  </ng-container>
+                </td>
+              </ng-container>
+            </tr>
+          </ng-container>
+
+          <!-- data output-->
+          <ng-template #dataOutput let-row="row" let-col="col">
+            <ng-container *ngIf="col.htmlInnerValue && !col.tagComponent">
+              <div [innerHTML]="row[col.htmlInnerValue]"></div>
+              <!-- {{row[col.htmlInnerValue]}} -->
+            </ng-container>
+            <ng-container *ngIf="!col.htmlInnerValue && col.tagComponent">
+              <!-- custom Tag-->
+              <ng-template [ngTemplateOutlet]="customTag" [ngTemplateOutletContext]="{ row: row, col: col }">
+              </ng-template>
+            </ng-container>
+            <ng-container *ngIf="!col.htmlInnerValue && !col.tagComponent">
+              <p *ngIf="col.pipeName == 'customerAsterisk'">{{ row[col.propertyName] | customerAsterisk }}</p>
+              <p *ngIf="!col.pipeName">{{ row[col.propertyName] }}</p>
+            </ng-container>
+          </ng-template>
+
+          <ng-template #customTag let-row="row" let-col="col">
+            <!-- <list-subproject-action *ngIf="col.tagComponent == 'list-subproject-action'" [data]="row"
+              (onCallBackAction)="callBackAction($event)"></list-subproject-action>
+            -->
+            <app-act-detail-fbb-tbb-tbl *ngIf="col.tagComponent == 'app-act-detail-fbb-tbb-tbl'" [isCheckFbb]="true"
+            (onCallBackAction)="callBackAction($event)" [dataRows]="row"></app-act-detail-fbb-tbb-tbl>
+          </ng-template>
+
+          <!-- Icon Action with font awsome-->
+          <ng-template #iconActionColumn let-data="row">
+            <ng-container *ngIf="iconActionAble && iconAction?.length > 0">
+              <td class="center">
+                <ng-container *ngFor="let item of iconAction; let i = index">
+                  <app-action-icon [styleClass]="item.styleClass" [actionCallBack]="item.callBackAction" [data]="data"
+                    (onCallBackAction)="callBackAction($event)"></app-action-icon>
+                </ng-container>
+              </td>
+            </ng-container>
+          </ng-template>
+        </tbody>
+        <!-- Case no data -->
+        <tbody *ngIf="!rows || rows?.length <= 0">
+          <tr class="cursorDefault">
+            <td attr.colspan="{{ columns.length }}" class="text-center btn-img notFoundData">
+              Data Not Found
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div>

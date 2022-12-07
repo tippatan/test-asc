@@ -1,0 +1,250 @@
+<div class="table-height">
+  <table class="table table-hover customTbl">
+    <thead>
+      <tr>
+        <th class="customColumnNoCursor header-sticky" style="width: 6%">
+          <button
+            *ngIf="!rows || (rows?.length > 0 && rows.length < limitEDS)"
+            type="button"
+            class="btn-modern btn-search"
+            style="color: white !important"
+            (click)="callBackAction(rows, 'ENTERPRISEALL')"
+          >
+            Check
+          </button>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 7%"
+          (click)="onSorting(columnListAlarm[0], 0)"
+        >
+          Result
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 12%"
+          (click)="onSorting(columnListAlarm[1], 1)"
+        >
+          Importance
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 6%"
+          (click)="onSorting(columnListAlarm[2], 2)"
+        >
+          SKA
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 10%"
+          (click)="onSorting(columnListAlarm[3], 3)"
+        >
+          Group
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 10%"
+          (click)="onSorting(columnListAlarm[4], 4)"
+        >
+          ID
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[4].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[4].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[4].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          (click)="onSorting(columnListAlarm[5], 5)"
+        >
+          Customer Name
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[5].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[5].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[5].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="headerColumn header-sticky"
+          style="width: 7%"
+          (click)="onSorting(columnListAlarm[6], 6)"
+        >
+          Node
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[6].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[6].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[6].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="rows && rows?.length > 0">
+      <tr
+        *ngFor="
+          let row of rows
+            | paginate
+              : {
+                  id: pagingControlId,
+                  itemsPerPage: selectedPageSize,
+                  currentPage: currentPage,
+                  totalItems: total
+                }
+        "
+      >
+        <ng-container>
+          <td>
+            <div class="center">
+              <button
+                *ngIf="row.productType == 'CORP_EDS'"
+                type="button"
+                class="btn-modern btn-search"
+                (click)="callBackAction(row, 'ENTERPRISE')"
+                style="color: white !important"
+              >
+                Check
+              </button>
+              <span *ngIf="row.productType != 'CORP_EDS'">Not Detect</span>
+            </div>
+          </td>
+          <!--  <td ><div class="center">{{row.result}}</div> </td> -->
+          <td>
+            <div *ngIf="row.chkEnterpriseFlag === 'N'" class="center">
+              <i class="far fa-check-circle" style="color: green"></i>
+            </div>
+            <div *ngIf="row.chkEnterpriseFlag === 'Y'" class="center">
+              <i class="fas fa-exclamation-circle" style="color: red"></i>
+            </div>
+          </td>
+          <td>
+            <div class="center">{{ row.importance }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.ska }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.group }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.customerId }}</div>
+          </td>
+          <td>
+            <div class="left break-word">{{ row.customerName }}</div>
+          </td>
+          <td>
+            <div>{{ row.node }}</div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!rows || rows?.length == 0">
+      <tr>
+        <td class="red center" colspan="8">Data not found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

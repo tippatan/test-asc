@@ -1,0 +1,64 @@
+<app-spinner [loading]="loading"></app-spinner>
+<div class="panel-content">
+  <ng-container>
+    <div class="p-fluid p-formgrid p-grid reset-padding">
+      <div class="p-field p-col-12 p-md-2 p-lg-2 reset-padding">
+        <mat-button-toggle-group #group="matButtonToggleGroup" class="button-toggle" (click)="onClickAlarmType(group.value)">
+          <mat-button-toggle value="Site Code" checked="{{ alarmType == 'Site Code' }}" [disabled]="!isAlarmSiteCode">
+            <b>Site Code</b>
+          </mat-button-toggle>
+          <mat-button-toggle value="Service" checked="{{ alarmType == 'Service' }}" [disabled]="!isAlarmService">
+            <b>Service</b>
+          </mat-button-toggle>
+          <mat-button-toggle value="Enterprise" checked="{{ alarmType == 'Enterprise' }}"
+            [disabled]="!isAlarmEnterprise">
+            <b>Enterprise</b>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+        <!-- <div class="example-selected-value">Selected value: {{group.value}}</div>
+        <div class="example-selected-value">alarmType: {{alarmType}}</div> -->
+      </div>
+      <div class="p-field p-col-12 p-md-1 p-lg-1 reset-padding">
+        <button mat-mini-fab [ngClass]="{
+            'btn-mat-note-edit':
+              (((dataMaster.controlDetail.alarmSiteCodeNote != null &&
+                dataMaster.controlDetail.alarmSiteCodeNote != '') ||
+                (activityDetailObj.alarmSiteCodeNote != '' &&
+                  activityDetailObj.alarmSiteCodeNote != null)) &&
+                alarmType == 'Site Code') ||
+              (((dataMaster.controlDetail.alarmServiceNote != null &&
+                dataMaster.controlDetail.alarmServiceNote != '') ||
+                (activityDetailObj.alarmServiceNote != '' &&
+                  activityDetailObj.alarmServiceNote != null)) &&
+                alarmType == 'Service') ||
+              (((dataMaster.controlDetail.alarmEnterpriseNote != null &&
+                dataMaster.controlDetail.alarmEnterpriseNote != '') ||
+                (activityDetailObj.alarmEnterpriseNote != '' &&
+                  activityDetailObj.alarmEnterpriseNote != null)) &&
+                alarmType == 'Enterprise')
+          }" class="btn-mat-note note-style" matTooltip="Alarm {{ alarmType }} Note" (click)="onClickNote()"
+          [disabled]="
+            dataMaster.controlDetail.canSaveActivity == 'N' ? true : false
+          ">
+          <i class="far fa-edit"></i>
+        </button>
+      </div>
+      <div class="p-field p-col-12 p-md-8 p-lg-8 service-margin">
+        <label *ngIf="
+            dataMaster.controlDetail.serviceDisplay != null &&
+            alarmType == 'Service'
+          " class="label-name service-label">Service : {{ dataMaster.controlDetail.serviceDisplay }}</label>
+      </div>
+      
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid panel-buttom">
+      <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+        <app-data-table2 [customTable]="'app-act-detail-alarm-tbl'" [dataValue]="dataTableAlarmValue"
+          (onCallBackAction)="onTblCallBackAction($event)" [pagingControlShow]="false"></app-data-table2>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<p-toast position="bottom-right"></p-toast>

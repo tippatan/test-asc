@@ -1,0 +1,42 @@
+<!-- <div class="container">
+    <div class="header">
+     
+        <input matInput placeholder="Your name here" type="text" [(ngModel)]="sender" [ngModelOptions]="{updateOn: 'blur'}">
+    
+    </div>
+    <div *ngIf="!!sender" #viewer class="body">
+      <div class="viewer">
+        <div class="message" *ngFor="let msg of serverMessages" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+          <div class="badge" [style.backgroundColor]="getSenderColor(msg.sender)">{{ getSenderInitials(msg.sender) }}</div>
+          <div class="content" [ngClass]="{'bold': msg.isBroadcast, 'others': !isMine(msg)}">
+            <i *ngIf="msg.isBroadcast" class="material-icons">speaker_phone</i>
+            <span>{{ msg.content }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!!sender" class="footer">
+      <form (submit)="send()">
+       
+          <input name="clientMessage" matInput placeholder="Write a message" type="text" [(ngModel)]="clientMessage">
+       
+        <button mat-fab type="submit">
+          <i class="material-icons">send</i>
+        </button>
+        <button mat-fab (click)="toggleIsBroadcast()" type="button" [ngClass]="{'disabled': !isBroadcast}">
+          <i class="material-icons">speaker_phone</i>
+        </button>
+      </form>
+    </div>
+  </div>
+   -->
+
+<div class="message" *ngFor="let msg of serverMessages">
+  <div>{{ msg.sender }}</div>
+  <div>{{ msg.content }}</div>
+  <div>{{ msg.isBroadcast }}</div>
+</div>
+
+<button (click)="send()">
+  <i class="material-icons">send</i>
+</button>

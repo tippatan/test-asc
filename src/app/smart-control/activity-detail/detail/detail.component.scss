@@ -1,0 +1,197 @@
+.p-scrollpanel {
+  p {
+    padding: 0.1rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &.custombar1 {
+    .p-scrollpanel-wrapper {
+      border-right: 9px solid var(--layer-1);
+      background-color: #007ad9;
+    }
+
+    .p-scrollpanel-bar {
+      background-color: var(--primary-color);
+      opacity: 1;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #007ad9;
+      }
+    }
+
+    .p-component {
+      background-color: #007ad9;
+    }
+  }
+
+  &.custombar2 {
+    .p-scrollpanel-wrapper {
+      border-right: 9px solid var(--layer-1);
+      border-bottom: 9px solid var(--layer-1);
+    }
+
+    .p-scrollpanel-bar {
+      background-color: var(--layer-2);
+      border-radius: 0;
+      opacity: 1;
+      transition: background-color 0.2s;
+    }
+  }
+}
+
+.reset-padding {
+  padding: 0 !important;
+}
+::ng-deep .mat-card-custom {
+  padding: 5px !important;
+}
+
+.mat-card-margin {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.margin-right-0 {
+  margin-right: 0px;
+}
+
+.textarea-size {
+  width: 100% !important;
+  height: 5rem !important;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 100% !important;
+  border: 1px solid #e1e1e1 !important;
+}
+
+.textarea-desc{
+  width: 99% !important;
+  height: 5rem !important;
+  padding: 3px !important;
+  border: 1px solid #e1e1e1 !important;
+  background-color: #f0efeb;
+  font-size: small;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-card-area {
+  height: 5rem;
+  overflow: auto;
+}
+
+.mat-card-desc {
+  background-color: #f0efeb;
+  font-size: small;
+}
+
+.mat-card-node {
+  background-color: #fff1e6;
+}
+
+.mat-card-node-re {
+  background-color: #eddcd2;
+}
+
+.textarea-size {
+  width: 100% !important;
+  height: 5rem !important;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: small !important;
+}
+
+.data-table-area {
+  height: 8rem;
+  overflow: auto;
+}
+
+.data-table-worker-area {
+  height: 10rem;
+  overflow: auto;
+}
+
+.label-name {
+  font-size: 100% !important;
+}
+
+.icon-noc-inform {
+  cursor: pointer;
+  color: cornflowerblue;
+}
+
+.worker-margin-bottom {
+  margin-bottom: 1%;
+}
+
+.node-margin {
+  margin: 0px;
+  font-size: small;
+}
+
+.p-grid {
+  margin: 0;
+}
+
+::ng-deep .mat-card {
+  color: #614e47;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+:host ::ng-deep .p-multiselect {
+  min-width: 100%;
+  width: 18rem;
+}
+
+:host ::ng-deep .multiselect-custom {
+  .p-multiselect-label {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .country-item-value {
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    display: inline-flex;
+    margin-right: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
+
+    img.flag {
+      width: 17px;
+    }
+  }
+
+  .country-placeholder {
+    padding: 0.25rem;
+  }
+}
+
+:host ::ng-deep {
+  @media screen and (max-width: 640px) {
+    .p-multiselect {
+      width: 100%;
+    }
+  }
+}
+
+::ng-deep .p-chips-token {
+  padding: 0 0.5rem;
+  margin-right: 0.5rem;
+  background: #d0f7b6 !important;
+  color: #323130;
+  border-radius: 4px;
+  cursor: pointer !important;
+}

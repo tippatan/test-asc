@@ -1,0 +1,40 @@
+export class UserProfile {
+  idCardNo: string;
+  firstNameTh: string;
+  lastNameTh: string;
+  firstNameEn: string;
+  lastNameEn: string;
+  birthDate: string;
+  emailAddress: string;
+  mobileNo: string;
+  company: string;
+  nationality: string;
+  userName: string;
+  credential: string;
+  subCode: string;
+  companyCode: string;
+  status: string;
+  lastLogin: string;
+  email: string;
+  createBy: string;
+  position: string;
+  positionName: string;
+  vendorCompanyCode: string;
+  idCard: string;
+  mobile: string;
+  username: string;
+  country: string;
+  passport: string;
+  statusDesc: string;
+  companyNameTh: string;
+  companyNameEn: string;
+  createDateString: string;
+  updateBy: string;
+  updateDateString: string;
+  userId: string;
+  userCompanyCode: string;
+
+  subProjectId: string = null;
+  arnSubProjectId: string = null;
+  channelLogin: string;
+}

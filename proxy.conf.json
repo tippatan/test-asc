@@ -1,0 +1,12 @@
+{
+  "/api/*": {
+    "target": "https://localhost:3004",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/refresh-token/*": {
+    "target": "https://localhost:3004",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

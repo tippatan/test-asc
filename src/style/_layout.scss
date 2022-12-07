@@ -1,0 +1,140 @@
+@import "./variable";
+
+.p-col-1,
+.p-col-2,
+.p-col-3,
+.p-col-4,
+.p-col-5,
+.p-col-6,
+.p-col-7,
+.p-col-8,
+.p-col-9,
+.p-col-10,
+.p-col-11,
+.p-col-12 {
+  padding: 0 10px;
+}
+
+.p-sm-1,
+.p-sm-2,
+.p-sm-3,
+.p-sm-4,
+.p-sm-5,
+.p-sm-6,
+.p-sm-7,
+.p-sm-8,
+.p-sm-9,
+.p-sm-10,
+.p-sm-11,
+.p-sm-12,
+.p-md-1,
+.p-md-2,
+.p-md-3,
+.p-md-4,
+.p-md-5,
+.p-md-6,
+.p-md-7,
+.p-md-8,
+.p-md-9,
+.p-md-10,
+.p-md-11,
+.p-md-12,
+.p-lg-1,
+.p-lg-2,
+.p-lg-3,
+.p-lg-4,
+.p-lg-5,
+.p-lg-6,
+.p-lg-7,
+.p-lg-8,
+.p-lg-9,
+.p-lg-10,
+.p-lg-11,
+.p-lg-12,
+.p-xl-1,
+.p-xl-2,
+.p-xl-3,
+.p-xl-4,
+.p-xl-5,
+.p-xl-6,
+.p-xl-7,
+.p-xl-8,
+.p-xl-9,
+.p-xl-10,
+.p-xl-11,
+.p-xl-12 {
+  padding: 0 10px;
+}
+
+.p-field {
+  margin-bottom: 0.2rem;
+  > label {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.p-formgroup-inline.center {
+  justify-content: center;
+}
+
+.p-autocomplete-dd .p-autocomplete-dropdown {
+  margin-right: 0px !important;
+}
+
+// Custom
+
+.form-check {
+  margin: auto 20px;
+}
+
+.button-group {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.content {
+  .title {
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 30px 0;
+  }
+  .title:first-of-type {
+    margin: 0 0 30px 0;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.ml-05 {
+  margin-left: 0.5rem !important;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mt-05 {
+  margin-top: 0.5rem !important;
+}
+
+.mr-05 {
+  margin-right: 0.5rem !important;
+}
+
+.ml-20 {
+  margin-left: 2rem !important;
+}
+
+.space-padding {
+  padding-right: 10px;
+}
+
+.footer {
+  border-radius: 3px;
+  text-align: end;
+  background-color: #d6d6d6;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+}

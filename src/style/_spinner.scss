@@ -1,0 +1,34 @@
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+  animation: custom-progress-spinner-color 0.5s ease-in-out infinite;
+}
+
+.progress-spinner {
+  display: inline-block;
+  height: 100px;
+  margin: auto !important;
+  position: fixed !important;
+  width: 100px;
+  z-index: 999;
+  overflow: show;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes custom-progress-spinner-color {
+  100%,
+  0% {
+    stroke: $primary-color;
+  }
+  40% {
+    stroke: $primary-color;
+  }
+  66% {
+    stroke: $primary-color;
+  }
+  80%,
+  90% {
+    stroke: $primary-color;
+  }
+}

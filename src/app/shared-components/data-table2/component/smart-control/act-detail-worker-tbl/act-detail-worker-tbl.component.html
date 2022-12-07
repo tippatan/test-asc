@@ -1,0 +1,58 @@
+<div class="freeze">
+  <table class="table tbl-font-size">
+    <thead>
+      <tr class="worker-header">
+        <th class="headerColumnNoCursor header-sticky worker-job">Job</th>
+        <th class="headerColumnNoCursor header-sticky worker-name">
+          Name - SurName
+        </th>
+        <th class="headerColumnNoCursor header-sticky worker-mobile">Mobile</th>
+        <th class="headerColumnNoCursor header-sticky worker-team">Team</th>
+        <th class="headerColumnNoCursor header-sticky worker-remark">Remark</th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="rows && rows?.length > 0">
+      <tr
+        *ngFor="
+          let row of rows
+            | paginate
+              : {
+                  id: pagingControlId,
+                  itemsPerPage: selectedPageSize,
+                  currentPage: currentPage,
+                  totalItems: total
+                }
+        "
+        [ngClass]="{
+          'worker-main': row.mainFlag == 'Y',
+          'worker-actm': row.mainFlag == 'N' && row.dept.startsWith('ACTM')
+        }"
+        class="worker-tbl"
+      >
+        <ng-container>
+          <td>
+            <div class="left">{{ row.jbId }}</div>
+          </td>
+          <td>
+            <div class="left">{{ row.displayNameSurName }}</div>
+          </td>
+          <td>
+            <div class="left">{{ row.mobileNo }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.dept }}</div>
+          </td>
+          <td>
+            <div class="left">{{ row.remark }}</div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!rows || rows?.length == 0">
+      <tr>
+        <td class="red center" colspan="5">Data not found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

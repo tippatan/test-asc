@@ -1,0 +1,85 @@
+.headerNoti {
+  background-color: lightsteelblue;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hrNoti {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.colNoti {
+  padding-top: 5px;
+}
+
+.tooltips {
+  /* position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; */
+  cursor: pointer;
+}
+
+.tooltips:hover {
+  background-color: #ffccd5;
+}
+
+.tooltips .tooltiptext {
+  visibility: hidden;
+  /* width: 120px; */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  min-width: 50px;
+  max-width: 400px;
+  /*Positionthetooltip*/
+  position: absolute;
+  z-index: 1;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  font-size: 0.8em;
+}
+
+.tooltips:hover .tooltiptext {
+  visibility: visible;
+}
+.allNotiPoint {
+  cursor: pointer;
+  text-align: center;
+}
+
+.label-norm {
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: 90%;
+  /* line-height: 1.5; */
+  font-weight: bold;
+  color: #614e47;
+  display: block;
+  cursor: pointer;
+}
+
+.label-small {
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: 80%;
+  /* line-height: 1.5; */
+  font-weight: lighter;
+  color: #614e47;
+  display: block;
+  cursor: pointer;
+  word-break: break-all;
+}
+
+.line {
+  margin: 0;
+}
+
+.acknowledge {
+  width: 12px;
+  height: 12px;
+}

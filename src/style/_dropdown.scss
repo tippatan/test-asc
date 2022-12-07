@@ -1,0 +1,48 @@
+.p-fluid .p-dropdown .p-dropdown-label {
+  border: none !important;
+}
+
+.p-dropdown-items-wrapper {
+  &::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: grey;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 20px;
+  }
+}
+
+// tt list box dropdown search
+#ddlSubsystem {
+  .p-dropdown {
+    width: 100%;
+    text-align: left;
+    background: white;
+  }
+}
+#ddlTier {
+  .p-dropdown {
+    width: 100%;
+    text-align: left;
+    background: white;
+  }
+}
+
+.ddl {
+  .p-dropdown {
+    width: 100%;
+    text-align: left;
+    background: white;
+  }
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  background-color: white;
+}

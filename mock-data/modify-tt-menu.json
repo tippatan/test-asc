@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "resultData": {
+    "menu": [
+      {
+        "menuName": "HISTORY",
+        "priority": "1",
+        "route": "/tt/history/:id",
+        "roleId": null,
+        "subMenu": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+.p-multiselect {
+  border: 1px solid #e1e1e1 !important;
+  color: #605e5c !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 24px !important;
+  max-width: 180px;
+}
+
+.multi-select {
+  display: inline-block;
+}
+
+.p-multiselect .p-multiselect-label {
+  padding: 0px 3px !important;
+}
+
+.p-multiselect-panel {
+  .p-multiselect-header {
+    padding: 0 !important;
+    .p-checkbox {
+      margin: auto 4px !important;
+    }
+    .p-multiselect-close {
+      margin-left: 0 !important;
+    }
+  }
+  .p-multiselect-items {
+    .p-multiselect-item {
+      padding: 0 !important;
+      .p-checkbox {
+        margin: auto 4px !important;
+      }
+    }
+  }
+}
+
+// for query job
+.full-width-multi-select {
+  .p-multiselect {
+    width: 100%;
+    max-width: 100%;
+  }
+  .p-multiselect-panel {
+    max-width: inherit;
+  }
+}

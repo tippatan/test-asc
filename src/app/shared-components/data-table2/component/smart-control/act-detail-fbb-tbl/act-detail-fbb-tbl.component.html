@@ -1,0 +1,211 @@
+<div class="freeze">
+  <div class="p-fluid p-formgrid p-grid" style="margin: 0 !important;">
+    <!-- <div class="p-field p-col-12 p-md-3 p-lg-3 reset-padding"> -->
+      <!-- <div class="div-count">
+        <label class="label-name label-count">Count of FBB: {{ countFBB }}, 3BB: {{ count3BB }}</label>
+      </div> -->
+    <div class="div-count p-grid p-col-12 p-md-12 p-lg-12">
+      <div class="div-count-padding p-col-9 p-md-9 p-lg-9">
+        <label class="label-name label-count">Count of FBB: {{ countFBB }}, 3BB: {{ count3BB }}</label>
+      </div>
+      <div class="div-count-padding p-col-3 p-md-3 p-lg-3 right">
+        <label class="label-name label-count">Last check : {{ lastChkServiceFbb }}</label>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!-- <div class="p-field p-col-12 p-md-2 p-lg-2 reset-padding center">
+      
+    </div>
+    <div class="p-field p-col-12 p-md-7 p-lg-7 reset-padding"></div> -->
+  </div>
+
+
+  <table class="table table-hover customTbl tbl-font-size">
+    <thead>
+      <tr>
+        <th class="customColumnNoCursor table-width-5 header-sticky">
+          <button *ngIf="!rows || rows?.length > 0" type="button" class="btn-modern btn-search"
+            style="color: white !important" (click)="callBackAction(rows, 'onCheckAllFBB')"
+            [disabled]="canSaveActivity == 'N' ? true : false">
+            Check
+          </button>
+        </th>
+        <th class="headerColumn table-width-5 header-sticky" (click)="onSorting(columnListAlarm[0], 0)">
+          Impact
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[0].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[0].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[0].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-10 header-sticky" (click)="onSorting(columnListAlarm[1], 1)">
+          BF
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[1].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[1].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[1].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-10 header-sticky" (click)="onSorting(columnListAlarm[2], 2)">
+          AT
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[2].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[2].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[2].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-10 header-sticky">
+          <p-checkbox id="sendSmsAllChk" name="sendSmsAllChk"
+            *ngIf="(!rows || rows?.length > 0) && (smsType && smsType != 'NONE' )" [(ngModel)]="isAllSelection"
+            [binary]="true" (click)="masterToggle()" [disabled]="canSaveActivity == 'N' ? true : false"></p-checkbox>
+            
+          <button id="sendSMSFbbBtn" *ngIf="smsType && smsType != 'NONE'" type="button" class="btn-modern btn-search"
+          style="color: white !important" (click)="callBackAction(rows, 'onSendSMSById')"
+          [disabled]="selection.selected.length == 0 ? true : false">Send SMS</button>
+        </th>
+        <th class="headerColumn header-sticky" (click)="onSorting(columnListAlarm[7], 7)">
+          Plan Down
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[7].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[7].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[7].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn header-sticky" (click)="onSorting(columnListAlarm[3], 3)">
+          OLT/DSLAM
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[3].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[3].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[3].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-10 header-sticky" (click)="onSorting(columnListAlarm[4], 4)">
+          PON
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[4].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[4].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[4].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-15 header-sticky" (click)="onSorting(columnListAlarm[5], 5)">
+          Splitter
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[5].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[5].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[5].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-6 header-sticky" (click)="onSorting(columnListAlarm[6], 6)">
+          FBB No.
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[6].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[6].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[6].isSortingAsc == false"></i>
+          </span>
+        </th>
+        <th class="headerColumn table-width-6 header-sticky" (click)="onSorting(columnListAlarm[8], 8)">
+          3BB No.
+          <span>
+            <i class="fa fa-sort fa-1" aria-hidden="true" *ngIf="columnListAlarm[8].isSortingAsc == null"></i>
+            <i class="fa fa-sort-up fa-1" aria-hidden="true" *ngIf="columnListAlarm[8].isSortingAsc == true"></i>
+            <i class="fa fa-sort-down fa-1" aria-hidden="true" *ngIf="columnListAlarm[8].isSortingAsc == false"></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="rows && rows?.length > 0">
+      <tr *ngFor="
+          let row of rows
+            | paginate
+              : {
+                  id: pagingControlId,
+                  itemsPerPage: selectedPageSize,
+                  currentPage: currentPage,
+                  totalItems: total
+                }
+        ">
+        <ng-container>
+          <td>
+            <div class="center">
+              <button type="button" class="btn-modern btn-search" style="color: white !important"
+                (click)="callBackAction(row, 'onCheckFBB')" [disabled]="canSaveActivity == 'N' ? true : false">
+                Check
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="center" *ngIf="row.impactFlag == 'Y'">
+              <i class="far fa-check-circle"></i>
+            </div>
+          </td>
+          <td>
+            <div class="center" matTooltip="{{ row.chkBfDate }}">
+              {{ row.chkBfCount }}
+            </div>
+          </td>
+          <td>
+            <div class="center" matTooltip="{{ row.chkAtDate }}">
+              {{ row.chkAtCount }}
+            </div>
+          </td>
+          <td>
+            <div class="center">
+              <p *ngIf="row.sendSmsDate && smsType === 'COMPLETE'">{{row.chkAtDate}}</p>
+              <p *ngIf="row.sendSmsDate && smsType === 'CANCEL'">{{row.sendSmsDate}}</p>
+              <p-checkbox *ngIf="((((smsType && smsType != 'NONE' ) && row.chkAtDate ) || (smsType && smsType == 'CANCEL') )
+                && !row.sendSmsDate) " 
+                id="sendSmsChk" name="sendSmsChk" [(ngModel)]="row.selected"
+                [binary]="true" (click)="onChecker(row)" [disabled]="canSaveActivity == 'N' ? true : false">
+              </p-checkbox>
+            </div>
+          </td>
+          <td>
+            <div>{{ row.planDown }}</div>
+          </td>
+          <td>
+            <div class="center break-word">{{ row.accessNode }}</div>
+          </td>
+          <td>
+            <div>{{ row.ponNo }}</div>
+          </td>
+          <td>
+            <div class="break-word">{{ row.splitter }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.totalCount }}</div>
+            <input type="hidden" name="pon" value="{{ row.pon }}" />
+            <input type="hidden" name="splitterName" value="{{ row.splitterName }}" />
+          </td>
+          <td (click)="openCustomerDetail(row, 'AIS', row.count3bb)" style="cursor: pointer;">
+            <div class="center">{{ row.count3bb ?  row.count3bb : '0'}}</div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!rows || rows?.length == 0">
+      <tr>
+        <td class="red center" colspan="11">Data not found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<p-dialog appendTo="body" [(visible)]="showCustomerDetailDialog" modal="modal" [style]="{width: '22vw',minWidth: '22vw',maxWidth: '22vw'}" height="200" [header]="customerDetailDialogHeader"
+[closable]="true" [showHeader]="true" class="p-dialog-content-3bb">
+<div class="container-fluid">
+  <div>
+    <div class="p-grid">
+      <div class="p-field p-col-12 p-md-12 p-lg-12" style="padding:0px;text-align: center;">
+        <div *ngIf="customerDetailList.length <= 0" class="red center customer-content">Data not found.</div>
+        <div *ngIf="customerDetailList.length > 0" class="customer-content">
+          <div *ngFor="let customer of customerDetailList">
+            {{customer}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</p-dialog>

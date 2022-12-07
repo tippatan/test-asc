@@ -1,0 +1,32 @@
+.table-width-5 {
+  width: 5%;
+}
+
+.table-width-7 {
+  width: 7%;
+}
+
+.table-width-8 {
+  width: 8%;
+}
+
+.table-width-10 {
+  width: 10%;
+}
+
+.table-width-23 {
+  width: 23%;
+}
+
+.div-count {
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+.label-count {
+  font-size: small;
+}
+
+.div-count-padding{
+  padding: 0px !important;
+}

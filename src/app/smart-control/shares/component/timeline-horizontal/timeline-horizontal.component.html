@@ -1,0 +1,35 @@
+<div id="timeline-wrap">
+  <div class="navigation">
+    <span *ngFor="let item of items" [class]="item.styleClass ? item.styleClass : ''">
+      <!-- <div class="timeline-label" *ngIf="item.label">
+        
+        <mat-card class="mat-card-custom mat-card-area mat-card-margin mat-card-node-re">
+          {{item.label}}
+        </mat-card>
+      </div> -->
+      <!-- <div class="timeline-label" *ngIf="item.title">{{item.title}}</div> -->
+
+      <!-- [class]="
+          item.active
+            ? 'marker timeline-icon marker-active'
+            : 'marker timeline-icon'" -->
+      <div [style.background-color]="getColor(item)"
+        class="timeline-icon marker-active cursor-default" [ngClass]="{'marker-check': item.label == 'Check Before' || item.label == 'Check After', 'marker' : item.label != 'Check Before' && item.label != 'Check After'}">
+        <i [class]="item.icon"></i>
+      </div>
+      <div class="mat-card-custom">
+        <div class="" [ngClass]="{'bubble-check': item.label == 'Check Before' || item.label == 'Check After', 'bubble' : item.label != 'Check Before' && item.label != 'Check After'}">
+          <div class="row cursor-default">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center font-size">
+              {{ item.label }}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 font-size" [innerHtml]="item.title">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+    <div class="timeline"></div>
+  </div>
+</div>

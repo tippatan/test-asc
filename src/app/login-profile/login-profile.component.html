@@ -1,0 +1,227 @@
+<app-alert-message></app-alert-message>
+<!-- spinner loading -->
+<app-spinner [loading]="loading"></app-spinner>
+<div class="login-profile-container">
+  <div class="login-profile" *ngIf="!loading || (!submitted && !loading)">
+    <div class="p-md-14 p-sm-12 card">
+      <img class="logo" src="./../../assets/images/TTS-logo.png" alt="logo" />
+      <form [formGroup]="formProfile">
+        <div class="p-col">
+          <div class="box box-stretched">
+            <div class="p-grid" *ngIf="profileData">
+              <div class="p-md-4 p-sm-12 padding-col">
+                <h3>Profile</h3>
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="name"><b>Name</b></label>
+                    <input
+                      id="name"
+                      type="text"
+                      pInputText
+                      value="{{ fullName }}"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="region"><b>Region</b></label>
+                    <input
+                      id="region"
+                      type="text"
+                      pInputText
+                      value="{{ profileData.result.user.region.regionNameEn }}"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="zone"><b>Zone</b></label>
+                    <input
+                      id="zone"
+                      type="text"
+                      pInputText
+                      value="{{ profileData.result.user.zone.description }}"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="zone"><b>Mobile No.</b></label>
+                    <input
+                      id="zone"
+                      type="text"
+                      pInputText
+                      value="{{ profileData.result.user.mobileNo }}"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="p-md-10 p-sm-12 line">
+                <h3>Login to Profile</h3>
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-7 p-sm-12">
+                    <label for="profile"
+                      ><b>Profile</b
+                      ><small class="p-error"><b>*</b></small></label
+                    >
+                    <p-dropdown
+                      [options]="profileDropdownList"
+                      id="profile"
+                      optionLabel="profileName"
+                      placeholder="Please select"
+                      formControlName="profile"
+                      [ngClass]="{ 'required-dropdown': validator('profile') }"
+                    >
+                    </p-dropdown>
+                    <small class="p-error" *ngIf="validator('profile')"
+                      >This field is required</small
+                    >
+                  </div>
+                  <div class="p-field p-col-12 p-md-7 p-sm-12">
+                    <label for="userStatus"><b>User Status</b></label>
+                    <p-dropdown
+                      [options]="userStatusDropdownList"
+                      id="userStatus"
+                      optionLabel="name"
+                      placeholder="Please select"
+                      formControlName="userStatus"
+                    >
+                    </p-dropdown>
+                  </div>
+                  <ng-container *ngIf="profileData.result.node !== null">
+                    <div class="p-field p-col-12 p-md-14 p-sm-12">
+                      <label for="shiftDay"
+                        ><b>Shift/Day</b
+                        ><small class="p-error"><b>*</b></small></label
+                      >
+                      <div class="p-fluid p-formgrid grid-flex radio">
+                        <div class="p-field p-md-3">
+                          <p-radioButton
+                            class="form-check p-ml-0"
+                            label="Shift"
+                            id="shiftDay1"
+                            name="shiftDay"
+                            value="S"
+                            formControlName="shiftDay"
+                            (onClick)="selectedShift = true"
+                            >Shift
+                          </p-radioButton>
+                        </div>
+                        <div class="p-field p-md-3">
+                          <p-radioButton
+                            class="form-check p-ml-0"
+                            label="Day"
+                            id="shiftDay2"
+                            name="shiftDay"
+                            value="D"
+                            formControlName="shiftDay"
+                            (onClick)="selectedShift = false"
+                            >Day
+                          </p-radioButton>
+                        </div>
+                      </div>
+                      <small class="p-error" *ngIf="validator('shiftDay')"
+                        >This field is required</small
+                      >
+                    </div>
+                    <div
+                      *ngIf="selectedShift"
+                      class="p-field p-col-12 p-md-7 p-sm-6"
+                    >
+                      <label for="node"
+                        ><b>Node</b
+                        ><small class="p-error"><b>*</b></small></label
+                      >
+                      <p-dropdown
+                        id="nodeAccId"
+                        [options]="nodeDropdownList"
+                        optionLabel="name"
+                        placeholder="Please select"
+                        formControlName="node"
+                        (onChange)="showRemark()"
+                        [ngClass]="{ 'required-dropdown': validator('node') }"
+                      >
+                      </p-dropdown>
+                      <small class="p-error" *ngIf="validator('node')"
+                        >This field is required</small
+                      >
+                    </div>
+                    <div
+                      *ngIf="selectedShift"
+                      class="p-field p-col-12 p-md-7 p-sm-6"
+                    >
+                      <label for="remark"><b>Remark</b></label>
+                      <textarea
+                        pInputTextarea
+                        autoResize="autoResize"
+                        name="remark"
+                        id="remark"
+                        cols="20"
+                        rows="2"
+                        formControlName="remark"
+                      ></textarea>
+                    </div>
+                  </ng-container>
+                  <div class="p-md-14 grid-flex no-gutter p-py-1">
+                    <div
+                      *ngIf="profileData.result.authWorkforce"
+                      class="p-field p-col-12 p-xl-12 p-md-14 p-sm-12"
+                    >
+                      <p-checkbox
+                        id="chkNeedSms"
+                        label="Need Receive SMS for plan job"
+                        name="needReceiveSMS"
+                        inputId="needReceiveSMS"
+                        binary="true"
+                        formControlName="needReceiveSMS"
+                      >
+                      </p-checkbox>
+                    </div>
+                    <div
+                      *ngIf="profileData.actmAuth"
+                      class="p-field p-col-12 p-xl-6 p-md-14 p-sm-12"
+                    >
+                      <p-checkbox
+                        id="chkGoToActivityCalendar"
+                        label="Login and Go to Activity Calendar"
+                        name="goToActivityCalendar"
+                        inputId="goToActivityCalendar"
+                        binary="true"
+                        [formControl]="
+                          formProfile.controls['goToActivityCalendar']
+                        "
+                      >
+                      </p-checkbox>
+                    </div>
+                  </div>
+                  <div
+                    class="p-field p-col-12 p-md-14 p-sm-12 p-text-center"
+                    *ngIf="errorText !== ''"
+                  >
+                    <div class="required-field">
+                      <label>{{ errorText }}</label>
+                    </div>
+                  </div>
+                  <div class="p-col-12 p-md-14 p-sm-12 p-text-center">
+                    <button
+                      id="btnLogin"
+                      type="button"
+                      (click)="onLoginProfile()"
+                    >
+                      <span class="p-button-label">LOGIN</span></button
+                    >&nbsp;
+                    <button
+                      id="btnReset"
+                      type="button"
+                      (click)="setDefaultFormProfile()"
+                    >
+                      <span class="p-button-label">RESET</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

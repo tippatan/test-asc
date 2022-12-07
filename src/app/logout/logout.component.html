@@ -1,0 +1,121 @@
+<app-spinner [loading]="loading"></app-spinner>
+<div class="login-profile-container">
+  <div class="login-profile">
+    <div class="p-md-14 p-sm-12 card" *ngIf="this.viewLogOutData">
+      <img class="logo" src="./../../assets/images/TTS-logo.png" alt="logo" />
+      <form>
+        <div class="p-col">
+          <div class="box box-stretched">
+            <div class="p-grid">
+              <div class="p-md-6 p-col-sm-12 p-sm-12 padding-col">
+                <h3>Profile</h3>
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="name"><b>Name</b></label>
+                    <input
+                      id="name"
+                      type="text"
+                      pInputText
+                      [value]="this.displayName"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="zone"><b>Status</b></label>
+                    <input
+                      id="zone"
+                      type="text"
+                      pInputText
+                      [value]="displayCurrentStatus"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="region"><b>Need Recieve SMS</b></label>
+                    <input
+                      id="region"
+                      type="text"
+                      pInputText
+                      [value]="this.displayRecieveSMS"
+                      disabled
+                    />
+                  </div>
+                  <div class="p-field p-col-12 p-md-14 p-sm-12">
+                    <label for="region"><b>Main Region</b></label>
+                    <input
+                      id="region"
+                      type="text"
+                      pInputText
+                      [value]="this.displayMainRegion"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="p-md-8 p-sm-12 line">
+                <h3>Logout Status</h3>
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12">
+                    <div class="p-field p-col-12 p-md-7 p-sm-12 center">
+                      <label for="status"
+                        ><b>User Status</b><span class="require">*</span></label
+                      >
+                      <p-dropdown
+                        [options]="statusDropdownList"
+                        id="status"
+                        name="status"
+                        optionLabel="name"
+                        placeholder="Please select"
+                        [(ngModel)]="this.status"
+                      >
+                      </p-dropdown>
+                    </div>
+                  </div>
+                  <div
+                    class="p-field p-col-12"
+                    *ngIf="viewLogOutData.AUTH_WORKFORCE"
+                  >
+                    <p-checkbox
+                      class="checkbox-sms"
+                      id="chkNeedSms"
+                      label="Need Receive SMS for plan job"
+                      name="needReceiveSMS"
+                      inputId="needReceiveSMS"
+                      binary="true"
+                      [(ngModel)]="receivePlanSms"
+                    >
+                    </p-checkbox>
+                  </div>
+                  <br />
+                  <div class="p-col-12 p-md-14 p-sm-12 p-text-center">
+                    <button id="btnLogin" type="button" (click)="logout()">
+                      <span class="p-button-label">LOGOUT</span></button
+                    >&nbsp;
+                    <button id="btnReset" type="button" (click)="cancel()">
+                      <span class="p-button-label">CANCEL</span>
+                    </button>
+                  </div>
+                  <div class="p-col-12 p-md-14 p-sm-12 p-text-start note">
+                    <label class="color-orange"><b>Note :</b></label>
+                  </div>
+                  <div class="p-col-12 p-md-14 p-sm-12 p-text-start">
+                    <label class="color-orange"
+                      >Stand By Status : กรณีที่สามารถติดต่อได้ทุกกรณี เช่น
+                      โทรศัพท์ติดต่อ เป็นต้น</label
+                    >
+                  </div>
+                  <div class="p-col-12 p-md-14 p-sm-12 p-text-start">
+                    <label class="color-orange"
+                      >Off Duty Status : ใช้สำหรับการลาพักร้อน, การ Training
+                      หรือในกรณีที่ไม่สามารถจะติดต่อได้</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,416 @@
+<app-spinner [loading]="loading"></app-spinner>
+<ng-container>
+  <p-panel header="TTS - Activity Smart Control" [toggleable]="true">
+    <ng-template pTemplate="icons">
+      <button mat-mini-fab class="btn-mat-header btn-icon-margin" (click)="gotoSmartCheck()">
+        <img class="btn-icon-img" matTooltip="Smart Check" src="../../assets/images/buttons/SMART_CHECK.png" />
+      </button>
+
+      <button mat-mini-fab class="btn-mat-header btn-icon-margin" matTooltip="Notification" data-toggle="collapse"
+        data-target="#notiTab" (click)="loadNoti(); acknowledgeNoti(null)">
+        <i id="notiBtn" data-badge="" class="fa fa-bell badge1"></i>
+      </button>
+      <p-dialog position="top-right" header="Notification" [(visible)]="showNoti" [draggable]="false" [modal]="true"
+        [style]="{ width: '25vw', top: '1.3vw' }" [dismissableMask]="true">
+        <app-noti-tab [dataNoti]="dataNoti" (onCallBackAction)="onCallBackAction($event)"></app-noti-tab>
+      </p-dialog>
+      <!-- <p-overlayPanel #op>
+          <ng-template pTemplate>
+            <app-noti-tab [dataNoti]="dataNoti" (onCallBackAction)="onCallBackAction($event)" ></app-noti-tab>
+          </ng-template>
+      </p-overlayPanel> -->
+
+      <button mat-mini-fab class="btn-mat-header btn-icon-margin" (click)="onClickProfile()">
+        <img class="btn-icon-img" matTooltip="User Profile" src="../../assets/images/buttons/USER_PROFILE.png" />
+      </button>
+
+      <p-dialog position="top-right" header="User Profile" [(visible)]="showUserprofile" [draggable]="false"
+        [style]="{ width: '30vw', top: '1.3vw' }">
+        <app-user-profile></app-user-profile>
+      </p-dialog>
+    </ng-template>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6 p-lg-6">
+        <p-chart #barChart type="bar" [data]="data" [responsive]="true" [options]="barChartOptions" [height]="150">
+        </p-chart>
+        <b>Graph Status : {{ graphStatus }}</b>
+      </div>
+      <div class="p-field p-col-12 p-md-6 p-lg-6">
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-1 p-lg-1">
+            <p-button class="p-button-primary" icon="fa fa-filter" (click)="onClickFilter()" [disabled]="companyActivityMode == '3BB'"></p-button>
+          </div>
+          <div class="p-field p-col-12 p-md-4 p-lg-4 margin-top-2">
+            <input id="txtSearchUsername" class="p-fluid full-width" type="text" placeholder="Username"
+              [(ngModel)]="searchUsername" pInputText [disabled]="companyActivityMode === 'AIS' ? false : true"/>
+          </div>
+          <div class="p-field p-col-12 p-md-4 p-lg-4 margin-top-2">
+            <p-selectButton class="p-button-warning" [options]="options" [(ngModel)]="companyActivityMode"
+              [matTooltip]="'Company Activity'" (onChange)="queryDashboard()"></p-selectButton>
+          </div>
+        </div>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-5 p-lg-5">
+            <label class="label-name"><b>Start Time</b></label>
+            <div>
+              <p-calendar id="startTimeCld" [(ngModel)]="editCriteria.startDate" [showIcon]="true" [dataType]="'string'"
+                [selectOtherMonths]="true" dateFormat="dd/mm/yy" [showTime]="true" [inputStyle]="{ cursor: 'pointer' }"
+                hourFormat="24">
+              </p-calendar>
+            </div>
+          </div>
+          <!-- [showButtonBar]="true" -->
+          <div class="p-field p-col-12 p-md-5 p-lg-5 text-left">
+            <label class="label-name"><b>End Time</b></label>
+            <div>
+              <p-calendar id="endTimeCld" [(ngModel)]="editCriteria.finishDate" [showIcon]="true" [dataType]="'string'"
+                dateFormat="dd/mm/yy" [selectOtherMonths]="true" [showTime]="true" [inputStyle]="{ cursor: 'pointer' }" hourFormat="24">
+              </p-calendar>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-10 p-lg-10">
+            <label class="label-name"><b>Power Filter</b></label>
+            <div>
+              <input id="txtPowerFilter" class="p-fluid full-width" type="text" placeholder="Power Filter"
+                [(ngModel)]="powerFilter" pInputText />
+            </div>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3 margin-top-hl">
+            <p-button class="p-button-primary query-btn" label="Query" (click)="queryDashboard()"></p-button>
+          </div>
+          <div class="p-field p-col-12 p-md-3 p-lg-3 margin-top-hl">
+            <!-- <p-button
+              class="p-button-primary query-btn"
+              label="Clear"
+              (click)="clearData()"
+            ></p-button> -->
+            <button pButton type="button" label="Clear" class="p-button-warning" (click)="clearData()"></button>
+
+          </div>
+          <!-- <div class="p-field p-col-12 p-md-3 p-lg-3 margin-top-hl">
+            <p-selectButton class="p-button-warning" [options]="options" [(ngModel)]="companyActivityMode"
+              [matTooltip]="'Company Activity'" (onChange)="queryDashboard()"></p-selectButton>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </p-panel>
+</ng-container>
+
+<ng-container>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-col-12 p-md-3 p-lg-3" *ngFor="let item of listWrActivity">
+      
+      <!-- --3BB CARD-- -->
+      <mat-card class="dashboard-card" [ngStyle]="{ 'background-color': item.statusColor }"
+        *ngIf="companyActivityMode === '3BB'">
+        <mat-card-header>
+          <mat-card-title class="card-title-width">
+            <div class="p-fluid p-formgrid p-grid">
+              <div class="p-col-12 p-md-6 p-lg-6 padding-right-0 nowarp">
+                <b class="txt-link" matTooltip="Open tab activity detail" (click)="gotoActivityDetail3BB(item)">{{
+                  item.maintenanceId }}</b>
+                <!-- <span *ngIf="item.countEds > item.limitEds"
+                  >&nbsp;(EDS over {{ item.limitEds }})</span
+                > -->
+              </div>
+              <div class="p-col-12 p-md-6 p-lg-6 text-right nowrap">
+                <small class="card-status-font">{{
+                  item.statusActivityDesc
+                  }}</small>
+              </div>
+            </div>
+          </mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-12 p-md-12 p-lg-12 card-padding-left-18 text-ellipsis">
+              <b style="font-size: 12px;">Title : </b><span matTooltip="{{ item.title }}">{{
+                item.title
+                }}</span>
+            </div>
+          
+            <div class="p-col-12 p-md-8 p-lg-8 card-padding-left-18">
+              <b style="font-size: 12px;">Start - Stop Time : </b>({{ item.startDate | date: "HH:mm" }} -
+              {{ item.finishDate | date: "HH:mm" }})
+            </div>
+            <div class="p-col-12 p-md-4 p-lg-4">
+              [จำนวนลูกค้า {{ item.countFbb }}]
+            </div>
+          </div>
+          
+        </mat-card-content>
+        
+        <mat-card-actions class="mat-card-actions-3bb">
+          <div class="p-fluid p-formgrid p-grid ">
+            <!-- version2 -->
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame" style="margin-top: 4px;">
+              <label><b>Before</b></label>
+              <div>
+                <span *ngIf="item.fbbStatusBefore === 'Pass'" class="p-tag p-tag-sucess product-badge status-pass">{{item.fbbStatusBefore}}</span>
+                <span *ngIf="item.fbbStatusBefore === 'Warning'" class="p-tag p-tag-sucess product-badge status-warning">{{item.fbbStatusBefore}}&nbsp;({{item.fbbCountWarningBefore}})</span>
+              </div>
+            </div>
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame" style="margin-top: 4px;">
+              <label><b>After</b></label>
+              <div>
+                <span *ngIf="item.fbbStatusAfter === 'Pass'" class="p-tag p-tag-danger product-badge status-pass">{{item.fbbStatusAfter}}</span>
+                <span *ngIf="item.fbbStatusAfter === 'Warning'" class="p-tag p-tag-danger product-badge status-warning">{{item.fbbStatusAfter}}&nbsp;({{item.fbbCountWarningAfter}})</span>
+              </div>
+            </div>
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame center" style="margin-top: 4px;padding: 0 4px;">
+              <label><b>&nbsp;</b></label>
+              <div>
+                <p-button class="p-button-primary query-btn" label="Check FBB" (click)="saveWRActivityFBB3BB(item, item.statusActivityId)">
+                  <img matTooltip="FBB" 
+                      src="../../assets/images/buttons/FBB.png" style="width: 20px;" />
+                </p-button>
+              </div>
+            </div>
+
+            <!-- end version2 -->
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+<!-- --3BB CARD-- -->
+
+<!-- --AIS CARD-- -->
+      
+      <mat-card class="dashboard-card" [ngStyle]="{ 'background-color': item.statusColor }"
+        *ngIf="companyActivityMode === 'AIS'">
+        <div *ngIf="listWrOnProcess.includes(item.wrId) || listWrOnProcess.includes('ALL') " class="card-spinner">
+          <p-progressSpinner [strokeWidth]="6"></p-progressSpinner>
+        </div>
+        <mat-card-header>
+          <mat-card-title class="card-title-width">
+            <div class="p-fluid p-formgrid p-grid">
+              <div class="p-col-12 p-md-6 p-lg-6 padding-right-0 nowarp">
+                <b class="txt-link" matTooltip="Open tab activity detail" (click)="gotoActivityDetail(item)">{{ item.wrId }}</b>
+                <span *ngIf="item.countServiceL3 > item.limitEds">&nbsp;(EDS over {{ item.limitEds }})</span>
+              </div>
+              <div class="p-col-12 p-md-6 p-lg-6 text-right nowrap">
+                <small class="card-status-font">{{
+                  item.statusActivityDesc
+                  }}</small>
+              </div>
+            </div>
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-7 p-md-7 p-lg-7 card-padding-left-18 text-ellipsis">
+              <span>[FBB : {{item.countFbb}}, Corp : {{item.countEds}}<span *ngIf="item.countKey && item.countKey !== '0'"> (Key {{item.countKey}})</span>]</span>
+            </div>
+            <div *ngIf="item.riskPredictiveResult !== ''" class="p-col-5 p-md-5 p-lg-5 btn-padding">
+              <span [ngStyle]="{ 'background-color': item.riskPredictiveColor }">Risk Predictive : {{item.riskPredictiveResult}}</span>
+            </div>
+          </div>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-12 p-md-12 p-lg-12 card-padding-left-18 text-ellipsis">
+              <b style="font-size: 12px;">Title : </b><span matTooltip="{{ item.title }}">{{
+                item.title
+                }}</span>
+            </div>
+          </div>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-12 p-md-8 p-lg-8 card-padding-left-18">
+              <b style="font-size: 12px;">Start - Stop Time : </b>({{ item.startDate | date: "HH:mm" }} -
+              {{ item.finishDate | date: "HH:mm" }})
+            </div>
+            <div class="p-col-12 p-md-4 p-lg-4">
+              <button *ngIf="canSentSMSFbb(item) && (item.countFbbSentSMS < item.countAllFbb)" pButton type="button"
+                class="p-button-warning btn-close" (click)="sendSmsFBB(item)"
+                label="SMS ({{item.countFbbSentSMS}} / {{item.countAllFbb}})">
+              </button>
+
+              <button *ngIf="canSentSMSFbb(item) && (item.countFbbSentSMS == item.countAllFbb)" pButton type="button"
+                class="p-button-primary" label="SMS ({{item.countFbbSentSMS}} / {{item.countAllFbb}})">
+              </button>
+            </div>
+          </div>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-12 p-md-12 p-lg-12 card-padding-left-19">
+              {{ item.mainContact }}
+            </div>
+           
+          </div>
+        
+        </mat-card-content>
+
+        <mat-card-actions>
+          <div class="p-fluid p-formgrid p-grid card-button-frame-bg">
+            <!-- version2 -->
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame" style="margin-top: 4px;">
+              <div class="icon-action-box">
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnAlm == 'N' || item.statusActivityId != 'CONFIRM')"
+                    (click)="saveWRActivityALM(item, 'ALM')">
+                    <img *ngIf="item.almStatusBefore === 'Warning'" matTooltip="Alarm" src="../../assets/images/buttons/ALM_WARNING.png"
+                      style="width: 20px;" />
+                    <img class="buttonALM" *ngIf="item.almStatusBefore === 'Pass'" matTooltip="Alarm"
+                      src="../../assets/images/buttons/ALM_PASS.png" style="width: 20px;" />
+                    <img class="buttonALM" *ngIf="item.almStatusBefore === ''" matTooltip="Alarm"
+                      src="../../assets/images/buttons/ALM.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnEds == 'N' || item.statusActivityId != 'CONFIRM' || item.countServiceL3 > item.limitEds)"
+                    (click)="saveWRActivityEDS(item, 'EDS')">
+                    <img matTooltip="EDS" *ngIf="item.edsStatusBefore === 'Warning'" src="../../assets/images/buttons/EDS-red.png" style="width: 20px;" />
+                    <img matTooltip="EDS" *ngIf="item.edsStatusBefore === 'Pass'" src="../../assets/images/buttons/EDS.png" style="width: 20px;" />
+                    <img matTooltip="EDS" *ngIf="item.edsStatusBefore === ''" src="../../assets/images/buttons/EDS.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnFbb == 'N' || item.statusActivityId != 'CONFIRM')"
+                    (click)="saveWRActivityFBB(item, 'FBB')">
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusBefore === 'Warning'" src="../../assets/images/buttons/FBB-red.png" style="width: 20px;" />
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusBefore === 'Pass'" src="../../assets/images/buttons/FBB.png" style="width: 20px;" />
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusBefore === ''" src="../../assets/images/buttons/FBB.png" style="width: 20px;" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame" style="border-left: 2px solid;border-right: 2px solid;">
+              <div class="icon-action-box" style="justify-content: space-evenly;padding-top: 4px;">
+                <div *ngIf="(item.btn1Flag == 'STA' || item.btn1Flag == null) &&item.btn1Display == null">
+                  <button *ngIf="(item.btn1Flag == 'STA' || item.btn1Flag == null) &&item.btn1Display == null"
+                    class="btn btn-outline-primary button-frame"
+                    [disabled]="item.canActionBtnSta == 'N' || item.disabledBtnAllFlag ? true : false"
+                    (click)="confirmSaveActivity(item, 'STA')">
+                    <img matTooltip="Start" src="../../assets/images/buttons/STA.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div *ngIf="item.btn1Flag == 'TM' ||(item.btn1Flag == 'STA' && item.btn1Display != null)">
+                  <button *ngIf="item.btn1Flag == 'TM' ||(item.btn1Flag == 'STA' && item.btn1Display != null)"
+                    class="btn btn-outline-primary button-frame"
+                    [disabled]="(item.btn1Flag == 'TM' && item.btn1Display != null) ||item.canActionBtnTm == 'N' ||item.disabledBtnAllFlag? true: false"
+                    (click)="saveWRActivity(item, 'TM')">
+                    <img matTooltip="Test & Monitoring" src="../../assets/images/buttons/TM.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div *ngIf="item.btn2Flag == 'FIN'" class="btn btn-outline-primary button-frame">
+                  <button *ngIf="item.btn2Flag == 'FIN'" class="btn btn-outline-primary button-frame"
+                    [disabled]="(item.btn2Flag == 'FIN' && item.btn2Display != null) ||item.canActionBtnFin == 'N' ||item.disabledBtnAllFlag? true: false"
+                    (click)="saveWRActivity(item, 'FIN')">
+                    <img matTooltip="Finish" src="../../assets/images/buttons/FIN.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div *ngIf="item.btn2Flag == 'CC'" class="btn btn-outline-primary button-frame">
+                  <button *ngIf="item.btn2Flag == 'CC'" class="btn btn-outline-primary button-frame"
+                    [disabled]="item.canActionBtnCc == 'N' || item.disabledBtnAllFlag ? true : false"
+                    (click)="confirmSaveActivity(item, 'CC')">
+                    <img matTooltip="Cancel" src="../../assets/images/buttons/CC.png" style="width: 20px;" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-col-12 p-md-4 p-lg-4 card-button-frame" style="margin-top: 4px;">
+              <div class="icon-action-box">
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnAlm == 'N' || item.statusActivityId == 'CONFIRM')"
+                    (click)="saveWRActivityALM(item, 'ALM')">
+                    <img *ngIf="item.almStatusAfter === 'Warning'" matTooltip="Alarm" src="../../assets/images/buttons/ALM_WARNING.png"
+                      style="width: 20px;" />
+                    <img class="buttonALM" *ngIf="item.almStatusAfter === 'Pass'" matTooltip="Alarm"
+                      src="../../assets/images/buttons/ALM_PASS.png" style="width: 20px;" />
+                    <img class="buttonALM" *ngIf="item.almStatusAfter === ''" matTooltip="Alarm"
+                      src="../../assets/images/buttons/ALM.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnEds == 'N' || item.statusActivityId == 'CONFIRM' || item.countServiceL3 > item.limitEds)"
+                    (click)="saveWRActivityEDS(item, 'EDS')">
+                    <img matTooltip="EDS" *ngIf="item.edsStatusAfter === 'Warning'" src="../../assets/images/buttons/EDS-red.png" style="width: 20px;" />
+                    <img matTooltip="EDS" *ngIf="item.edsStatusAfter === 'Pass'" src="../../assets/images/buttons/EDS.png" style="width: 20px;" />
+                    <img matTooltip="EDS" *ngIf="item.edsStatusAfter === ''" src="../../assets/images/buttons/EDS.png" style="width: 20px;" />
+                  </button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-primary button-frame" [disabled]="(item.canActionBtnFbb == 'N' || item.statusActivityId == 'CONFIRM')"
+                    (click)="saveWRActivityFBB(item, 'FBB')">
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusAfter === 'Warning'" src="../../assets/images/buttons/FBB-red.png" style="width: 20px;" />
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusAfter === 'Pass'" src="../../assets/images/buttons/FBB.png" style="width: 20px;" />
+                    <img matTooltip="FBB" *ngIf="item.fbbStatusAfter === ''" src="../../assets/images/buttons/FBB.png" style="width: 20px;" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- end version2 -->
+          </div>
+
+          <!-- <div style="display:flex;width: 100%;flex-direction: row;justify-content: space-between;">
+            <div style="width: 30%;display:flex;flex-direction: row;justify-content: space-around;">
+              <div>{{item.countAlarmBefore }}</div>
+              <div>{{item.countEdsBefore }}</div>
+              <div>{{item.countFbbBefore }}</div>
+            </div>
+            <div></div>
+            <div style="width: 30%;display:flex;flex-direction: row;justify-content: space-around;">
+              <div>{{item.countAlarmAfter }}</div>
+              <div>{{item.countEdsAfter }}</div>
+              <div>{{item.countFbbAfter}}</div>
+            </div>
+          </div> -->
+
+          <div class="p-fluid p-formgrid p-grid card-number-space">
+            <div class="p-col-12 p-md-4 p-lg-4 card-number-display">
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.almStatusBefore">{{item.countAlarmBefore ? item.countAlarmBefore : '0'}}</span></div>
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.edsStatusBefore">{{item.countEdsBefore ? item.countEdsBefore : '0'}}</span></div>
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.fbbStatusBefore">{{item.countFbbBefore ? item.countFbbBefore : '0'}}</span></div>
+            </div>
+            <div></div>
+            <div class="p-col-12 p-md-4 p-lg-4 card-number-display">
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.almStatusAfter">{{item.countAlarmAfter ? item.countAlarmAfter : '0'}}</span></div>
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.edsStatusAfter">{{item.countEdsAfter ? item.countEdsAfter : '0'}}</span></div>
+              <div class="p-col-12 p-md-4 p-lg-4 card-button-frame"><span *ngIf="item.fbbStatusAfter">{{item.countFbbAfter ? item.countFbbAfter : '0'}}</span></div>
+            </div>
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+<!-- --AIS CARD-- -->
+    </div>
+  </div>
+</ng-container>
+
+<p-dialog appendTo="body" [(visible)]="showCancelDialog" modal="modal" width="400" height="200" header="Warning"
+  [closable]="true" [showHeader]="true">
+  <div class="container-fluid">
+    <div>
+      <div class="p-grid">
+        <div class="p-field p-col-3 p-md-3 p-lg-3" style="padding-top:4px;">
+          <label class="text-label"><b>Status<span style="color: red;">*</span> : </b></label>
+        </div>
+        <div class="p-field p-col-9 p-md-9 p-lg-9" style="padding-top:4px;">
+          <p-dropdown id="ddlStatus" dataKey="statusId" [(ngModel)]="selectStatus" [options]="listStatusItems"
+            optionLabel="statusDesc" placeholder="Select status">
+          </p-dropdown>
+        </div>
+
+        <div class="p-field p-col-3 p-md-3 p-lg-3" style="padding-top:10px;">
+          <label class="text-label"><b>Reason<span style="color: red;">*</span>: </b></label>
+        </div>
+        <div class="p-field p-col-9 p-md-9 p-lg-9" style="padding-top:10px;">
+          <textarea [rows]="3" [cols]="30" pInputTextarea [(ngModel)]="reason"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 10px;text-align: right;">
+    <button type="button" pButton icon="pi pi-check" label="Yes" (click)="onSaveCancelDialog()"></button>
+    <button type="button" pButton icon="pi pi-times" label="No" class="p-button-warning" style="margin-left: 10px;"
+      (click)="closeCancelDialog()"></button>
+  </div>
+</p-dialog>
+
+<p-toast position="bottom-right"></p-toast>

@@ -1,0 +1,51 @@
+<p-dialog
+  header="Job Title"
+  [(visible)]="TitleModal"
+  [modal]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="false"
+  [resizable]="true"
+  [style]="{ width: '30vw' }"
+>
+  <app-overlay-spinner [loading]="loading"></app-overlay-spinner>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-6 p-mx-auto">
+      <p-listbox
+        id="lstbTitle"
+        class="tt-create-listbox"
+        [listStyle]="{ height: '150px' }"
+        [options]="sourceData"
+        [metaKeySelection]="false"
+        [(ngModel)]="titleSelected"
+        [checkbox]="true"
+        [filter]="true"
+        [multiple]="false"
+        optionLabel="jobTitleName"
+      >
+      </p-listbox>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <div class="p-formgroup-inline button-group center">
+      <button
+        id="btnOkTitle"
+        class="p-button-primary"
+        pButton
+        type="button"
+        label="OK"
+        (click)="onSelectTitle()"
+      ></button>
+      <button
+        id="btnCloseTitle"
+        class="p-button-primary"
+        pButton
+        type="button"
+        label="CLOSE"
+        (click)="onCloseModal()"
+      ></button>
+    </div>
+  </ng-template>
+</p-dialog>

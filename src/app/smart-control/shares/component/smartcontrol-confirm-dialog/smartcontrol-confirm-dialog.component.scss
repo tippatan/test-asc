@@ -1,0 +1,120 @@
+.default-pad {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.panel-margin {
+  margin: 0 0 10px 0 !important;
+}
+
+.btnNonMargin {
+  margin: 0;
+}
+
+.btnNonPadding {
+  padding: 0;
+}
+
+.icon-margin {
+  margin: 0px 5px 2px 0;
+}
+
+.popup-header {
+  margin: 0 !important;
+  padding: 0px 5px !important;
+  border-bottom: #614e47 solid 1px;
+}
+
+.popup-content {
+  margin: 0 !important;
+  padding: 0px 5px !important;
+  border-bottom: #614e47 solid 1px;
+}
+
+.popup-footer {
+  margin: 0 !important;
+  padding: 6px !important;
+}
+
+.content-footer {
+  padding: 0px 20px !important;
+}
+
+.col-min-width {
+  min-width: 60rem;
+}
+
+.col-max-width {
+  max-width: 600px;
+}
+
+.mat-dialog-container {
+  padding: 10px !important;
+}
+
+.txt-size {
+  width: 100% !important;
+  height: 10rem !important;
+}
+
+.input-size {
+  width: 40%;
+}
+
+.input-num {
+  text-align: right;
+}
+
+.form-control {
+  display: unset !important;
+}
+
+.label-header {
+  /* font-family: "DB Heavent Med"; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  /* font-size: x-large;  */
+  color: #b2d235;
+  display: block;
+  text-align: justify;
+}
+
+.label-header-warn {
+  /* font-family: "DB Heavent Med"; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: x-large;
+  color: #eb2227;
+  display: block;
+  text-align: justify;
+}
+
+.label-message {
+  /* font-family: "DB Heavent Regular"; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: large;
+  color: #614e47;
+  display: block;
+  text-align: justify;
+}
+
+.label-inline {
+  display: inline;
+}
+
+.btn-normal {
+  cursor: pointer;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}

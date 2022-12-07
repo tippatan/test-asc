@@ -1,0 +1,169 @@
+{
+  "data": {
+    "resultData": {
+      "mstNocList": [
+        {
+          "nocName": "CTS",
+          "nocTeam": "NOC Enterprise"
+        },
+        {
+          "nocName": "ECS",
+          "nocTeam": "NOC ECS"
+        },
+        {
+          "nocName": "ICTS",
+          "nocTeam": "NOC ICTS"
+        },
+        {
+          "nocName": "IIG",
+          "nocTeam": "NOC-IIG"
+        },
+        {
+          "nocName": "NOC-KTB",
+          "nocTeam": "NOC KTB"
+        },
+        {
+          "nocName": "Surv-Access",
+          "nocTeam": "NOC Access"
+        },
+        {
+          "nocName": "Surv-Core",
+          "nocTeam": "NOC Core"
+        }
+      ],
+      "controlDetail": {
+        "wrId": "WR21-002544",
+        "statusActivityId": "CONFIRM",
+        "statusActivityDesc": "Overtime",
+        "title": "[ST] Test autoCheckServiceBatch 2",
+        "planStartDate": "28/09/2021 00:00",
+        "planFinishDate": "28/09/2021 00:59",
+        "planDownTime_hr": "0",
+        "planDownTimeMin": "34",
+        "region": "BKK",
+        "description": "[ST] Test autoCheckServiceBatch 2",
+        "node": "AVNHP (WIFI),CTWPP (Node B),EK95M (Node B)",
+        "nodeRelated": "AVNHP (WIFI),CTWPP (Node B),EK95M (Node B)",
+        "impactCdr": "CDR Impact : ",
+        "impactExtCustomer": "Customer Impact : ",
+        "impactIntCustomer": "Internal User Impact : ",
+        "impactNetwork": "Network Impact : ",
+        "impactService": "Service Impact : ",
+        "autoCheckAlarmFlag": "N",
+        "autoCheckAlarmDate": null,
+        "autoCheckServiceFlag": "Y",
+        "autoCheckServiceDate": "27/09/2021 04:32",
+        "canSaveActivity": "N",
+        "haveAlarmSiteCode": "Y",
+        "haveAlarmService": "Y",
+        "haveAlarmEds": "Y",
+        "haveServiceEds": "HAVE_SERVICE_EDS",
+        "haveServiceFbb": "Y",
+        "staDate": null,
+        "staBy": null,
+        "tmDate": null,
+        "tmBy": null,
+        "finDate": null,
+        "finBy": null,
+        "ccDate": null,
+        "ccBy": null,
+        "reason": null,
+        "alarmSiteCodeNote": null,
+        "alarmServiceNote": null,
+        "alarmEnterpriseNote": null,
+        "serviceEnterpriseNote": null,
+        "serviceFbbNote": null,
+        "serviceDisplay": "Easy Code for Checking (*121), Voice/Data (Supernova)",
+        "nocInformUrl": "https://www.youtube.com/"
+      },
+      "workerList": [
+        {
+          "firstname": "Jastsada",
+          "lastname": "Kanchanaphichit",
+          "dept": "ACTM",
+          "mobileNo": "66840428985",
+          "mainFlag": "Y",
+          "jbId": "Response",
+          "displayOrder": "1",
+          "displayNameSurName": "Jastsada Kanchanaphichit"
+        },
+        {
+          "firstname": "Jittapol",
+          "lastname": "Pancharoenchairoj",
+          "dept": "CSE",
+          "mobileNo": "0813409995",
+          "mainFlag": "N",
+          "jbId": "Response",
+          "displayOrder": "1",
+          "displayNameSurName": "Jittapol Pancharoenchairoj"
+        },
+        {
+          "firstname": "Khanoione",
+          "lastname": "Shabu",
+          "dept": "NOC",
+          "mobileNo": "0812345678",
+          "mainFlag": "N",
+          "jbId": "Response",
+          "displayOrder": "1",
+          "displayNameSurName": "Khanoione Shabu"
+        },
+        {
+          "firstname": "Nukool",
+          "lastname": "Charoensombat",
+          "dept": "ITO12",
+          "mobileNo": "6840428985",
+          "mainFlag": "Y",
+          "jbId": "Response",
+          "displayOrder": "1",
+          "displayNameSurName": "Nukool Charoensombat"
+        },
+        {
+          "firstname": "Khanoione",
+          "lastname": "Shabu",
+          "dept": "NOC",
+          "mobileNo": "0812345678",
+          "mainFlag": "N",
+          "jbId": "Standby",
+          "displayOrder": "2",
+          "displayNameSurName": "Khanoione Shabu"
+        },
+        {
+          "firstname": "Nukool",
+          "lastname": "Charoensombat",
+          "dept": "ITO12",
+          "mobileNo": "6840428985",
+          "mainFlag": "N",
+          "jbId": "Standby",
+          "displayOrder": "2",
+          "displayNameSurName": "Nukool Charoensombat"
+        },
+        {
+          "firstname": "Yordkwan",
+          "lastname": "Wannupatham",
+          "dept": "CUSTOMER INTERACTION MANAGEMENT APP.",
+          "mobileNo": "66840428985",
+          "mainFlag": "N",
+          "jbId": "Member",
+          "displayOrder": "3",
+          "displayNameSurName": "Yordkwan Wannupatham"
+        }
+      ],
+      "nocList": [
+        {
+          "nocName": "CTS",
+          "nocTeam": "NOC Enterprise",
+          "nocTel": "0892013339,020292731",
+          "nocEmail": "Enterprise Data Service Supervision <sc-edss@ais.co.th>"
+        },
+        {
+          "nocName": "Surv-Access",
+          "nocTeam": "NOC Access",
+          "nocTel": "02-029-2700",
+          "nocEmail": "Surveillance Access Network <svlacc-ns@ais.co.th>"
+        }
+      ]
+    },
+    "resultCode": "0",
+    "resultMessage": ""
+  }
+}

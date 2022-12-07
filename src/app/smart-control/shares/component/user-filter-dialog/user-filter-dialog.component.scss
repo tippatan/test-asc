@@ -1,0 +1,216 @@
+.default-pad {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.panel-margin {
+  margin: 0 0 10px 0 !important;
+}
+
+.btnNonMargin {
+  margin: 0;
+}
+
+.btnNonPadding {
+  padding: 0;
+}
+
+.icon-margin {
+  margin: 0 5px 0 0;
+}
+
+.popup-header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.popup-footer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.col-min-width {
+  min-width: 60rem;
+}
+
+.col-max-width {
+  max-width: 600px;
+}
+
+/* .mat-dialog-container{
+    padding: 10px !important;
+  }
+   */
+.txt-size {
+  width: 100% !important;
+  height: 10rem !important;
+}
+
+.input-size {
+  width: 40%;
+}
+
+.input-num {
+  text-align: right;
+}
+
+.form-control {
+  display: unset !important;
+}
+
+.label-header {
+  padding-left: 5px;
+  /* font-family: "DB Heavent Med"; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: #614e47;
+  display: block;
+  text-align: justify;
+}
+
+.label-message {
+  /* font-family: "DB Heavent Regular"; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  /* font-size: large;  */
+  color: #614e47;
+  display: block;
+  text-align: justify;
+}
+
+.label-name.input-parellel {
+  padding: 0px;
+}
+
+.label-inline {
+  display: inline;
+}
+
+.filter-card {
+  padding: 0px !important;
+  box-shadow: 1px 3px 1px -2px rgba(0, 0, 0, 0.82),
+    0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.filter-card-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.filter-card-title {
+  /* font-family: "DB Heavent Med" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  color: #614e47 !important;
+  /* font-size: 18px !important; */
+  line-height: 1.5 !important;
+  text-align: justify !important;
+  font-weight: bolder !important;
+  margin-bottom: 0px !important;
+  font-size: 15px;
+}
+
+.filter-card-header {
+  margin: 0px !important;
+}
+
+.filter-card-content {
+  padding: 0px !important;
+  /* font-family: "DB Heavent Regular" !important; */
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: 85% !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #614e47;
+  text-align: left;
+}
+
+.padding-zero {
+  padding: 0px !important;
+}
+
+.padding-l {
+  padding: 5px 10px;
+}
+
+.margin-b {
+  margin-bottom: 4px;
+}
+
+.checker {
+  float: right;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 5px;
+}
+
+.label-txt {
+  font-family: Myriad Pro, Arial Unicode MS, Arial, Helvetica, sans-serif, Arial,
+    Helvetica, sans-serif;
+  font-size: 85%;
+  line-height: 1.5;
+}
+
+ng-multiselect-dropdown .dropdown-btn {
+  padding: 3px !important;
+}
+
+.center {
+  text-align: center;
+}
+
+::ng-deep .mat-dialog-content {
+  overflow: unset !important;
+}
+
+.label-filter {
+  /* font-family: "DB Heavent Med"; */
+  font-size: 1em;
+  font-weight: bold;
+  /* font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal; */
+  letter-spacing: 0.2px;
+  color: #614e47;
+  display: block;
+}
+
+.p-grid {
+  padding: 0;
+  margin: 0;
+}
+
+.field-checkbox-custom {
+  margin-right: 1px;
+  font-size: small;
+}
+
+.label-checkbox-custom {
+  margin-right: 5px !important;
+  margin-left: 0px;
+}
+
+.margin-left-right-5 {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}

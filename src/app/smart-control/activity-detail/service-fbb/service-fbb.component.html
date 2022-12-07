@@ -1,0 +1,46 @@
+<app-spinner [loading]="loading"></app-spinner>
+<div class="panel-content">
+  <ng-container>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+        <button
+          mat-mini-fab
+          [ngClass]="{
+            'btn-mat-note-edit':
+              (dataMaster.controlDetail.serviceFbbNote != null &&
+                dataMaster.controlDetail.serviceFbbNote != '') ||
+              (activityDetailObj.serviceFbbNote != '' &&
+                activityDetailObj.serviceFbbNote != null)
+          }"
+          class="btn-mat-note note-style"
+          matTooltip="Service Fixed Broadband Note"
+          (click)="onClickNote()"
+          [disabled]="
+            dataMaster.controlDetail.canSaveActivity == 'N' ? true : false
+          "
+        >
+          <i class="far fa-edit"></i>
+        </button>
+      </div>
+      <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+        <!-- <mat-card class="mester-card">
+            <mat-card-header>
+              <mat-card-title><b>FBB</b></mat-card-title>
+            </mat-card-header>
+           
+            <mat-card-content> -->
+        <app-data-table2
+          [customTable]="'app-act-detail-fbb-tbl'"
+          [dataValue]="dataTableFBBValue"
+          (onCallBackAction)="onTblCallBackAction($event)"
+          [pagingControlShow]="false"
+          [dataRefresh]="reload"
+        ></app-data-table2>
+        <!-- </mat-card-content>
+          </mat-card> -->
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<p-toast position="bottom-right"></p-toast>

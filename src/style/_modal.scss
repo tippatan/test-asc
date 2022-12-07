@@ -1,0 +1,155 @@
+.record-table {
+  margin: 10px 0 10px 0;
+}
+
+.p-dialog-warning {
+  .p-dialog .p-dialog-header {
+    color: white !important;
+    background-color: #e91f1f !important;
+    padding: 5px 0px 5px 10px !important;
+  }
+
+  .p-dialog .p-dialog-footer {
+    border-top: 0 none;
+    background: #ffffff;
+    color: #323130;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+
+.p-dialog {
+  border-radius: 5px !important;
+  width: max-content;
+  min-width: 37vw;
+
+  .p-dialog-header {
+    color: white !important;
+    background-color: #2ba58e !important;
+    padding: 5px 0px 5px 10px !important;
+    .p-dialog-title {
+      font-size: 1.1rem !important;
+    }
+  }
+  .p-dialog-content {
+    font-size: 0.875rem;
+    // padding: 15px 15px 0px 20px !important;
+    padding: 10px 15px 0px 20px !important;
+
+    .p-field {
+      margin-bottom: 0px !important;
+    }
+
+    &::-webkit-scrollbar {
+      width: 11px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: grey;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #404040;
+      border-radius: 20px;
+    }
+
+    /* Handle on hover */
+    // &::-webkit-scrollbar-thumb:hover {
+    //     background: #b30000;
+    // }
+
+    .search-content {
+      padding: 15px 0px 15px 0px;
+    }
+
+    .p-datatable {
+      .p-datatable-thead {
+        > tr {
+          > th {
+            padding: 5px 5px !important;
+          }
+        }
+      }
+    }
+  }
+  .p-picklist-header {
+    padding: 5px !important;
+  }
+
+  .p-dialog-footer {
+    > .button-group {
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+// ======== modal affected node ========
+.form-check {
+  margin: 0;
+
+  label {
+    margin: 0 10px 0px 5px !important;
+  }
+}
+// ----------- query modal ------------
+#problemServiceQueryModal {
+  .p-dropdown-panel {
+    width: -webkit-fill-available;
+  }
+  .p-dropdown-items-wrapper {
+    max-height: 160px !important;
+  }
+}
+// ======= end modal affected node ========
+.error-deselect {
+  text-align: center;
+  margin: 5px;
+  background: rgba(212, 65, 73, 0.4);
+  border-radius: 4px;
+}
+
+.warningDialog {
+  .p-dialog .p-dialog-header {
+    color: white !important;
+    background-color: orange !important;
+    padding: 5px 0px 5px 10px !important;
+  }
+
+  .p-dialog .p-dialog-content .p-confirm-dialog-icon {
+    color: orange;
+  }
+
+  .p-dialog .p-dialog-footer {
+    border-top: 0 none;
+    background: #ffffff;
+    color: #323130;
+    padding: 0 0.5rem 1rem 0.5rem;
+    text-align: right;
+  }
+}
+
+.errorDialog {
+  .p-dialog .p-dialog-header {
+    color: white !important;
+    background-color: red !important;
+    padding: 5px 0px 5px 10px !important;
+  }
+
+  .p-dialog .p-dialog-content .p-confirm-dialog-icon {
+    color: red;
+  }
+
+  .p-dialog .p-dialog-footer {
+    border-top: 0 none;
+    background: #ffffff;
+    color: #323130;
+    padding: 0 0.5rem 1rem 0.5rem;
+    text-align: right;
+  }
+}

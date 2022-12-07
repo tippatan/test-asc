@@ -1,0 +1,214 @@
+.master-card {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0;
+}
+
+.master-header-image {
+  background-color: blue;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.padding-0 {
+  padding: 0px;
+}
+
+.label-align-left {
+  text-align: left;
+}
+
+.filter-frame {
+  margin-top: 32px;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.checkbox-me-frame {
+  margin-top: 34px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: left;
+}
+
+.checkbox-me-larger {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0px;
+}
+
+.checkbox-me-label {
+  padding-left: 10px;
+  font-size: x-large;
+  margin-top: 3px;
+}
+
+.chip-btn {
+  display: inline-block;
+  padding: 5px 15px;
+  /* height: 50px; */
+  /* font-size: 16px; */
+  line-height: 25px;
+  border-radius: 25px;
+  background-color: #e3eeb6; /*#f1f1f1;*/
+  margin: 2px;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
+
+.textarea-size {
+  width: 97% !important;
+  height: 90% !important;
+}
+
+.btn-mat-add {
+  line-height: 24px !important;
+}
+
+.btn-mat-warn {
+  line-height: 24px !important;
+}
+
+.mat-card-header-text {
+  width: 100% !important;
+}
+
+.col-inline {
+  display: inline-block;
+}
+
+.margin-2 {
+  margin-right: 3px;
+}
+
+.margin-9 {
+  margin-right: 9px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+/* ::-webkit-input-placeholder { // Chrome 
+    color: red;
+  }
+  :-ms-input-placeholder { // IE 10+ 
+    color: red;
+  }
+  ::-moz-placeholder { // Firefox 19+
+    color: red;
+    opacity: 1;
+  }
+  :-moz-placeholder { // Firefox 4 - 18
+    color: red;
+    opacity: 1;
+  } */
+
+.panel-content {
+  font-size: 85%;
+}
+
+.label-name {
+  font-size: 100% !important;
+}
+
+.form-control {
+  font-size: 100% !important;
+}
+
+.label-txt {
+  padding-top: 0.5rem;
+}
+
+::ng-deep .mat-tab-label {
+  color: black !important;
+  font-weight: bold;
+}
+
+.p-2 {
+  padding: 2px;
+}
+
+.margin-top-1 {
+  margin-top: 1px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+  color: black;
+}
+
+.btn-save {
+  background-color: #b4df56 !important;
+  margin: 4px;
+  width: 80px;
+}
+
+.btn-close {
+  background-color: #ffcd11 !important;
+  margin: 4px;
+  width: 80px;
+}
+
+.border-color-red {
+  border-color: red;
+  background-color: lavenderblush;
+}
+
+::ng-deep .p-calendar .p-inputtext:disabled {
+  cursor: default !important;
+}
+
+.p-inputtext {
+  padding: 0 !important;
+  font-family: "db_heavent_cond" !important;
+  border: 1px solid #e1e1e1 !important;
+}
+
+::ng-deep .mat-dialog-container{
+  padding: 10px !important;
+}
+
+// button
+// :host ::ng-deep .p-button {
+//     margin-right: .5rem;
+// }
+
+// :host ::ng-deep .p-buttonset {
+//     .p-button {
+//         margin-right: 0;
+//     }
+// }
+
+// :host ::ng-deep .sizes {
+//     .button {
+//         margin-bottom: .5rem;
+//         display: block;
+
+//         &:last-child {
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 960px) {
+//     .p-button {
+//         margin-bottom: .5rem;
+
+//         &:not(.p-button-icon-only) {
+//             display: flex;
+//             width: 100%;
+//         }
+//     }
+
+//     .p-buttonset {
+//         .p-button {
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+// button

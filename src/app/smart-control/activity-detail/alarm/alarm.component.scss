@@ -1,0 +1,62 @@
+.mydialog {
+  width: 50vw;
+}
+
+@media screen and (max-width: 40em) {
+  .mydialog {
+    width: 75vw;
+  }
+}
+
+.textarea-size {
+  width: 100% !important;
+  height: 5rem !important;
+  margin-bottom: 5px;
+}
+
+.reset-padding {
+  padding: 0 !important;
+}
+
+.mat-card-margin {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.mat-card-area {
+  height: 5rem;
+  overflow: auto;
+}
+
+.mat-card-desc {
+  background-color: #f0efeb;
+}
+
+.mat-card-node {
+  background-color: #fff1e6;
+}
+
+.mat-card-node-re {
+  background-color: #eddcd2;
+}
+
+.data-table-area {
+  height: 8rem;
+  overflow: auto;
+}
+
+.note-style {
+  margin-left: 15px;
+}
+
+.service-margin {
+  margin-top: 15px;
+}
+
+.service-label {
+  font-size: 100% !important;
+}
+
+.button-toggle{
+  left: 9px;
+}

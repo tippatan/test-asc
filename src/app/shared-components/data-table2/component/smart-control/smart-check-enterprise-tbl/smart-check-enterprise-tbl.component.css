@@ -1,0 +1,136 @@
+.headerActName {
+  width: 800px !important;
+}
+
+.bgMasterPlan {
+  background-color: #8bc43f !important;
+}
+
+.fontColor1 {
+  color: #8c7f79 !important;
+}
+
+.fontColor2 {
+  color: black !important;
+}
+
+.col-bg-red {
+  background-color: #ffbfbf !important;
+}
+
+.headerColor1 {
+  background-color: #8dba00 !important;
+}
+
+.headerColor1-light {
+  background-color: #a1c751 !important;
+}
+
+.headerColor2 {
+  background-color: #3ca6a0 !important;
+}
+
+.headerColor2-light {
+  background-color: #59ada6 !important;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+}
+
+.fontColorRed {
+  color: red !important;
+}
+
+.fiveActTbl {
+  table-layout: auto !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid black;
+  position: relative;
+  width: 3760px !important;
+}
+
+.sixActTbl {
+  table-layout: auto !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid black;
+  position: relative;
+  width: 5160px !important;
+}
+
+.fontColorRed {
+  color: red !important;
+}
+
+.freeze {
+  height: fit-content;
+  max-height: 532px;
+  position: relative;
+  overflow: scroll;
+}
+
+thead tr th {
+  border: 1px solid #ddd;
+}
+
+tbody td {
+  opacity: none !important;
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) td {
+  background: #ddd;
+}
+
+tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.link-eform {
+  color: #614e47;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.link-eform :hover {
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-size: 20px;
+  text-shadow: 2px 2px 5px rgb(212, 212, 212);
+}
+
+.link-eform :active {
+  color: #614e47;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.headerColorBrown {
+  background-color: #614e47 !important;
+}
+
+.table-height {
+  height: 395px;
+  overflow: auto;
+  font-size: smaller;
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background-color: #e9f5db;
+}

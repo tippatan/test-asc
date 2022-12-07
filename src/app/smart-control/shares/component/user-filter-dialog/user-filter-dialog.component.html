@@ -1,0 +1,583 @@
+<app-spinner [loading]="loading"></app-spinner>
+<!-- header popup -->
+<div mat-dialog-content class="popup-header">
+  <ng-container>
+    <div class="p-fluid p-formgrid p-grid margin-top-10">
+      <div class="p-field p-col-12 p-md-10 p-lg-10">
+        <strong class="label-header"
+          ><i class="fas fa-filter icon-size"></i> Filter</strong
+        >
+      </div>
+      <div class="p-field p-col-12 p-md-2 p-lg-2 text-right">
+        <span class="btn-modern" (click)="onClose()">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- <mat-divider class="popup-content"></mat-divider> -->
+<!-- content popup -->
+<div mat-dialog-content class="popup-content panel-margin">
+  <div class="panel-body smart-panel default-pad">
+    <div class="p-fluid p-formgrid p-grid">
+      <ng-container>
+        <div class="col-md-12 default-pad" style="width: 100%">
+          <label
+            for="projectName"
+            class="label-message"
+            style="width: 100%"
+          ></label>
+        </div>
+      </ng-container>
+    </div>
+    <div class="p-fluid p-formgrid p-grid">
+      <ng-container>
+        <div
+          class="p-field p-col-12 p-md-1 p-lg-1 text-right default-pad label-message"
+        >
+          <label for="region" class="label-name">Region : </label>
+        </div>
+        <div class="p-field p-col-12 p-md-5 p-lg-5">
+          <div class="p-formgroup-inline">
+            <div
+              class="p-field-checkbox field-checkbox-custom"
+              *ngFor="let region of listRegion"
+            >
+              <p-checkbox
+                inputId="{{ region.value }}"
+                name="{{ region.value }}"
+                value="{{ region.value }}"
+                [(ngModel)]="selectedFilter.region"
+                (onChange)="onChecker('region', region.value, $event.checked)"
+              ></p-checkbox>
+              <label class="label-checkbox-custom"> {{ region.label }} </label>
+            </div>
+          </div>
+          <!-- <label class="example-margin label-txt" *ngFor="let region of listRegion">
+            <input type="checkbox" name="{{ region.value }}" 
+            type="checkbox" id="{{region.value}}" checked="{{region.checker}}"
+            (change)="onChecker('region',region.value, $event.checked)" /> {{region.label}} 
+          </label> -->
+          <!-- <label class="example-margin label-txt " *ngFor="let region of listRegion"> -->
+          <!-- <input type="checkbox" name="{{ region.value }}" 
+              type="checkbox" id="{{region.value}}" checked="{{region.checker}}"
+              (change)="onChecker('region',region.value, $event.checked)" /> 
+              <label class="example-margin">{{region.label}}</label>  -->
+          <!-- </label> -->
+          <!-- <p-multiSelect [options]="listRegion" defaultLabel="--- Please Select ---" [(ngModel)]="selectedFilter.systemGroup"></p-multiSelect> -->
+        </div>
+        <div
+          class="p-field p-col-12 p-md-2 p-lg-2 text-right default-pad label-message"
+        >
+          <label for="activityDetail" class="label-name">Activity Type:</label>
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <div class="p-formgroup-inline">
+            <div
+              class="p-field-checkbox field-checkbox-custom"
+              *ngFor="let activity of listActivityType"
+            >
+              <p-checkbox
+                inputId="{{ activity.value }}"
+                name="{{ activity.value }}"
+                value="{{ activity.value }}"
+                [(ngModel)]="selectedFilter.activityType"
+                (onChange)="
+                  onChecker('activityType', activity.value, $event.checked)
+                "
+              ></p-checkbox>
+              <label class="label-checkbox-custom">
+                {{ activity.label }}
+              </label>
+            </div>
+          </div>
+          <!-- <label class="example-margin label-txt" *ngFor="let activity of listActivityType">
+              <input type="checkbox" name="{{ activity.value }}" 
+              type="checkbox" id="{{activity.value}}" checked="{{activity.checker}}"
+              (change)="onChecker('activityType',activity.value, $event.checked)" /> {{activity.label}} 
+            </label>
+<p-multiSelect [options]="listActivityType" defaultLabel="--- Please Select ---" [(ngModel)]="selectedFilter.systemGroup"></p-multiSelect>             -->
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+      <ng-container>
+        <div class="p-field p-col-12 p-md-12 p-lg-12">
+          <mat-card class="filter-card">
+            <mat-card-header class="filter-card-header">
+              <mat-card-title class="filter-card-title"
+                >Basic Filter</mat-card-title
+              >
+            </mat-card-header>
+
+            <mat-card-content class="filter-card-content">
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">System Group : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown idField="systemGroupDdl" id="systemGroupDdl" [placeholder]="'--- Please Select ---'" [data]="listSystemGroup"
+                      [(ngModel)]="selectedFilter.systemGroup" [settings]="systemGroupDDLSettings" 
+                      (click)="onDropDownChange('systemGroup')">
+                    </ng-multiselect-dropdown>  -->
+                  <p-multiSelect
+                    id="systemGroupDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listSystemGroup"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('systemGroup')"
+                    [(ngModel)]="selectedFilter.systemGroup"
+                  >
+                  </p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Alias Node : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="aliasNodeDdl" [placeholder]="'--- Please Select ---'"
+                         [data]="listAliasNode"
+                      [(ngModel)]="selectedFilter.aliasNode" [settings]="systemGroupDDLSettings" 
+                      (click)="onDropDownChange('aliasNode')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="listAliasNodeDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listAliasNode"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('aliasNode')"
+                    [(ngModel)]="selectedFilter.aliasNode"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Status : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="statusDdl" [placeholder]="'--- Please Select ---'" [data]="listStatus"
+                      [(ngModel)]="selectedFilter.status" [settings]="statusDDLSettings" 
+                      (click)="onDropDownChange('status')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="listStatusDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listStatus"
+                    [optionLabel]="'statusDesc'"
+                    (onClick)="onDropDownChange('status')"
+                    [(ngModel)]="selectedFilter.status"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Downtime : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        name="downtime_yes"
+                        [(ngModel)]="downtime_yes"
+                        [binary]="true"
+                        (onChange)="
+                          onChecker('downtime', 'YES', $event.checked)
+                        "
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        name="downtime_no"
+                        [(ngModel)]="downtime_no"
+                        [binary]="true"
+                        (onChange)="onChecker('downtime', 'NO', $event.checked)"
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> No </label>
+                    </div>
+                  </div>
+                  <!--                     
+                    <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="downtime_yes" 
+                      (change)="onChecker('downtime', 'YES', $event.checked)"/>
+                       Yes
+                    </label>
+  
+                    <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="downtime_no" 
+                      (change)="onChecker('downtime', 'NO', $event.checked)"/>
+                       No
+                    </label> -->
+                </div>
+
+                <div
+                  class="p-field p-col-12 p-md-2 p-lg-2 padding-zero text-right"
+                >
+                  <label class="label-filter">Schedule Conflict :</label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <!-- <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="scheduleConflict" 
+                      (change)="onChecker('scheduleConflict', 'YES', $event.checked)"/>
+                       Yes
+                    </label> -->
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        inputId="scheduleConflictChk"
+                        name="scheduleConflictChk"
+                        [(ngModel)]="scheduleConflict"
+                        [binary]="true"
+                        (onChange)="
+                          onChecker('scheduleConflict', 'YES', $event.checked)
+                        "
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">FBB Impact : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <!-- <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="fbbImpact" 
+                      (change)="onChecker('fbbImpact', 'YES', $event.checked)"/>
+                       Yes
+                    </label> -->
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        inputId="fbbImpactChk"
+                        name="fbbImpactChk"
+                        [(ngModel)]="fbbImpact"
+                        [binary]="true"
+                        (onChange)="
+                          onChecker('fbbImpact', 'YES', $event.checked)
+                        "
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Importance -->
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Importance : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="importanceDdl" [placeholder]="'--- Please Select ---'" [data]="listImportance"
+                    [(ngModel)]="selectedFilter.importance" [settings]="importanceDDLSettings" 
+                    (click)="onDropDownChange('importance')">
+                  </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="listImportanceDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listImportance"
+                    [optionLabel]="'valueListDisplay'"
+                    [(ngModel)]="selectedFilter.importance"
+                    (onClick)="onDropDownChange('importance')"
+                  ></p-multiSelect>
+                </div>
+                <!-- 3BB Impact -->
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">3BB Impact : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        inputId="tbbImpactChk"
+                        name="tbbImpactChk"
+                        [(ngModel)]="tbbImpact"
+                        [binary]="true"
+                        (onChange)="
+                          onChecker('tbbImpact', 'YES', $event.checked)
+                        "
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Group -->
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Group : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="groupDdl" [placeholder]="'--- Please Select ---'" [data]="listGroup"
+                    [(ngModel)]="selectedFilter.group" [settings]="groupDDLSettings" 
+                    (click)="onDropDownChange('group')">
+                  </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    defaultLabel="--- Please Select ---"
+                    [options]="listGroup"
+                    [optionLabel]="'valueListDisplay'"
+                    (onClick)="onDropDownChange('group')"
+                    [(ngModel)]="selectedFilter.group"
+                  ></p-multiSelect>
+                </div>
+
+                <!-- SKA -->
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">SKA : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <!-- <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="ska" 
+                      (change)="onChecker('ska', 'YES', $event.checked)"/>
+                       Yes
+                    </label> -->
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        inputId="skaChk"
+                        name="skaChk"
+                        [(ngModel)]="ska"
+                        [binary]="true"
+                        (onChange)="onChecker('ska', 'YES', $event.checked)"
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="p-field p-col-12 p-md-12 p-lg-12">
+          <mat-card class="filter-card">
+            <mat-card-header class="filter-card-header">
+              <mat-card-title class="filter-card-title"
+                >Advance Filter</mat-card-title
+              >
+            </mat-card-header>
+
+            <mat-card-content class="filter-card-content">
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Impact : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="impactTypeDdl" [placeholder]="'--- Please Select ---'" [data]="listImpact"
+                      [(ngModel)]="selectedFilter.impactType" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('impactType')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    defaultLabel="--- Please Select ---"
+                    [options]="listImpact"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('impactType')"
+                    [(ngModel)]="selectedFilter.impactType"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Impact NRI : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="impactNRIDdl" [placeholder]="'--- Please Select ---'" [data]="listImpactNRI"
+                      [(ngModel)]="selectedFilter.impactNRI" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('impactNRI')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="impactNRIDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listImpactNRI"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('impactNRI')"
+                    [(ngModel)]="selectedFilter.impactNRI"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Activity Error : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="activityErrorDdl" [placeholder]="'--- Please Select ---'"
+                         [data]="listActivityError"
+                      [(ngModel)]="selectedFilter.activityError" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('activityError')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="activityErrorDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listActivityError"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('activityError')"
+                    [(ngModel)]="selectedFilter.activityError"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Corp. Doc Status : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="corpDocStatusDdl" [placeholder]="'--- Please Select ---'" 
+                        [data]="listCorpDocStatus"
+                      [(ngModel)]="selectedFilter.corpDocStatus" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('corpDocStatus')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="corpDocStatusDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listCorpDocStatus"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('corpDocStatus')"
+                    [(ngModel)]="selectedFilter.corpDocStatus"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Corp. Product Impact : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="corpProductImpactDdl" [placeholder]="'--- Please Select ---'" 
+                        [data]="listCorpProductImpact"
+                      [(ngModel)]="selectedFilter.corpProductImpact" [settings]="corpProductImpDDLSettings" 
+                      (click)="onDropDownChange('corpProductImpact')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="corpProductImpactDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listCorpProductImpact"
+                    [optionLabel]="'productImpacDesc'"
+                    (onClick)="onDropDownChange('corpProductImpact')"
+                    [(ngModel)]="selectedFilter.corpProductImpact"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Remark Group : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="remarkGroupDdl" [placeholder]="'--- Please Select ---'" [data]="listRemarkGroup"
+                      [(ngModel)]="selectedFilter.remarkGroup" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('remarkGroup')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="remarkGroupDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listRemarkGroup"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('remarkGroup')"
+                    [(ngModel)]="selectedFilter.remarkGroup"
+                  ></p-multiSelect>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">Site Access : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4">
+                  <!-- <label class="example-margin">
+                      <input type="checkbox" [(ngModel)]="siteAccess" 
+                      (change)="onChecker('siteAccess', 'YES', $event.checked)"/>
+                       Yes
+                    </label> -->
+                  <div class="p-formgroup-inline">
+                    <div class="p-field-checkbox field-checkbox-custom">
+                      <p-checkbox
+                        inputId="siteAccessChk"
+                        name="siteAccessChk"
+                        [(ngModel)]="siteAccess"
+                        [binary]="true"
+                        (onChange)="
+                          onChecker('siteAccess', 'YES', $event.checked)
+                        "
+                      ></p-checkbox>
+                      <label class="label-checkbox-custom"> Yes </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-field p-col-12 p-md-2 p-lg-2 padding-zero right">
+                  <label class="label-filter">WR Action(Auto) : </label>
+                </div>
+                <div class="p-field p-col-12 p-md-4 p-lg-4 padding-l">
+                  <!-- <ng-multiselect-dropdown #multiSelect id="wrActionDdl" [placeholder]="'--- Please Select ---'" [data]="listWrAction"
+                      [(ngModel)]="selectedFilter.wrAction" [settings]="dropdownSettings" 
+                      (click)="onDropDownChange('wrAction')">
+                    </ng-multiselect-dropdown> -->
+                  <p-multiSelect
+                    id="wrActionDdl"
+                    defaultLabel="--- Please Select ---"
+                    [options]="listWrAction"
+                    [optionLabel]="'label'"
+                    (onClick)="onDropDownChange('wrAction')"
+                    [(ngModel)]="selectedFilter.wrAction"
+                  ></p-multiSelect>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-divider class="popup-content"></mat-divider> -->
+<!-- footer popup -->
+<div mat-dialog-content class="popup-footer">
+  <div class="p-fluid p-formgrid p-grid">
+    <!-- navigation button -->
+
+    <div class="p-field p-col-12 p-md-12 p-lg-12 padding-zero center">
+      <button
+        mat-button
+        id="applyBtn"
+        class="btn-mat-add margin-left-right-5"
+        (click)="onApplyFilter()"
+      >
+        <i class="far fa-check-circle"></i>
+        Apply Filter
+      </button>
+
+      <button
+        mat-button
+        id="loadBtn"
+        class="btn-mat-add margin-left-right-5"
+        (click)="onLoadFilter()"
+      >
+        <i class="far fa-copy"></i>
+        Load Filter
+      </button>
+
+      <button
+        mat-button
+        id="saveBtn"
+        class="btn-mat-add margin-left-right-5"
+        (click)="onSaveFilter()"
+      >
+        <i class="far fa-save"></i>
+        Save Filter
+      </button>
+
+      <button
+        mat-button
+        id="clearBtn"
+        class="btn-mat-add margin-left-right-5"
+        (click)="onClearFilter()"
+      >
+        <i class="fas fa-redo-alt"></i>
+        Clear Filter
+      </button>
+      <!-- <button type="button" class="btn-modern btn-back-icon"  mat-dialog-close>ttt</button> -->
+      <!-- 
+            <button  type="button" id="saveBtn" class="btn-modern btn-import" 
+            (click)="onConfirm()" *ngIf="btnConfirmShow ==='show' &&  (commentShow == 'show' || textAreaShow == 'show')" 
+            [disabled]="commentResult == ''">
+            {{btnConfirmName}}
+            </button>
+  
+            <button  type="button" id="saveBtn" class="btn-modern btn-import" 
+            (click)="onConfirm()" *ngIf="btnConfirmShow ==='show' &&  (commentShow != 'show' && textAreaShow != 'show')" >
+            {{btnConfirmName}}
+            </button> -->
+    </div>
+  </div>
+</div>
+
+<p-toast position="bottom-right"></p-toast>

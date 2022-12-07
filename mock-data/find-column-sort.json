@@ -1,0 +1,267 @@
+{
+  "status": "success",
+  "resultData": {
+    "columnPage": [
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 1,
+        "columnName": "Ticket Special Type",
+        "columnSql": "TT.TT_SPECIAL_TYPE",
+        "mandateYn": "Y",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 2,
+        "columnName": "Job Flag",
+        "columnSql": "TT.JOB_FLAG",
+        "mandateYn": "Y",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 3,
+        "columnName": "TT ID",
+        "columnSql": "TT.TT_ID",
+        "mandateYn": "Y",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": 10835,
+          "page": "TT_ActiveBox",
+          "columnNo": 3,
+          "orderSeq": 1,
+          "orderBy": "asc",
+          "lastUpdBy": 10835,
+          "lastUpdDate": 1621315116000
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 4,
+        "columnName": "Status",
+        "columnSql": "TT.TT_STATUS_ID",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 5,
+        "columnName": "Priority",
+        "columnSql": "TT.PRIORITY_ID",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 6,
+        "columnName": "System",
+        "columnSql": "TT.SYSTEM_VALUE",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 7,
+        "columnName": "Subsystem",
+        "columnSql": "TT.SUBSYSTEM",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 8,
+        "columnName": "Service",
+        "columnSql": "PSERVICE",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 9,
+        "columnName": "Title",
+        "columnSql": "TT.TITLE1",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 10,
+        "columnName": "Problem Node",
+        "columnSql": "PNODE",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 11,
+        "columnName": "Problem Type",
+        "columnSql": "TT.PROBLEM_TYPE_ID",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 12,
+        "columnName": "Problem Date",
+        "columnSql": "TT.PROBLEM_DATE",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      },
+      {
+        "page": "TT_ActiveBox",
+        "columnNo": 13,
+        "columnName": "Relate CP",
+        "columnSql": "TT_RELATE_CP",
+        "mandateYn": "N",
+        "lastUpdBy": null,
+        "lastUpdDate": null,
+        "showYn": null,
+        "columnSort": {
+          "userId": null,
+          "page": null,
+          "columnNo": null,
+          "orderSeq": null,
+          "orderBy": null,
+          "lastUpdBy": null,
+          "lastUpdDate": null
+        },
+        "columnCheck": null
+      }
+    ]
+  }
+}

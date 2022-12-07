@@ -1,0 +1,33 @@
+@import "../style/variable";
+
+.p-inputtext {
+  padding: 0 0.5rem !important;
+  font-family: "db_heavent_cond" !important;
+  border: 1px solid #e1e1e1 !important;
+}
+
+.required-calendar {
+  input {
+    border: 1px solid $color-red !important;
+  }
+}
+
+.required-dropdown {
+  div.p-dropdown {
+    border: 1px solid $color-red !important;
+  }
+}
+
+.required {
+  border: 1px solid $color-red !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

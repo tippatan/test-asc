@@ -1,0 +1,425 @@
+.viewBtn {
+  background-color: #b1d136;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.confirmBtn {
+  background-color: #00b55d;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.disabledBtn {
+  background-color: silver;
+  color: #ffffff;
+  cursor: pointer;
+}
+.cancelBtn {
+  background-color: #eb2227;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.reqCancelBtn {
+  background-color: #eb2227;
+  padding: 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.iconDeleteBtn {
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #eb2227;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.iconDeleteBtn :hover {
+  color: #c51c1f;
+}
+
+.editBtn {
+  background-color: #0071bb;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.linkLabel {
+  /* color: #2b2825; */
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+}
+
+.importBtn {
+  background-color: #fbffdb;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #0071bb;
+  cursor: pointer;
+}
+
+.successLabel {
+  background-color: #b1d136;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 23px;
+  padding: 0px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 2.3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: limegreen;
+}
+
+input:checked:disabled + .slider {
+  background-color: rgb(188, 233, 188);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px limegreen;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 23px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.displayBtn {
+  margin-right: 140px;
+}
+
+.confirmTxt {
+  background-color: #fbffdb;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #0071bb;
+}
+
+.btn-inc-team {
+  border-radius: 5px;
+  border: solid 1px #614d47;
+  background-color: #ffffff;
+  color: #614e47;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.icon-teams {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  background-image: url(/../../../assets/images/icons/team-icon.png);
+  background-repeat: no-repeat;
+  background-position: -0px -0px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0px 5px 0px 5px;
+  margin-top: -6px;
+}
+
+.icon-no-teams {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  background-image: url(/../../../assets/images/icons/no-team-icon.png);
+  background-repeat: no-repeat;
+  background-position: -0px -0px;
+  padding: 0px 5px 0px 5px;
+  margin-top: 0px;
+}
+
+.btn-team {
+  cursor: pointer;
+}
+
+.btn-width {
+  width: 20%;
+}
+
+.btn-width-s {
+  width: 10%;
+}
+
+.btn-select {
+  background-color: #b2d235;
+  border: none;
+  color: #1d1d1d;
+  padding: 0px 10px;
+  width: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: #1d1d1d solid 1px;
+}
+
+/* Darker background on mouse-over */
+.btn-select:hover {
+  background-color: #7aa700;
+}
+
+.btn-deselect {
+  background-color: #eb2227;
+  color: #1d1d1d;
+  border: none;
+  padding: 0px 2px;
+  width: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  border: #1d1d1d solid 1px;
+}
+
+.btn-deselect:hover {
+  background-color: #c51c1f;
+}
+
+.login-btn {
+  font-family: Hack, monospace;
+  background: #bbff00;
+  color: #1d1d1d;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0.5rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+}
+
+.login-btn:after {
+  content: "\f2f6";
+  font-family: "fa fa-home";
+  font-weight: 400;
+  position: absolute;
+  left: 80%;
+  top: 54%;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.login-btn:hover {
+  background: #2b2bff;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #0000ff61;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  color: #ffffff;
+}
+
+.login-btn:after {
+  opacity: 1;
+  transition: all 0.5s;
+  color: #ffffff;
+}
+
+.input-size {
+  margin: auto;
+  width: 40%;
+}
+
+.input-num {
+  text-align: right;
+}
+
+.input-color {
+  color: #614e47 !important;
+}
+
+.input-color-red {
+  color: #eb2227 !important;
+}
+
+.headerActName {
+  width: 800px !important;
+}
+
+.bgMasterPlan {
+  background-color: #8bc43f !important;
+}
+
+.fontColor1 {
+  color: #8c7f79 !important;
+}
+
+.fontColor2 {
+  color: black !important;
+}
+
+.col-bg-red {
+  background-color: #ffbfbf !important;
+}
+
+.headerColor1 {
+  background-color: #8dba00 !important;
+}
+
+.headerColor1-light {
+  background-color: #a1c751 !important;
+}
+
+.headerColor2 {
+  background-color: #3ca6a0 !important;
+}
+
+.headerColor2-light {
+  background-color: #59ada6 !important;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+}
+
+.fontColorRed {
+  color: red !important;
+}
+
+.fiveActTbl {
+  table-layout: auto !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid black;
+  position: relative;
+  width: 3760px !important;
+}
+
+.sixActTbl {
+  table-layout: auto !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid black;
+  position: relative;
+  width: 5160px !important;
+}
+
+.fontColorRed {
+  color: red !important;
+}
+
+.freeze {
+  height: fit-content;
+  max-height: 500px;
+  position: relative;
+  overflow: auto;
+}
+
+thead tr th {
+  border: 1px solid #ddd;
+  font-weight: bold !important;
+}
+
+tbody td {
+  opacity: none !important;
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) td {
+  background: #ddd;
+}
+
+tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.break-word {
+  word-break: break-all;
+}
+
+.link-eform {
+  color: #614e47;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.link-eform :hover {
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-size: 20px;
+  text-shadow: 2px 2px 5px rgb(212, 212, 212);
+}
+
+.link-eform :active {
+  color: #614e47;
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.headerColorBrown {
+  background-color: #614e47 !important;
+}

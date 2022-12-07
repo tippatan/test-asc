@@ -1,0 +1,6 @@
+<div *ngFor="let toast of toasts">
+  <p-toast
+    [position]="findPositionByKey(toast.key)"
+    [key]="toast.key"
+  ></p-toast>
+</div>

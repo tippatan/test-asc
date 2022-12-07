@@ -1,0 +1,75 @@
+<div class="body">
+  <div class="login-card" [formGroup]="formLogin">
+    <div class="p-md-6 p-p-0 d-none">
+      <img
+        class="login-card-img"
+        src="./../../assets/images/login-side-img.png"
+        alt="login"
+      />
+    </div>
+    <div class="p-md-8">
+      <div class="card-body">
+        <div class="required-field" *ngIf="loginUnsuccess">
+          <label>{{ errorText }}</label>
+        </div>
+        <div class="p-fluid">
+          <div class="brand-wrapper">
+            <img
+              class="logo"
+              src="./../../assets/images/TTS-ASC-logo.png"
+              alt="logo"
+            />
+          </div>
+          <p class="login-card-description">Sign into your account</p>
+          <div class="p-field p-col-12 p-p-0" *ngIf="!this.isLoginSAMLPage">
+            <input
+              class="form-control"
+              id="txtUsername"
+              type="text"
+              pInputText
+              formControlName="username"
+              placeholder="Username"
+              (keydown.enter)="onLogin()"
+              [ngClass]="{ required: validator('username') }"
+            />
+            <small class="p-error" *ngIf="validator('username')"
+              >This field is required</small
+            >
+          </div>
+          <div class="p-field p-col-12 p-p-0" *ngIf="!this.isLoginSAMLPage">
+            <input
+              class="form-control"
+              id="txtPwd"
+              type="password"
+              pInputText
+              formControlName="password"
+              placeholder="***********"
+              (keydown.enter)="onLogin()"
+              [ngClass]="{ required: validator('password') }"
+            />
+            <small class="p-error" *ngIf="validator('password')"
+              >This field is required</small
+            >
+          </div>
+          <div class="p-field p-col-12 p-p-0">
+            <button
+              id="btnLogin"
+              type="button"
+              label="LOGIN"
+              (click)="onLogin()"
+            >
+              <span class="p-button-label">Login</span>
+            </button>
+          </div>
+          <div class="login-card-footer-text">
+            <p class="caption">
+              The recommended display resolution for this website is<br />1920 x
+              1080 px and scale is 100%
+            </p>
+            <p>Copyright © 2021 all rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

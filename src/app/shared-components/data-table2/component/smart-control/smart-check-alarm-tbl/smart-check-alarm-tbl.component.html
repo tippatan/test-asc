@@ -1,0 +1,139 @@
+<div class="table-height">
+  <table class="table table-hover customTbl">
+    <thead>
+      <tr>
+        <th
+          class="customColumnNoCursor header-sticky"
+          style="width: 10%"
+          (click)="onSorting(columnListAlarm[0], 0)"
+        >
+          Severity
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[0].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="customColumnNoCursor header-sticky"
+          style="width: 15%"
+          (click)="onSorting(columnListAlarm[1], 1)"
+        >
+          Date Time
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[1].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="customColumnNoCursor header-sticky"
+          style="width: 15%"
+          (click)="onSorting(columnListAlarm[2], 2)"
+        >
+          Server Serial
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[2].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+        <th
+          class="customColumnNoCursor header-sticky"
+          style="width: 60%"
+          (click)="onSorting(columnListAlarm[3], 3)"
+        >
+          Alarm Description
+          <span>
+            <i
+              class="fa fa-sort fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == null"
+            ></i>
+            <i
+              class="fa fa-sort-up fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == true"
+            ></i>
+            <i
+              class="fa fa-sort-down fa-1"
+              aria-hidden="true"
+              *ngIf="columnListAlarm[3].isSortingAsc == false"
+            ></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="rows && rows?.length > 0">
+      <tr
+        *ngFor="
+          let row of rows
+            | paginate
+              : {
+                  id: pagingControlId,
+                  itemsPerPage: selectedPageSize,
+                  currentPage: currentPage,
+                  totalItems: total
+                }
+        "
+      >
+        <ng-container>
+          <td>
+            <div class="center">{{ row.severity }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.firstInsertTime }}</div>
+          </td>
+          <td>
+            <div class="center">{{ row.serverSerial }}</div>
+          </td>
+          <td>
+            <div class="left break-word">{{ row.description }}</div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!rows || rows?.length == 0">
+      <tr>
+        <td class="red center" colspan="4">Data not found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

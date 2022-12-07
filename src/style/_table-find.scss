@@ -1,0 +1,22 @@
+.p-datatable-scrollable-body {
+  &::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: grey;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 20px;
+  }
+}
+
+// best fix
+
+#divfixtable .p-datatable table {
+  table-layout: auto;
+}

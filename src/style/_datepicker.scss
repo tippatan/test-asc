@@ -1,0 +1,64 @@
+@import "./variable";
+.p-datepicker {
+  padding: 0.5rem;
+  table td.p-datepicker-today > span {
+    background: #ced4da;
+  }
+  .p-datepicker-buttonbar {
+    border-top: 1px solid #dee2e6 !important;
+    padding: 5px 0 0 0 !important;
+    .p-button.p-button-text {
+      color: #2196f3;
+    }
+  }
+  .p-datepicker-group {
+    .p-datepicker-header {
+      color: #495057 !important;
+      background: #ffffff !important;
+      font-weight: 600 !important;
+      margin: 0 !important;
+      border-bottom: 1px solid #dee2e6 !important;
+      border-top-right-radius: 3px !important;
+      border-top-left-radius: 3px !important;
+    }
+    .p-datepicker-calendar-container {
+      table {
+        tr {
+          th,
+          td {
+            text-align: center;
+            color: none !important;
+          }
+          th:last-of-type,
+          td:last-of-type {
+            border-right: none;
+          }
+          th {
+            font-style: normal;
+            padding: 10px 0px 0px 0px;
+            margin: 0;
+          }
+          td {
+            padding: 0px;
+          }
+        }
+        thead {
+          > tr {
+            background-color: white;
+            > th {
+              color: $gray-color-dark;
+            }
+          }
+        }
+        tbody {
+          > tr:nth-child(odd) {
+            background-color: white !important;
+          }
+          > tr:nth-child(even) {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+  }
+}

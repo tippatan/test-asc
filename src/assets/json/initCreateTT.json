@@ -1,0 +1,2079 @@
+{
+  "result": {
+    "TT": {
+      "findTitle1": "",
+      "findTitleName1": "",
+      "findTitle2": "",
+      "ttId": "",
+      "records": 0,
+      "closeOhter": false,
+      "systemValue": 123,
+      "isModifyTT": false,
+      "fromITSD": false,
+      "ttPrefix": "21",
+      "ttPostfix": "",
+      "regionId": "BKK",
+      "subsystem": "Radio-ISP",
+      "problemTypeId": "",
+      "problemService": "",
+      "system": "YYNNYYN",
+      "problemNodeId1": "",
+      "problemNodeCode": ""
+    },
+    "FaultTypeColl": [
+      {
+        "id": "185",
+        "name": "TEST",
+        "description": "TEST",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 1,
+        "nameTh": "ทดสอบ",
+        "priority": 1
+      },
+      {
+        "id": "006",
+        "name": "Base station",
+        "description": "Base station",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 2,
+        "nameTh": "มีปัญหาที่สถานีฐาน",
+        "priority": 2
+      },
+      {
+        "id": "004",
+        "name": "Switching",
+        "description": "Switching",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 3,
+        "nameTh": "มีปัญหาที่ชุมสาย",
+        "priority": 3
+      },
+      {
+        "id": "005",
+        "name": "Transmission",
+        "description": "Transmission",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 4,
+        "nameTh": "มีปัญหาที่ระบบวงจรเชื่อมต่อ",
+        "priority": 4
+      },
+      {
+        "id": "124",
+        "name": "GG",
+        "description": "GGกก",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 5,
+        "nameTh": "กกกกกคค",
+        "priority": 5
+      },
+      {
+        "id": "007",
+        "name": "Power system/Infrastructure",
+        "description": "Power system/Infrastructure",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 6,
+        "nameTh": "ไฟฟ้าดับที่site",
+        "priority": 6
+      },
+      {
+        "id": "008",
+        "name": "Value added system",
+        "description": "Value added system",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 7,
+        "nameTh": "มีปัญหาในระบบบริการเสริม",
+        "priority": 7
+      },
+      {
+        "id": "009",
+        "name": "OSS/other support system",
+        "description": "OSS/other support system",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 8,
+        "nameTh": "มีปัญหาที่ระบบคอมพิวเตอร์",
+        "priority": 8
+      },
+      {
+        "id": "003",
+        "name": "Interconnection between operators",
+        "description": "Interconnection between operators",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 9,
+        "nameTh": "วงจรเชื่อมต่อขององค์การโทรศัพท์มีปัญหา",
+        "priority": 9
+      },
+      {
+        "id": "002",
+        "name": "Improper Configuration/Parameter",
+        "description": "Improper Configuration/Parameter",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 10,
+        "nameTh": "กำลังอยู่ในแผนงานปรับปรุง",
+        "priority": 10
+      },
+      {
+        "id": "144",
+        "name": "Ohmtest F1",
+        "description": "Ohmtest F1",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 11,
+        "nameTh": "เทสฟอล์ต",
+        "priority": 11
+      },
+      {
+        "id": "010",
+        "name": "International Roaming",
+        "description": "International Roaming",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 12,
+        "nameTh": "วงจรเชื่อมต่อระหว่างประเทศ",
+        "priority": 12
+      },
+      {
+        "id": "001",
+        "name": "Planned work activity",
+        "description": "Planned work activity",
+        "updateFlag": "N",
+        "status": "A",
+        "rownum": 13,
+        "nameTh": "เจ้าหน้าที่กำลังปฏิบัติงานที่จำเป็นต้องปิดบริการชั่วคราว",
+        "priority": 13
+      },
+      {
+        "id": "013",
+        "name": "IT HW/SW Failure",
+        "description": "IT HW/SW Failure",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 14,
+        "nameTh": "มีปัญหาที่ฮาร์ดแวร์หรือซอฟแวร์ของทางไอที",
+        "priority": 14
+      },
+      {
+        "id": "014",
+        "name": "Data Network",
+        "description": "Data Network",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 15,
+        "nameTh": "ปัญหาระบบเครือข่ายข้อมูล",
+        "priority": 15
+      },
+      {
+        "id": "114",
+        "name": "BOS system",
+        "description": "Billing \u0026 Online Charging System",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 16,
+        "nameTh": "ปัญหาระบบบอส",
+        "priority": 16
+      },
+      {
+        "id": "134",
+        "name": "Cloud_Service",
+        "description": "Cloud_Service",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 17,
+        "nameTh": "ปัญหาการให้บริการระบบคลาวด์",
+        "priority": 16
+      },
+      {
+        "id": "154",
+        "name": "IRB System",
+        "description": "IRB System",
+        "updateFlag": "Y",
+        "status": "A",
+        "rownum": 18,
+        "nameTh": "ปัญหาระบบไออาร์บี",
+        "priority": 17
+      }
+    ],
+    "TT_SITE": [
+      {
+        "id": "SLIMS-383008",
+        "cfmsSite": "3RNCTWA1H",
+        "priority": 0,
+        "siteCode": "3RNCTWA1H",
+        "siteType": "RNC",
+        "systemId": "G18, G9(All), 3G9(All), 3G21(All)",
+        "mnimsSiteCode": "3RNCTWA1H",
+        "nsType": "Switching \u0026 IN",
+        "chkAlarmActive": false,
+        "newSiteAccess": false,
+        "siteRelateSubsystem": false
+      },
+      {
+        "id": "SLIMS-397741",
+        "cfmsSite": "3RNCTWA2H",
+        "priority": 0,
+        "siteCode": "3RNCTWA2H",
+        "siteType": "RNC",
+        "systemId": "G18, G9(All), 3G9(All), 3G21(All)",
+        "mnimsSiteCode": "3RNCTWA2H",
+        "nsType": "Switching \u0026 IN",
+        "chkAlarmActive": false,
+        "newSiteAccess": false,
+        "siteRelateSubsystem": false
+      },
+      {
+        "id": "SLIMS-421971",
+        "cfmsSite": "3RNCTWA3H",
+        "priority": 0,
+        "siteCode": "3RNCTWA3H",
+        "siteType": "RNC",
+        "systemId": "G18, G9(All), 3G9(All), 3G21(All)",
+        "mnimsSiteCode": "3RNCTWA3H",
+        "nsType": "Switching \u0026 IN",
+        "chkAlarmActive": false,
+        "newSiteAccess": false,
+        "siteRelateSubsystem": false
+      }
+    ],
+    "ProblemTypeColl": [
+      {
+        "problemTypeId": "01",
+        "description": "Service Outage"
+      },
+      {
+        "problemTypeId": "02",
+        "description": "Service Degraded"
+      },
+      {
+        "problemTypeId": "03",
+        "description": "Service Unaffected"
+      }
+    ],
+    "hasJBWorkforceQuickAuth": true,
+    "RegionColl": [
+      {
+        "id": "BKK",
+        "regionNameEn": "Bangkok"
+      },
+      {
+        "id": "CR",
+        "regionNameEn": "Central"
+      },
+      {
+        "id": "SR",
+        "regionNameEn": "South"
+      },
+      {
+        "id": "NR",
+        "regionNameEn": "North"
+      },
+      {
+        "id": "ER",
+        "regionNameEn": "East"
+      },
+      {
+        "id": "NER",
+        "regionNameEn": "NorthEast"
+      }
+    ],
+    "PriorityLimitBeanColl": [
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "BKK"
+      },
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "CR"
+      },
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "ER"
+      },
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "NER"
+      },
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "NR"
+      },
+      {
+        "none": 43200,
+        "minor": 4320,
+        "major": 600,
+        "critical": 180,
+        "noneMinute": 0,
+        "noneHour": 0,
+        "noneDay": 30,
+        "minorMinute": 0,
+        "minorHour": 0,
+        "minorDay": 3,
+        "majorMinute": 0,
+        "majorHour": 10,
+        "majorDay": 0,
+        "criticalMinute": 0,
+        "criticalHour": 3,
+        "criticalDay": 0,
+        "regionId": "SR"
+      }
+    ],
+    "cpType": "",
+    "SubsystemEscalateCol": [
+      {
+        "valueListValue": "EDS-OSP",
+        "valueListDisplay": "EDS-OSP"
+      },
+      {
+        "valueListValue": "Transmission-OSP",
+        "valueListDisplay": "Transmission-OSP"
+      },
+      {
+        "valueListValue": "EDS SW NODE-OSP",
+        "valueListDisplay": "EDS SW NODE-OSP"
+      },
+      {
+        "valueListValue": "EDS SW NODE-ISP",
+        "valueListDisplay": "EDS SW NODE-ISP"
+      },
+      {
+        "valueListValue": "Facility",
+        "valueListDisplay": "Facility"
+      },
+      {
+        "valueListValue": "FTTB-ISP",
+        "valueListDisplay": "FTTB-ISP"
+      },
+      {
+        "valueListValue": "FTTH-ISP",
+        "valueListDisplay": "FTTH-ISP"
+      }
+    ],
+    "PriorityColl": [
+      {
+        "id": "1",
+        "name": "None"
+      },
+      {
+        "id": "2",
+        "name": "Minor"
+      },
+      {
+        "id": "3",
+        "name": "Major"
+      },
+      {
+        "id": "4",
+        "name": "Critical"
+      }
+    ],
+    "docId": "",
+    "SubSystemColl": [
+      {
+        "name": "AIR/FAN",
+        "description": "AIR/FAN",
+        "status": "A",
+        "rownum": 1,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "APO",
+        "description": "APO",
+        "status": "A",
+        "rownum": 2,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2017,
+              "month": 7,
+              "dayOfMonth": 21,
+              "hourOfDay": 13,
+              "minute": 11,
+              "second": 1
+            },
+            "createUserId": 701,
+            "subsystem": "APO",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "Y",
+            "faultRequired": "Y",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Airnet-ISP",
+        "description": "Airnet-ISP",
+        "status": "A",
+        "rownum": 3,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Airnet-OSP",
+        "description": "Airnet-OSP",
+        "status": "A",
+        "rownum": 4,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Application",
+        "description": "Application",
+        "status": "A",
+        "rownum": 5,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "Y",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 48,
+              "second": 20
+            },
+            "createUserId": 701,
+            "subsystem": "Application",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "BOS",
+        "description": "BOS",
+        "status": "A",
+        "rownum": 6,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Cloud Partner Service",
+        "description": "Cloud Partner Service",
+        "status": "A",
+        "rownum": 7,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Cloud Service",
+        "description": "Cloud Service",
+        "status": "A",
+        "rownum": 8,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Computer Center Facility",
+        "description": "Computer Center Facility",
+        "status": "A",
+        "rownum": 9,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Computer Center Facility",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Corporate Solution",
+        "description": "Corporate Solution",
+        "status": "A",
+        "rownum": 10,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2015,
+              "month": 1,
+              "dayOfMonth": 11,
+              "hourOfDay": 10,
+              "minute": 50,
+              "second": 51
+            },
+            "createUserId": 6375,
+            "subsystem": "Corporate Solution",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "Y",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Data Center",
+        "description": "Data Center",
+        "status": "A",
+        "rownum": 11,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Data Network",
+        "description": "Data Network",
+        "status": "A",
+        "rownum": 12,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Data Network",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Datacom",
+        "description": "Datacom",
+        "status": "A",
+        "rownum": 13,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2006,
+              "month": 1,
+              "dayOfMonth": 17,
+              "hourOfDay": 15,
+              "minute": 42,
+              "second": 53
+            },
+            "createUserId": 701,
+            "subsystem": "Datacom",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Deploy Application",
+        "description": "Deploy Application support ICT",
+        "status": "A",
+        "rownum": 14,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "EDS",
+        "description": "EDS",
+        "status": "A",
+        "rownum": 15,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "EDS SW NODE-ISP",
+        "description": "EDS SW NODE-ISP",
+        "status": "A",
+        "rownum": 16,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "EDS SW NODE-OSP",
+        "description": "EDS SW NODE-OSP",
+        "status": "A",
+        "rownum": 17,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "EDS-ISP",
+        "description": "EDS-ISP",
+        "status": "A",
+        "rownum": 18,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "EDS-OSP",
+        "description": "EDS-OSP",
+        "status": "A",
+        "rownum": 19,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "ETS-ISP",
+        "description": "ETS-ISP",
+        "status": "A",
+        "rownum": 20,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "ETS-OSP",
+        "description": "ETS-OSP",
+        "status": "A",
+        "rownum": 21,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FBB Core and Wifi Core",
+        "description": "FBB Core and Wifi Core",
+        "status": "A",
+        "rownum": 22,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTB-ISP",
+        "description": "FTTB-ISP",
+        "status": "A",
+        "rownum": 23,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTB-OSP",
+        "description": "FTTB-OSP",
+        "status": "A",
+        "rownum": 24,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTH-ISP",
+        "description": "FTTH-ISP",
+        "status": "A",
+        "rownum": 25,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTH-OSP",
+        "description": "FTTH-OSP",
+        "status": "A",
+        "rownum": 26,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTX-ISP",
+        "description": "FTTX-ISP",
+        "status": "A",
+        "rownum": 27,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "FTTX-OSP",
+        "description": "FTTX-OSP",
+        "status": "A",
+        "rownum": 28,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Facility",
+        "description": "Facility",
+        "status": "A",
+        "rownum": 29,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Facility-Base Station",
+        "description": "Facility-Base Station",
+        "status": "A",
+        "rownum": 30,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Facility-Principle Node",
+        "description": "Facility-Principle Node",
+        "status": "A",
+        "rownum": 31,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Golf Test",
+        "description": "Test Create",
+        "status": "A",
+        "rownum": 32,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "ICT",
+        "description": "ICT",
+        "status": "A",
+        "rownum": 33,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "INS",
+        "description": "INS",
+        "status": "A",
+        "rownum": 34,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "IRB",
+        "description": "IRB",
+        "status": "A",
+        "rownum": 35,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "IT Network",
+        "description": "IT Network",
+        "status": "A",
+        "rownum": 36,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "IT Network",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Internet Datacenter",
+        "description": "Internet Datacenter",
+        "status": "A",
+        "rownum": 37,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2013,
+              "month": 0,
+              "dayOfMonth": 15,
+              "hourOfDay": 11,
+              "minute": 16,
+              "second": 27
+            },
+            "createUserId": 707,
+            "subsystem": "Internet Datacenter",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "MD",
+        "description": "MD",
+        "status": "A",
+        "rownum": 38,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "MD",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "OSS",
+        "description": "OSS",
+        "status": "A",
+        "rownum": 39,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Ohm Test Create Sub1",
+        "description": "Ohm Test Create Sub1",
+        "status": "A",
+        "rownum": 40,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2017,
+              "month": 2,
+              "dayOfMonth": 14,
+              "hourOfDay": 11,
+              "minute": 49,
+              "second": 28
+            },
+            "createUserId": 701,
+            "subsystem": "Ohm Test Create Sub1",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "Y",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2017,
+              "month": 2,
+              "dayOfMonth": 14,
+              "hourOfDay": 11,
+              "minute": 50,
+              "second": 22
+            },
+            "createUserId": 701,
+            "subsystem": "Ohm Test Create Sub1",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "Y",
+            "faultRequired": "Y",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Power System",
+        "description": "Power System",
+        "status": "A",
+        "rownum": 41,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Power System",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "RA E2E",
+        "description": "RA E2E",
+        "status": "A",
+        "rownum": 42,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2008,
+              "month": 4,
+              "dayOfMonth": 14,
+              "hourOfDay": 10,
+              "minute": 12,
+              "second": 18
+            },
+            "createUserId": 201,
+            "subsystem": "RA E2E",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Radio",
+        "description": "Radio",
+        "status": "A",
+        "rownum": 43,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Radio",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Radio-ISP",
+        "description": "Radio-ISP",
+        "status": "A",
+        "rownum": 44,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Radio-OSP",
+        "description": "Radio-OSP",
+        "status": "A",
+        "rownum": 45,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "SCP",
+        "description": "SCP",
+        "status": "A",
+        "rownum": 46,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SCP",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "SSP",
+        "description": "SSP",
+        "status": "A",
+        "rownum": 47,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "SSP",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "description": "Security",
+        "status": "A",
+        "rownum": 48,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "createDate": {
+              "year": 2005,
+              "month": 10,
+              "dayOfMonth": 28,
+              "hourOfDay": 10,
+              "minute": 26,
+              "second": 33
+            },
+            "createUserId": 701,
+            "subsystem": "Security",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Switching",
+        "description": "Switching",
+        "status": "A",
+        "rownum": 49,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Switching",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "System and Database",
+        "description": "System and Database",
+        "status": "A",
+        "rownum": 50,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "System and Database",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "TEST-SUB",
+        "description": "ทดสอบ SubSystem",
+        "status": "A",
+        "rownum": 51,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Test Activity ",
+        "description": "Test Activity ",
+        "status": "A",
+        "rownum": 52,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Test12072017",
+        "description": "Test12072017",
+        "status": "A",
+        "rownum": 53,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Transmission",
+        "description": "Transmission",
+        "status": "A",
+        "rownum": 54,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Transmission",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "Transmission-ISP",
+        "description": "Transmission-ISP",
+        "status": "A",
+        "rownum": 55,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Transmission-OSP",
+        "description": "Transmission-OSP",
+        "status": "A",
+        "rownum": 56,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Value added",
+        "description": "Value added",
+        "status": "A",
+        "rownum": 57,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Value added",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "WIFI_NODZ",
+        "description": "WIFI_NODZ_DESC",
+        "status": "A",
+        "rownum": 58,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Wifi Access",
+        "description": "Wifi Access",
+        "status": "A",
+        "rownum": 59,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Wifi Access-ISP",
+        "description": "Wifi Access-ISP",
+        "status": "A",
+        "rownum": 60,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Wifi Access-OSP",
+        "description": "Wifi Access-OSP",
+        "status": "A",
+        "rownum": 61,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Wifi Core",
+        "description": "Wifi Core",
+        "status": "A",
+        "rownum": 62,
+        "serviceSubRegionCol": []
+      },
+      {
+        "name": "Wireless Lan",
+        "description": "Wireless Lan",
+        "status": "A",
+        "rownum": 63,
+        "serviceSubRegionCol": [
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "CR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "ER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "NER",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "NR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          },
+          {
+            "subsystem": "Wireless Lan",
+            "status": "A",
+            "regionId": "SR",
+            "planRequired": "N",
+            "faultRequired": "N",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "description": "test",
+        "status": "A",
+        "rownum": 64,
+        "serviceSubRegionCol": [
+          {
+            "createDate": {
+              "year": 2017,
+              "month": 7,
+              "dayOfMonth": 9,
+              "hourOfDay": 16,
+              "minute": 40,
+              "second": 48
+            },
+            "createUserId": 701,
+            "subsystem": "test",
+            "status": "A",
+            "regionId": "BKK",
+            "planRequired": "Y",
+            "faultRequired": "Y",
+            "orderUserSystem": 0
+          }
+        ]
+      },
+      {
+        "name": "ฟฟฟฟฟ",
+        "description": "ฟฟฟฟ",
+        "status": "A",
+        "rownum": 65,
+        "serviceSubRegionCol": []
+      }
+    ],
+    "AL_CFMS_Site": "",
+    "hasPD": false,
+    "isRequireSystem": true,
+    "hasTTTemplateAuth": true,
+    "checkEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5\u0027);",
+    "hasCreateTTCAPlanAuth": true,
+    "hasCFMSAuth": true,
+    "canWorkTTAndJob": true,
+    "isPDPostToCalendar": false,
+    "systemParam": "1|2|3|4|5|6",
+    "systemCol": [
+      {
+        "displayName": "GSM900",
+        "value": 8,
+        "type": "CHECKBOX",
+        "group": "1",
+        "script": "javascript:checkEnableSystem(this,\u00276\u0027,\u00272|3|4|5\u0027);",
+        "option": "ENABLE",
+        "multisize": "0",
+        "scriptEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5\u0027);",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "3G900",
+        "value": 16,
+        "type": "CHECKBOX",
+        "group": "2",
+        "script": "javascript:checkEnableSystem(this,\u00276\u0027,\u00271|3|4|5\u0027);",
+        "option": "ENABLE",
+        "multisize": "0",
+        "scriptEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5\u0027);",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "3G2100",
+        "value": 32,
+        "type": "CHECKBOX",
+        "group": "3",
+        "script": "javascript:checkEnableSystem(this,\u00276\u0027,\u00271|2|4|5\u0027);",
+        "option": "ENABLE",
+        "multisize": "0",
+        "scriptEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5\u0027);",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "4G",
+        "value": 64,
+        "type": "CHECKBOX",
+        "group": "4",
+        "script": "javascript:checkEnableSystem(this,\u00276\u0027,\u00271|2|3|5\u0027);",
+        "option": "ENABLE",
+        "multisize": "0",
+        "scriptEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5\u0027);",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "2G900",
+        "value": 256,
+        "type": "CHECKBOX",
+        "group": "5",
+        "script": "javascript:checkEnableSystem(this,\u00276\u0027,\u00271|2|3|4|5\u0027);",
+        "option": "ENABLE",
+        "multisize": "0",
+        "scriptEnableDropdown": "javascript:checkEnableSystemDropdown(\u00276\u0027,\u00271|2|3|4|5|\u0027);",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "All",
+        "value": 3,
+        "type": "DROPDOWN",
+        "group": "6",
+        "option": "DISABLE",
+        "multisize": "3",
+        "displayGroup": "NULL",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "Postpaid",
+        "value": 1,
+        "type": "DROPDOWN",
+        "group": "6",
+        "option": "DISABLE",
+        "multisize": "3",
+        "displayGroup": "NULL",
+        "systemDigit": 11
+      },
+      {
+        "displayName": "Prepaid",
+        "value": 2,
+        "type": "DROPDOWN",
+        "group": "6",
+        "option": "DISABLE",
+        "multisize": "3",
+        "displayGroup": "NULL",
+        "systemDigit": 11
+      }
+    ]
+  }
+}

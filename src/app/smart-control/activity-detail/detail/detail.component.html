@@ -1,0 +1,150 @@
+<ng-container>
+  <div class="p-fluid p-formgrid p-grid" *ngIf="dataMaster.controlDetail && dataMaster.nocList">
+    <div class="p-col-12 p-md-8 p-lg-8">
+      <div class="content-section implementation">
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-col-12 p-md-6 p-lg-6 reset-padding">
+            <label class="label-name">Description : </label>
+          </div>
+          <div class="p-col-12 p-md-3 p-lg-3 reset-padding">
+            <label class="label-name">Node : </label>
+          </div>
+          <div class="p-col-12 p-md-3 p-lg-3 reset-padding">
+            <label class="label-name">Node Related : </label>
+          </div>
+        </div>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-col-12 p-md-6 p-lg-6 reset-padding">
+            <textarea class="textarea-desc" pInputTextarea
+            [readonly]="true"
+            [(ngModel)]="dataMaster.controlDetail.description"></textarea>
+            <!-- <mat-card class="mat-card-custom mat-card-area mat-card-margin mat-card-desc">
+              {{ dataMaster.controlDetail.description }}
+            </mat-card> -->
+          </div>
+          <div class="p-col-12 p-md-3 p-lg-3 reset-padding">
+            <mat-card class="mat-card-custom mat-card-area mat-card-margin mat-card-node">
+              <p class="node-margin" *ngFor="let data of dataMaster.controlDetail.node">
+                {{ data }}
+              </p>
+            </mat-card>
+          </div>
+          <div class="p-col-12 p-md-3 p-lg-3 reset-padding">
+            <mat-card class="mat-card-custom mat-card-area mat-card-margin mat-card-node-re margin-right-0">
+              <p class="node-margin" *ngFor="let data of dataMaster.controlDetail.nodeRelated">
+                {{ data }}
+              </p>
+            </mat-card>
+          </div>
+        </div>
+
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-col-12 p-md-12 p-lg-12 reset-padding">
+            <app-data-table2 [customTable]="'act-detail-worker-tbl'" [dataValue]="workerDataTableValue"
+              [pagingControlShow]="false"></app-data-table2>
+          </div>
+        </div>
+        <br />
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-col-12 p-md-2 p-lg-2 right">
+            <label class="text-label">Inform NOC List : </label>
+          </div>
+          <div class="p-col-12 p-md-9 p-lg-9 reset-padding">
+            <!-- <p-multiSelect [options]="cities" formControlName="selectedCities" 
+                                defaultLabel="Select a City" optionLabel="name"
+                                    display="chip">
+                                </p-multiSelect> -->
+            <!-- [(ngModel)]="nocSelectList" -->
+            <p-multiSelect [options]="listNocDDL" [(ngModel)]="selectedNoc" defaultLabel="Select NOC"
+              optionLabel="nocTeam" scrollHeight="100px" placeholder="--- Please Select ---" [maxSelectedLabels]="7"
+              [selectedItemsLabel]="'{0} items selected'" (onChange)="onDropDownChange($event)" [disabled]="
+                dataMaster.controlDetail.canSaveActivity == 'N' ? true : false
+              "></p-multiSelect>
+          </div>
+          <div class="p-col-12 p-md-1 p-lg-1 reset-padding right">
+            <i class="fas fa-info-circle fa-lg icon-noc-inform" matTooltip="Open tab NOC Information"
+              (click)="onClickNocInformation()"></i>
+          </div>
+        </div>
+
+        <br />
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-col-12 p-md-2 p-lg-2 right">
+            <label class="label-name">Document : </label>
+          </div>
+          <div class="p-col-12 p-md-3 p-lg-3 reset-padding">
+            <button type="button" pButton icon="pi pi-upload" label="Upload" class="p-button-success" style="vertical-align: top;"
+            (click)="openAttachFileDialog()"></button>
+          </div>
+          <div class="p-col-12 p-md-6 p-lg-6"></div>
+          <div class="p-col-12 p-md-12 p-lg-12">
+            <p-chips [(ngModel)]="uploadedFiles"  (onRemove)=onRemoveDocument($event) (onChipClick)=onDownloadDocument($event)>
+              <ng-template let-item pTemplate="item">
+                  {{item.fileName || item.name}}({{ (item.fileSize || item.size) /1024 | number:'1.0-2'}}KB) <i class="pi pi-file p-ml-2"></i>
+              </ng-template>
+            </p-chips>
+          </div>
+        </div>
+
+        <div class="p-fluid p-formgrid p-grid" *ngIf="items">
+          <div class="p-col-12 p-md-12 p-lg-12">
+            <app-timeline-horizontal [(items)]="items"></app-timeline-horizontal>
+          </div>
+        </div>
+        
+                   
+      </div>
+    </div>
+    <div class="p-col-12 p-md-4 p-lg-4">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <label class="label-name">Impact : </label>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <textarea id="1Txt" class="form-control textarea-size" placeholder="Service Impact" disabled>{{
+              dataMaster.controlDetail.impactService == null
+                ? ""
+                : dataMaster.controlDetail.impactService
+            }}</textarea>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <textarea id="2Txt" class="form-control textarea-size" placeholder="Customer Impact" disabled>{{
+              dataMaster.controlDetail.impactExtCustomer == null
+                ? ""
+                : dataMaster.controlDetail.impactExtCustomer
+            }}</textarea>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <textarea id="3Txt" class="form-control textarea-size" placeholder="Internal User Impact" disabled>{{
+              dataMaster.controlDetail.impactIntCustomer == null
+                ? ""
+                : dataMaster.controlDetail.impactIntCustomer
+            }}</textarea>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <textarea id="4Txt" class="form-control textarea-size" placeholder="CDR Impact" disabled>{{
+              dataMaster.controlDetail.impactCdr == null
+                ? ""
+                : dataMaster.controlDetail.impactCdr
+            }}</textarea>
+        </div>
+        <div class="p-col-12 p-md-12 p-lg-12">
+          <textarea id="5Txt" class="form-control textarea-size" placeholder="Network Impact" disabled>{{
+              dataMaster.controlDetail.impactNetwork == null
+                ? ""
+                : dataMaster.controlDetail.impactNetwork
+            }}</textarea>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</ng-container> 
+
+<!-- <p-chips [(ngModel)]="uploadedFiles"  (onRemove)=onRemoveDocument($event)>
+  <ng-template let-item pTemplate="item">
+      {{item.fileName}}({{item.fileSize}}MB) <i class="pi pi-file p-ml-2"></i> <i class="pi pi-file p-ml-2" (click)="onRemoveDocument(item)"></i>
+  </ng-template>
+</p-chips> -->

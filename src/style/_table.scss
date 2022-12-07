@@ -1,0 +1,1476 @@
+@import "./variable";
+
+// Override
+$columnWidthDefault: 100px;
+$columnWidthCheckBox: 30px;
+$columnWidthOverdue: 30px;
+$columnWidthFrom: 40px;
+$columnWidthJobFlag: 80px;
+$columnWidthSpecial: 65px;
+$columnWidthPriority: 70px;
+$columnWidthJBPriority: 100px;
+$columnWidthSubSystem: 160px;
+$columnWidthOwner: 160px;
+$columnWidthService: 160px;
+$columnWidthTitle: 160px;
+$columnWidthProblemNode: 160px;
+$columnWidthTTID: 100px;
+$columnWidthProblemType: 140px;
+$columnWidthOwner: 140px;
+$columnWidthSender: 140px;
+$columnWidthForwardTo: 140px;
+$columnWidthCreateDate: 140px;
+$columnWidthAlertName: 140px;
+$columnWidthProblemDate: 140px;
+$columnWidthInitiateDate: 140px;
+$columnWidthStartDate: 140px;
+$columnWidthFinishDate: 140px;
+$columnWidthExpandDate: 140px;
+$columnWidthCloseDate: 140px;
+$columnWidthReportDate: 140px;
+$columnWidthRelateCP: 100px;
+$columnWidthMain: 40px;
+$columnWidthCopy: 40px;
+$columnWidthIcon: 40px;
+$columnWidthCPID: 100px;
+$columnWidthSystem: 80px;
+$columnWidthCreateDt: 100px;
+$columnWidthALID: 100px;
+$columnWidthStatus: 65px;
+$columnWidthEventDt: 170px;
+$columnWidthCustomer: 160px;
+$columnWidthUrgentStatus: 160px;
+$columnWidthSymptom: 200px;
+$columnWidthProblem: 200px;
+$columnWidthError: 200px;
+$columnWidthTime: 230px;
+$columnWidthFaultUp: 230px;
+$columnWidthEtDate: 230px;
+$columnWidthDown: 230px;
+$columnWidthEventDate: 140px;
+$columnWidthAlarmDate: 140px;
+$columnWidthLocation: 140px;
+$columnWidthSeverity: 140px;
+$columnWidthBrand: 140px;
+$columnWidthAlertDate: 140px;
+$columnWidthExpandIcon: 40px;
+$columnWidthOnSite: 100px;
+$columnWidthTotalUncloseJob: 140px;
+$columnWidthJobOnSite: 100px;
+$columnWidthJbStatus: 120px;
+$columnWidthJbOldStatus: 120px;
+$columnWidthJbId: 140px;
+$columnWidthTrId: 140px;
+$columnWidthAssignBy: 140px;
+$columnWidthAssignTo: 140px;
+$columnWidthOldOwner: 140px;
+$columnWidthNewOwner: 140px;
+$columnWidthJbDate: 140px;
+$columnWidthSiteAccess: 240px;
+$columnWidthJbTitle: 240px;
+$columnWidthAssignByTel: 200px;
+$columnWidthAssignToTel: 200px;
+$columnWidthNo: 30px;
+$columnWidthRegion: 100px;
+$columnWidthNinId: 100px;
+$columnWidthSentDate: 20px;
+$columnWidthNinType: 100px;
+$columnWidthLevel: 100px;
+$columnWidthAffectArea: 250px;
+$columnWidthCustomerImpact: 250px;
+$columnWidthNetworkEffect: 250px;
+$columnWidthCause: 250px;
+$columnWidthContact: 160px;
+$columnWidthNinStatus: 100px;
+$columnWidthAction: 100px;
+$columnWidthNewJbStatus: 65px;
+$columnWidthExpectTime: 150px;
+$columnWidthCinId: 100px;
+$columnWidthCinType: 100px;
+$columnWidthCinStatus: 100px;
+$columnWidthCustomerType: 150px;
+$columnWidthServiceSymptom: 160px;
+$columnWidthSymptomOther: 150px;
+$columnWidthCauseOther: 100px;
+$columnWidthProblemStatus: 150px;
+$columnWidthCreateBy: 160px;
+$columnWidthProblemDetail: 150px;
+$columnWidthAlarmId: 100px;
+$columnWidthObject: 100px;
+$columnWidthDescription: 100px;
+$columnWidthSiteCode: 100px;
+$colPercentWidthCategory: 10%;
+$colPercentWidthBrand: 10%;
+$colPercentWidthModel: 20%;
+$colPercentWidthArticleNo: 10%;
+$colPercentWidthArticleDesc: 20%;
+$colPercentWidthQty: 10%;
+$colPercentWidthAction: 10%;
+$colPercentWidthSystem: 10%;
+$columnWidthAsingJobList: 160px;
+$columnWidthTransDate: 140px;
+$columnWidthModule: 100px;
+$columnWidthState: 100px;
+$columnWidthStatusDesc: 200px;
+$columnWidthRefLocation: 200px;
+.p-datatable-scrollable-body {
+  overflow: unset !important;
+}
+
+.p-paginator {
+  .p-paginator-next,
+  .p-paginator-prev {
+    display: none !important;
+  }
+  .p-paginator-first,
+  .p-paginator-last {
+    color: $greenblue-color !important;
+    border: 1px solid $gray-color-light !important;
+    margin: 0 !important;
+  }
+  .p-paginator-first {
+    border-radius: $border-radius 0 0 $border-radius !important;
+  }
+  .p-paginator-last {
+    border-radius: 0 $border-radius $border-radius 0 !important;
+  }
+  .p-paginator-pages {
+    .p-paginator-page {
+      border: 1px solid $gray-color-light !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+    }
+    .p-paginator-page.p-highlight {
+      background-color: $greenblue-color !important;
+      color: white !important;
+    }
+  }
+  .p-disabled {
+    color: #605e5c !important;
+  }
+}
+
+// Custom
+
+.container-table {
+  width: 80%;
+  margin: 80px auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 !important;
+  tr {
+    th,
+    td {
+      text-align: center;
+      color: $dark-color;
+    }
+    th:last-of-type,
+    td:last-of-type {
+      border-right: none;
+    }
+    th {
+      font-style: normal;
+      padding: 2px 2px !important;
+      font-size: 14px !important;
+    }
+    td {
+      padding: 0px 2px !important;
+    }
+  }
+  tr:first-child {
+    th {
+      padding-bottom: 1px !important;
+    }
+  }
+  tr:last-child {
+    th {
+      padding-top: 1px !important;
+    }
+  }
+  thead {
+    > tr {
+      background-color: $greenblue-color;
+      > th {
+        color: white;
+      }
+    }
+  }
+  tbody {
+    > tr:nth-child(odd) {
+      background-color: white !important;
+    }
+    > tr:nth-child(even) {
+      background-color: $gray-color-light !important;
+    }
+  }
+}
+
+.p-datatable-thead {
+  word-wrap: break-word;
+  tr {
+    th {
+      background: $greenblue-color !important;
+      color: white !important;
+      text-align: center !important;
+      width: $columnWidthDefault;
+      .p-dropdown,
+      .p-multiselect,
+      .p-calendar,
+      .p-inputtext {
+        width: 100%;
+      }
+
+      &#thOverdue,
+      &.thOverdue {
+        width: $columnWidthOverdue;
+      }
+      &#thFrom,
+      &.thFrom {
+        width: $columnWidthFrom;
+      }
+      &#thJobFlag,
+      &.thJobFlag {
+        width: $columnWidthJobFlag;
+      }
+      &#thSpecial,
+      &.thSpecial {
+        width: $columnWidthSpecial;
+      }
+      &#thPriority,
+      &.thPriority {
+        width: $columnWidthPriority;
+      }
+      &#thJBPriority,
+      &.thJBPriority {
+        width: $columnWidthJBPriority;
+      }
+      &#thSubSystem,
+      &.thSubSystem {
+        width: $columnWidthSubSystem;
+      }
+      &#thOwner,
+      &.thOwner {
+        width: $columnWidthOwner;
+      }
+      &#thService,
+      &.thService {
+        width: $columnWidthService;
+      }
+      &#thTitle,
+      &.thTitle {
+        width: $columnWidthTitle;
+      }
+      &#thProblemNode,
+      &.thProblemNode {
+        width: $columnWidthProblemNode;
+      }
+      &#thTTID,
+      &.thTTID {
+        width: $columnWidthTTID;
+      }
+      &#thProblemType,
+      &.thProblemType {
+        width: $columnWidthProblemType;
+      }
+      &#thSender,
+      &.thSender {
+        width: $columnWidthSender;
+      }
+      &#thForwardTo,
+      &.thForwardTo {
+        width: $columnWidthForwardTo;
+      }
+      &#thCreateDate,
+      &.thCreateDate {
+        width: $columnWidthCreateDate;
+      }
+      &#thAlertName,
+      &.thAlertName {
+        width: $columnWidthAlertName;
+      }
+      &#thProblemDate,
+      &.thProblemDate {
+        width: $columnWidthProblemDate;
+      }
+      &#thInitiateDate,
+      &.thInitiateDate {
+        width: $columnWidthInitiateDate;
+      }
+      &#thStartDate,
+      &.thStartDate {
+        width: $columnWidthStartDate;
+      }
+      &#thFinishDate,
+      &.thFinishDate {
+        width: $columnWidthFinishDate;
+      }
+      &#thExpandDate,
+      &.thExpandDate {
+        width: $columnWidthExpandDate;
+      }
+      &#thCloseDate,
+      &.thCloseDate {
+        width: $columnWidthCloseDate;
+      }
+      &#thReportDate,
+      &.thReportDate {
+        width: $columnWidthReportDate;
+      }
+      &#thRelateCP,
+      &.thRelateCP {
+        width: $columnWidthRelateCP;
+      }
+      &#thChkbox,
+      &.thChkbox {
+        width: $columnWidthCheckBox;
+      }
+      &#thMain,
+      &.thMain {
+        width: $columnWidthMain;
+      }
+      &#thCopy,
+      &.thCopy {
+        width: $columnWidthCopy;
+      }
+      &#thIcon,
+      &.thIcon {
+        width: $columnWidthIcon;
+      }
+      &#thCpid,
+      &.thCpid {
+        width: $columnWidthCPID;
+      }
+      &#thSystem,
+      &.thSystem {
+        width: $columnWidthSystem;
+      }
+      &#thCreateDt,
+      &.thCreateDt {
+        width: $columnWidthCreateDt;
+      }
+      &#thALID,
+      &.thALID {
+        width: $columnWidthALID;
+      }
+      &#thUrgentStatus,
+      &.thUrgentStatus {
+        width: $columnWidthUrgentStatus;
+      }
+      &#thCustomer,
+      &.thCustomer {
+        width: $columnWidthCustomer;
+      }
+      &#thSymptom,
+      &.thSymptom {
+        width: $columnWidthSymptom;
+      }
+      &#thProblem,
+      &.thProblem {
+        width: $columnWidthProblem;
+      }
+      &#thError,
+      &.thError {
+        width: $columnWidthError;
+      }
+      &#thTime,
+      &.thTime {
+        width: $columnWidthTime;
+      }
+      &#thFaultUp,
+      &.thFaultUp {
+        width: $columnWidthFaultUp;
+      }
+      &#thEtDate,
+      &.thEtDate {
+        width: $columnWidthEtDate;
+      }
+      &#thDown,
+      &.thDown {
+        width: $columnWidthDown;
+      }
+      &#thEventDate,
+      &.thEventDate {
+        width: $columnWidthEventDate;
+      }
+      &#thEventDt,
+      &.thEventDt {
+        width: $columnWidthEventDt;
+      }
+      &#thAlarmDate,
+      &.thAlarmDate {
+        width: $columnWidthAlarmDate;
+      }
+      &#thAlarmId,
+      &.thAlarmId {
+        width: $columnWidthAlarmId;
+      }
+      &#thObject,
+      &.thObject {
+        width: $columnWidthObject;
+      }
+      &#thDescription,
+      &.thDescription {
+        width: $columnWidthDescription;
+      }
+      &#thSiteCode,
+      &.thSiteCode {
+        width: $columnWidthSiteCode;
+      }
+      &#thLocation,
+      &.thLocation {
+        width: $columnWidthLocation;
+      }
+      &#thSeverity,
+      &.thSeverity {
+        width: $columnWidthSeverity;
+      }
+      &#thSystem,
+      &.thSystem {
+        width: $columnWidthSystem;
+      }
+      &#thBrand,
+      &.thBrand {
+        width: $columnWidthBrand;
+      }
+      &#thExpandIcon,
+      &.thExpandIcon {
+        width: $columnWidthExpandIcon;
+      }
+      &#thJobOnSite,
+      &.thJobOnSite {
+        width: $columnWidthOnSite;
+      }
+      &#thStatus,
+      &.thStatus {
+        width: $columnWidthStatus;
+      }
+      &#thTotalUncloseJob,
+      &.thTotalUncloseJob {
+        width: $columnWidthTotalUncloseJob;
+      }
+      &#thJbStatus,
+      &.thJbStatus {
+        width: $columnWidthJbStatus;
+      }
+      &#thOldJbStatus,
+      &.thOldJbStatus {
+        width: $columnWidthJbOldStatus;
+      }
+      &#thJbId,
+      &.thJbId {
+        width: $columnWidthJbId;
+      }
+      &#thTrId,
+      &.thTrId {
+        width: $columnWidthTrId;
+      }
+      &#thAssignBy,
+      &.thAssignBy {
+        width: $columnWidthAssignBy;
+      }
+      &#thAssignTo,
+      &.thAssignTo {
+        width: $columnWidthAssignTo;
+      }
+      &#thOldOwner,
+      &.thOldOwner {
+        width: $columnWidthOldOwner;
+      }
+      &#thJbDate,
+      &.thJbDate {
+        width: $columnWidthJbDate;
+      }
+      &#thSiteAccess,
+      &.thSiteAccess {
+        width: $columnWidthSiteAccess;
+      }
+      &#thJbTitle,
+      &.thJbTitle {
+        width: $columnWidthJbTitle;
+      }
+      &#thAssignByTel,
+      &.thAssignByTel {
+        width: $columnWidthAssignByTel;
+      }
+      &#thAssignToTel,
+      &.thAssignToTel {
+        width: $columnWidthAssignToTel;
+      }
+      &#thNo,
+      &.thNo {
+        width: $columnWidthNo;
+      }
+      &#thRegion,
+      &.thRegion {
+        width: $columnWidthRegion;
+      }
+      &#thNinId,
+      &.thNinId {
+        width: $columnWidthNinId;
+      }
+      &#thNinType,
+      &.thNinType {
+        width: $columnWidthNinType;
+      }
+      &#thLevel,
+      &.thLevel {
+        width: $columnWidthLevel;
+      }
+      &#thAffectArea,
+      &.thAffectArea {
+        width: $columnWidthAffectArea;
+      }
+      &#thCustomerImpact,
+      &.thCustomerImpact {
+        width: $columnWidthCustomerImpact;
+      }
+      &#thNetworkEffect,
+      &.thNetworkEffect {
+        width: $columnWidthNetworkEffect;
+      }
+      &#thCause,
+      &.thCause {
+        width: $columnWidthCause;
+      }
+      &#thContact,
+      &.thContact {
+        width: $columnWidthContact;
+      }
+      &#thNinStatus,
+      &.thNinStatus {
+        width: $columnWidthNinStatus;
+      }
+      &#thAction,
+      &.thAction {
+        width: $columnWidthAction;
+      }
+      &#thNewOwner,
+      &.thNewOwner {
+        width: $columnWidthNewOwner;
+      }
+      &#thNewJbStatus,
+      &.thNewJbStatus {
+        width: $columnWidthNewJbStatus;
+      }
+      &#thExpectTime,
+      &.thExpectTime {
+        width: $columnWidthExpectTime;
+      }
+      &#thCinId,
+      &.thCinId {
+        width: $columnWidthCinId;
+      }
+      &#thCinType,
+      &.thCinType {
+        width: $columnWidthCinType;
+      }
+      &#thCinStatus,
+      &.thCinStatus {
+        width: $columnWidthCinStatus;
+      }
+      &#thCustomerType,
+      &.thCustomerType {
+        width: $columnWidthCustomerType;
+      }
+      &#thServiceSymptom,
+      &.thServiceSymptom {
+        width: $columnWidthServiceSymptom;
+      }
+      &#thSymptomOther,
+      &.thSymptomOther {
+        width: $columnWidthSymptomOther;
+      }
+      &#thCauseOther,
+      &.thCauseOther {
+        width: $columnWidthCauseOther;
+      }
+      &#thProblemStatus,
+      &.thProblemStatus {
+        width: $columnWidthProblemStatus;
+      }
+      &#thCreateBy,
+      &.thCreateBy {
+        width: $columnWidthCreateBy;
+      }
+      &#thProblemDetail,
+      &.thProblemDetail {
+        width: $columnWidthProblemDetail;
+      }
+      &#thCategory.colPercent {
+        width: $colPercentWidthCategory;
+      }
+      &#thBrand.colPercent {
+        width: $colPercentWidthBrand;
+      }
+      &#thModel.colPercent {
+        width: $colPercentWidthModel;
+      }
+      &#thArticleNo.colPercent {
+        width: $colPercentWidthArticleNo;
+      }
+      &#thArticleDesc.colPercent {
+        width: $colPercentWidthArticleDesc;
+      }
+      &#thQty.colPercent {
+        width: $colPercentWidthQty;
+      }
+      &#thAction.colPercent {
+        width: $colPercentWidthAction;
+      }
+      &#thSystem.colPercent {
+        width: $colPercentWidthSystem;
+      }
+      &#thSentDate,
+      &.thSentDate {
+        width: $columnWidthSentDate;
+      }
+      &#thAssignJoblist,
+      &.thAssignJoblist {
+        width: $columnWidthAsingJobList;
+        text-align: left !important;
+      }
+      &#thTransDate,
+      &.thTransDate {
+        width: $columnWidthTransDate;
+        text-align: center !important;
+      }
+      &#thModule,
+      &.thModule {
+        width: $columnWidthModule;
+      }
+      &#thState,
+      &.thState {
+        width: $columnWidthState;
+      }
+      &#thStatusDesc,
+      &.thStatusDesc {
+        width: $columnWidthStatusDesc;
+      }
+      &#thRefLocation,
+      &.thRefLocation {
+        width: $columnWidthRefLocation;
+      }
+    }
+  }
+}
+.p-datatable-tbody {
+  word-wrap: break-word;
+  tr {
+    td {
+      width: $columnWidthDefault;
+
+      &#tdChkbox,
+      &.tdChkbox {
+        width: $columnWidthCheckBox;
+        text-align: center !important;
+      }
+      &#tdOverdue,
+      &.tdOverdue {
+        width: $columnWidthOverdue;
+        text-align: center !important;
+      }
+      &#tdFrom,
+      &.tdFrom {
+        width: $columnWidthFrom;
+        text-align: center !important;
+      }
+      &#tdJobFlag,
+      &.tdJobFlag {
+        width: $columnWidthJobFlag;
+        text-align: center !important;
+      }
+      &#tdSpecial,
+      &.tdSpecial {
+        width: $columnWidthSpecial;
+        text-align: center !important;
+      }
+      &#tdPriority,
+      &.tdPriority {
+        width: $columnWidthPriority;
+      }
+      &#tdJBPriority,
+      &.tdJbPriority {
+        width: $columnWidthJBPriority;
+      }
+      &#tdSubSystem,
+      &.tdSubSystem {
+        width: $columnWidthSubSystem;
+      }
+      &#tdOwner,
+      &.tdOwner {
+        width: $columnWidthOwner;
+      }
+      &#tdService,
+      &.tdService {
+        width: $columnWidthService;
+      }
+      &#tdTitle,
+      &.tdTitle {
+        width: $columnWidthTitle;
+        text-align: left !important;
+      }
+      &#tdProblemNode,
+      &.tdProblemNode {
+        width: $columnWidthProblemNode;
+        text-align: left;
+      }
+      &#tdTTID,
+      &.tdTTID {
+        width: $columnWidthTTID;
+        text-align: center !important;
+      }
+      &#tdProblemType,
+      &.tdProblemType {
+        width: $columnWidthProblemType;
+      }
+      &#tdSender,
+      &.tdSender {
+        width: $columnWidthSender;
+      }
+      &#tdForwardTo,
+      &.tdForwardTo {
+        width: $columnWidthForwardTo;
+      }
+      &#tdCreateDate,
+      &.tdCreateDate {
+        width: $columnWidthCreateDate;
+        text-align: center !important;
+      }
+      &#tdAlertName,
+      &.tdAlertName {
+        width: $columnWidthAlertName;
+      }
+      &#tdProblemDate,
+      &.tdProblemDate {
+        width: $columnWidthProblemDate;
+        text-align: center !important;
+      }
+      &#tdInitiateDate,
+      &.tdInitiateDate {
+        width: $columnWidthInitiateDate;
+        text-align: center !important;
+      }
+      &#tdStartDate,
+      &.tdStartDate {
+        width: $columnWidthStartDate;
+        text-align: center !important;
+      }
+      &#tdFinishDate,
+      &.tdFinishDate {
+        width: $columnWidthFinishDate;
+        text-align: center !important;
+      }
+      &#tdExpandDate,
+      &.tdExpandDate {
+        width: $columnWidthExpandDate;
+        text-align: center !important;
+      }
+      &#tdCloseDate,
+      &.tdCloseDate {
+        width: $columnWidthCloseDate;
+        text-align: center !important;
+      }
+      &#tdReportDate,
+      &.tdReportDate {
+        width: $columnWidthReportDate;
+        text-align: center !important;
+      }
+      &#tdRelateCP,
+      &.tdRelateCP {
+        width: $columnWidthRelateCP;
+        text-align: right;
+      }
+      &#tdMain,
+      &.tdMain {
+        width: $columnWidthMain;
+      }
+      &#tdCopy,
+      &.tdCopy {
+        width: $columnWidthCopy;
+      }
+      &#tdIcon,
+      &.tdIcon {
+        width: $columnWidthIcon;
+        text-align: center !important;
+      }
+      &#tdCpid,
+      &.tdCpid {
+        width: $columnWidthCPID;
+        text-align: center !important;
+      }
+      &#tdSystem,
+      &.tdSystem {
+        width: $columnWidthSystem;
+      }
+      &#tdCreateDt,
+      &.tdCreateDt {
+        width: $columnWidthCreateDt;
+        text-align: center !important;
+      }
+      &#tdALID,
+      &.tdALID {
+        width: $columnWidthALID;
+        text-align: center !important;
+      }
+      &#tdAlid,
+      &.tdAlid {
+        width: $columnWidthALID;
+        text-align: left !important;
+      }
+      &#tdUrgentStatus,
+      &.tdUrgentStatus {
+        width: $columnWidthUrgentStatus;
+      }
+      &#tdCustomer,
+      &.tdCustomer {
+        width: $columnWidthCustomer;
+      }
+      &#tdSymptom,
+      &.tdSymptom {
+        width: $columnWidthSymptom;
+      }
+      &#tdProblem,
+      &.tdProblem {
+        width: $columnWidthProblem;
+      }
+      &#tdError,
+      &.tdError {
+        width: $columnWidthError;
+      }
+      &#tdTime,
+      &.tdTime {
+        width: $columnWidthTime;
+      }
+      &#tdFaultUp,
+      &.tdFaultUp {
+        width: $columnWidthFaultUp;
+      }
+      &#tdEtDate,
+      &.tdEtDate {
+        width: $columnWidthEtDate;
+        text-align: center !important;
+      }
+      &#tdDown,
+      &.tdDown {
+        width: $columnWidthDown;
+      }
+      &#tdEventDate,
+      &.tdEventDate {
+        width: $columnWidthEventDate;
+        text-align: center !important;
+      }
+      &#tdEventDt,
+      &.tdEventDt {
+        width: $columnWidthEventDt;
+        text-align: center !important;
+      }
+      &#tdAlarmDate,
+      &.tdAlarmDate {
+        width: $columnWidthAlarmDate;
+        text-align: center !important;
+      }
+      &#tdLocation,
+      &.tdLocation {
+        width: $columnWidthLocation;
+      }
+      &#tdSeverity,
+      &.tdSeverity {
+        width: $columnWidthSeverity;
+      }
+      &#tdSystem,
+      &.tdSystem {
+        width: $columnWidthSystem;
+      }
+      &#tdBrand,
+      &.tdBrand {
+        width: $columnWidthBrand;
+      }
+      &#tdExpandIcon,
+      &.tdExpandIcon {
+        width: $columnWidthExpandIcon;
+        text-align: center !important;
+      }
+      &#tdStatus,
+      &.tdStatus {
+        width: $columnWidthStatus;
+        text-align: center !important;
+      }
+      &#tdJobOnSite,
+      &.tdJobOnSite {
+        width: $columnWidthJobOnSite;
+        text-align: right !important;
+      }
+      &#tdTotalUncloseJob,
+      &.tdTotalUncloseJob {
+        width: $columnWidthTotalUncloseJob;
+        text-align: right !important;
+      }
+      &#tdJbStatus,
+      &.tdJbStatus {
+        width: $columnWidthJbStatus;
+        text-align: center !important;
+      }
+      &#tdOldJbStatus,
+      &.tdOldJbStatus {
+        width: $columnWidthJbOldStatus;
+        text-align: center !important;
+      }
+      &#tdJbId,
+      &.tdJbId {
+        width: $columnWidthJbId;
+        text-align: center !important;
+      }
+      &#tdTrId,
+      &.tdTrId {
+        width: $columnWidthTrId;
+        text-align: center !important;
+      }
+      &#tdAssignBy,
+      &.tdAssignBy {
+        width: $columnWidthAssignBy;
+      }
+      &#tdAssignTo,
+      &.tdAssignTo {
+        width: $columnWidthAssignTo;
+      }
+      &#tdOldOwner,
+      &.tdOldOwner {
+        width: $columnWidthOldOwner;
+      }
+      &#tdJbDate,
+      &.tdJbDate {
+        width: $columnWidthJbDate;
+        text-align: center !important;
+      }
+      &#tdSiteAccess,
+      &.tdSiteAccess {
+        width: $columnWidthSiteAccess;
+      }
+      &#tdJbTitle,
+      &.tdJbTitle {
+        width: $columnWidthJbTitle;
+      }
+      &#tdAssignByTel,
+      &.tdAssignByTel {
+        width: $columnWidthAssignByTel;
+      }
+      &#tdAssignToTel,
+      &.tdAssignToTel {
+        width: $columnWidthAssignToTel;
+      }
+      &#tdAssignBy,
+      &.tdAssignBy,
+      &#tdAssignTo,
+      &.tdAssignTo &#tdJbTitle,
+      &.tdJbTitle,
+      &#tdSiteAccess,
+      &.tdSiteAccess {
+        text-align: left !important;
+      }
+      &#tdNo,
+      &.tdNo {
+        width: $columnWidthNo;
+        text-align: center !important;
+      }
+      &#tdRegion,
+      &.tdRegion {
+        width: $columnWidthRegion;
+        text-align: center !important;
+      }
+      &#tdRegions,
+      &.tdRegions {
+        width: $columnWidthRegion;
+        text-align: left !important;
+      }
+      &#tdNinId,
+      &.tdNinId {
+        width: $columnWidthNinId;
+        text-align: center !important;
+      }
+      &#tdNinType,
+      &.tdNinType {
+        width: $columnWidthNinType;
+        text-align: center !important;
+      }
+      &#tdLevel,
+      &.tdLevel {
+        width: $columnWidthLevel;
+        text-align: center !important;
+      }
+      &#tdAffectArea,
+      &.tdAffectArea {
+        width: $columnWidthAffectArea;
+      }
+      &#tdCustomerImpact,
+      &.tdCustomerImpact {
+        width: $columnWidthCustomerImpact;
+      }
+      &#tdNetworkEffect,
+      &.tdNetworkEffect {
+        width: $columnWidthNetworkEffect;
+      }
+      &#tdCause,
+      &.tdCause {
+        width: $columnWidthCause;
+        padding-right: 0.75rem !important;
+      }
+      &#tdContact,
+      &.tdContact {
+        width: $columnWidthContact;
+      }
+      &#tdNinStatus,
+      &.tdNinStatus {
+        width: $columnWidthNinStatus;
+        text-align: center !important;
+      }
+      &#tdAction,
+      &.tdAction {
+        width: $columnWidthAction;
+      }
+      &#tdNewOwner,
+      &.tdNewOwner {
+        width: $columnWidthNewOwner;
+      }
+      &#tdNewJbStatus,
+      &.tdNewJbStatus {
+        width: $columnWidthNewJbStatus;
+      }
+      &#tdExpectTime,
+      &.tdExpectTime {
+        width: $columnWidthExpectTime;
+        text-align: center !important;
+      }
+      &#tdCinId,
+      &.tdCinId {
+        width: $columnWidthCinId;
+        text-align: center !important;
+      }
+      &#tdCinType,
+      &.tdCinType {
+        width: $columnWidthCinType;
+        text-align: center !important;
+      }
+      &#tdCinStatus,
+      &.tdCinStatus {
+        width: $columnWidthCinStatus;
+        text-align: center !important;
+      }
+      &#tdCustomerType,
+      &.tdCustomerType {
+        width: $columnWidthCustomerType;
+      }
+      &#tdServiceSymptom,
+      &.tdServiceSymptom {
+        width: $columnWidthServiceSymptom;
+      }
+      &#tdSymptomOther,
+      &.tdSymptomOther {
+        width: $columnWidthSymptomOther;
+      }
+      &#tdCauseOther,
+      &.tdCauseOther {
+        width: $columnWidthCauseOther;
+      }
+      &#tdProblemStatus,
+      &.tdProblemStatus {
+        width: $columnWidthProblemStatus;
+        text-align: center !important;
+      }
+      &#tdCreateBy,
+      &.tdCreateBy {
+        width: $columnWidthCreateBy;
+      }
+      &#tdProblemDetail,
+      &.tdProblemDetail {
+        width: $columnWidthProblemDetail;
+      }
+      &#tdAlarmId,
+      &.tdAlarmId {
+        width: $columnWidthAlarmId;
+        text-align: left !important;
+      }
+      &#tdObject,
+      &.tdObject {
+        width: $columnWidthObject;
+      }
+      &#tdDescription,
+      &.tdDescription {
+        width: $columnWidthDescription;
+      }
+      &#tdSiteCode,
+      &.tdSiteCode {
+        width: $columnWidthSiteCode;
+        text-align: center !important;
+      }
+      &#tdCategory.colPercent {
+        width: $colPercentWidthCategory;
+      }
+      &#tdBrand.colPercent {
+        width: $colPercentWidthBrand;
+      }
+      &#tdModel.colPercent {
+        width: $colPercentWidthModel;
+      }
+      &#tdArticleNo.colPercent {
+        width: $colPercentWidthArticleNo;
+      }
+      &#tdArticleDesc.colPercent {
+        width: $colPercentWidthArticleDesc;
+      }
+      &#tdQty.colPercent {
+        width: $colPercentWidthQty;
+      }
+      &#tdAction.colPercent {
+        width: $colPercentWidthAction;
+      }
+      &#tdSystem.colPercent {
+        width: $colPercentWidthSystem;
+      }
+      &#tdSentDate,
+      &.tdSentDate {
+        width: $columnWidthSentDate;
+        text-align: center !important;
+      }
+      &#tdAssignJoblist,
+      &.tdAssignJoblist {
+        width: $columnWidthAsingJobList;
+        text-align: left !important;
+      }
+      &#tdTransDate,
+      &.tdTransDate {
+        width: $columnWidthTransDate;
+        text-align: center !important;
+      }
+      &#tdModule,
+      &.tdModule {
+        width: $columnWidthModule;
+        text-align: left !important;
+      }
+      &#tdStatusDesc,
+      &.tdStatusDesc {
+        width: $columnWidthStatusDesc;
+        text-align: left !important;
+      }
+      &#tdRefLocation,
+      &.tdRefLocation {
+        width: $columnWidthRefLocation;
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+.find-similar-tt .expand-table-find-similar-tt .query-tt {
+  .p-datatable {
+    max-width: -webkit-fill-available;
+  }
+}
+
+.p-datatable-scrollable-wrapper {
+  &::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: grey;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 20px;
+  }
+}
+
+.p-sortable-column-icon {
+  font-size: 10px !important;
+  font-weight: bold !important;
+  margin-left: 1px !important;
+}
+
+.sort-column-number {
+  vertical-align: middle;
+  font-size: 8px !important;
+  min-width: 15px !important;
+  height: 15px !important;
+  line-height: 16px !important;
+  margin-left: 3px !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-datatable
+  .p-sortable-column:not(.p-highlight):hover
+  .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight:hover .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-treetable .p-sortable-column .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-treetable
+  .p-sortable-column:not(.p-highlight):hover
+  .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-treetable .p-sortable-column.p-highlight .p-sortable-column-icon {
+  color: white !important;
+}
+// transfer tt
+.tt-list-transfer {
+  .p-datatable {
+    width: fit-content;
+    .p-datatable-thead {
+      tr {
+        th {
+          &#no {
+            text-align: center !important;
+            width: 50px;
+          }
+          &#ttId {
+            padding-left: 20px !important;
+          }
+        }
+      }
+    }
+    .p-datatable-tbody {
+      tr {
+        td {
+          &#no {
+            text-align: center !important;
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+#transferTT {
+  .p-datatable {
+    width: fit-content;
+    .p-datatable-thead {
+      tr {
+        th {
+          text-align: center !important;
+          &#radio {
+            width: 3%;
+          }
+          &#name {
+            width: 27%;
+          }
+          &#mobilePhone {
+            width: 15%;
+          }
+          &#department {
+            width: 20%;
+          }
+          &#section {
+            width: 20%;
+          }
+          &#position {
+            width: 15%;
+          }
+        }
+      }
+    }
+    .p-datatable-tbody {
+      tr {
+        td {
+          &#radio {
+            width: 3%;
+            text-align: center !important;
+          }
+          &#name {
+            width: 27%;
+          }
+          &#mobilePhone {
+            width: 15%;
+            text-align: center !important;
+          }
+          &#department {
+            width: 20%;
+            text-align: center !important;
+          }
+          &#section {
+            width: 20%;
+            text-align: center !important;
+          }
+          &#position {
+            width: 15%;
+            text-align: center !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+#siteAccessTable {
+  .p-datatable {
+    width: fit-content;
+  }
+}
+
+.count-items {
+  float: right;
+  font-weight: bold;
+}
+
+.id-link {
+  text-decoration: underline;
+  color: $steel-blue-color;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.noti-link {
+  text-decoration: underline;
+  color: #d9a300;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.table-search {
+  border-top: 2px solid $greenblue-color;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-loading-overlay {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  align-items: baseline;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+}
+
+:host ::ng-deep .p-datatable-loading-icon {
+  color: $primary-color;
+  font-size: 100px;
+  margin-top: 100px;
+}
+
+:host ::ng-deep .p-datatable-loading-icon-center {
+  .p-datatable-loading-icon {
+    color: $primary-color;
+    font-size: 100px;
+    margin: auto;
+  }
+}
+
+.p-datatable {
+  border: 1px solid #f3f2f1;
+}
+
+.fire-alt {
+  color: $overdue-color;
+  vertical-align: middle;
+}
+
+.table-topic {
+  border-top: 2px solid $greenblue-color;
+}
+
+.p-paginator .p-dropdown {
+  margin-left: 10px !important;
+  height: 32px !important;
+  width: 57px !important;
+}
+
+.p-datatable-scrollable-header-box {
+  padding-right: unset !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.staff-contact-job,
+#job-history {
+  .table-header {
+    display: table-row;
+  }
+}
+
+#staffContact {
+  .p-datatable-thead {
+    tr {
+      th {
+        &#checkbox {
+          width: 5%;
+        }
+        &#tier {
+          width: 8%;
+        }
+        &#name,
+        &#email {
+          width: 23%;
+        }
+      }
+    }
+  }
+  .p-datatable-tbody {
+    tr {
+      td {
+        &#checkbox {
+          width: 5%;
+        }
+        &#tier {
+          width: 8%;
+        }
+        &#name,
+        &#email {
+          width: 23%;
+        }
+      }
+    }
+  }
+}
+
+.cp-pool-list {
+  .p-datatable-tbody {
+    tr {
+      td {
+        &#tdForwardDate,
+        &#tdDueDate,
+        &#tdCommitDate,
+        &#tdMobileSegment,
+        &#tdIssueNo {
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}
+
+.td-checkbox {
+  display: table-cell;
+  text-align: center !important;
+}

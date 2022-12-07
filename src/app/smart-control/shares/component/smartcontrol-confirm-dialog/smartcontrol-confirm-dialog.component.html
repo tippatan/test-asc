@@ -1,0 +1,120 @@
+<!-- header popup -->
+<div mat-dialog-content class="popup-header">
+  <ng-container>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-10 p-lg-10 default-pad">
+        <strong *ngIf="type === 'confirm'" class="label-header"
+          ><i class="fas fa-exclamation-circle"></i> {{ title }}</strong
+        >
+        <strong *ngIf="type === 'warning'" class="label-header-warn"
+          ><i class="fas fa-exclamation-circle"></i> {{ title }}</strong
+        >
+        <!-- <strong *ngIf="commentShow == 'show'" class="label-header col-min-width"><i class="fas fa-exclamation-circle"></i>  {{title}}</strong>  -->
+      </div>
+      <div class="p-field p-col-12 p-md-2 p-lg-2 default-pad right">
+        <span class="btn-normal" (click)="onClose()">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- <mat-divider class="popup-content"></mat-divider> -->
+<!-- content popup -->
+<div mat-dialog-content class="popup-content panel-margin">
+  <div class="panel-body smart-panel default-pad">
+    <div class="p-fluid p-formgrid p-grid">
+      <ng-container>
+        <div
+          class="p-field p-col-12 p-md-12 p-lg-12 default-pad"
+          style="width: 100%"
+        >
+          <label for="projectName" class="label-message" style="width: 100%">{{
+            message
+          }}</label>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- <div class="row" *ngIf="commentShow == 'show'">
+        <ng-container>
+          <div class="col-md-2 default-pad label-message">
+            <span class="text-danger"> * </span><label for="comment">{{commentTitle}}:</label>
+          </div>
+          <div class="col-md-10 default-pad right">
+            <textarea id="comment" class="form-control txt-size" [(ngModel)]="commentResult" [required]="true" ></textarea>
+          </div>
+        </ng-container>
+      </div> -->
+
+    <div class="p-fluid p-formgrid p-grid" *ngIf="commentShow == 'show'">
+      <ng-container>
+        <div class="p-field p-col-12 p-md-12 p-lg-12">
+          <span class="text-danger" *ngIf="requireComment"> * </span>
+          <label for="textArea">{{ commentTitle }}:</label>
+        </div>
+        <div class="p-field p-col-12 p-md-12 p-lg-12">
+          <textarea
+            id="textArea"
+            class="form-control txt-size"
+            [(ngModel)]="commentResult"
+            [required]="true"
+          ></textarea>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-divider class="popup-content"></mat-divider> -->
+<!-- footer popup -->
+<div mat-dialog-content class="popup-footer">
+  <div class="p-fluid p-formgrid p-grid">
+    <!-- navigation button -->
+
+    <div class="p-field p-col-12 p-md-12 p-lg-12 content-footer center">
+      <button
+        mat-raised-button
+        id="saveBtn"
+        class="btn-mat-success icon-margin"
+        (click)="onConfirm()"
+        *ngIf="btnConfirmShow === 'show'"
+        [disabled]="commentResult == '' && requireComment"
+      >
+        <i class="far fa-check-circle"></i>
+        {{ btnConfirmName }}
+      </button>
+
+      <button
+        mat-raised-button
+        id="closeBtn"
+        class="btn-mat-back icon-margin"
+        *ngIf="btnCancelShow === 'show'"
+        (click)="onClose()"
+      >
+        <i class="far fa-times-circle"></i>
+        {{ btnCancelName }}
+      </button>
+
+      <button
+        mat-raised-button
+        id="rejectBtn"
+        class="btn-mat-reject icon-margin"
+        (click)="onReject()"
+        *ngIf="btnRejectShow === 'show'"
+        [disabled]="commentResult == '' && requireComment"
+      >
+        <i class="far fa-pause-circle"></i>
+        {{ btnRejectName }}
+      </button>
+
+      <!-- <button  type="button" id="saveBtn" class="btn-modern btn-import" 
+            (click)="onConfirm()" *ngIf="btnConfirmShow ==='show'"
+            [disabled]="(commentResult == '' && requireComment)">
+              <i class="far fa-check-circle"></i>
+              {{btnConfirmName}}
+            </button> -->
+    </div>
+  </div>
+</div>

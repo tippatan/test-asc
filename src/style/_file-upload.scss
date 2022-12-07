@@ -1,0 +1,169 @@
+@import "../style/variable";
+
+.p-fileupload-buttonbar,
+.p-fileupload-content {
+  background: none !important;
+  border: none !important;
+}
+
+.p-fileupload-content {
+  padding: 0px 15px 10px 15px !important;
+}
+
+.p-fileupload {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0;
+    tr {
+      th,
+      td {
+        text-align: center;
+        color: $dark-color;
+      }
+      th:last-of-type,
+      td:last-of-type {
+        border-right: none;
+      }
+      th {
+        font-style: normal;
+        padding: 8px 5px;
+      }
+      td {
+        padding: 4px 4px !important;
+      }
+    }
+    thead {
+      > tr {
+        background-color: $greenblue-color;
+        > th {
+          color: white;
+        }
+      }
+    }
+    tbody {
+      i {
+        &:hover {
+          color: $danger-color;
+          cursor: pointer;
+        }
+      }
+      > tr:nth-child(odd) {
+        background-color: white;
+      }
+      > tr:nth-child(even) {
+        background-color: $gray-color-light;
+      }
+    }
+  }
+}
+.remark {
+  padding-left: 20px;
+  padding-top: 10px;
+  u {
+    font-weight: bold;
+  }
+  font-size: 14px;
+}
+
+.p-fileupload-row {
+  .p-button[icon="pi pi-times"] {
+    color: white;
+    //background-color: $steel-blue-color !important;
+    //border-color: $steel-blue-color;
+    background: #cc0000 !important;
+    border-color: #cc0000;
+    /*width: 30px;
+        height: 30px;*/
+    &:hover,
+    &:active {
+      //background: lighten($steel-blue-color, 10%) !important;
+      //border-color: lighten($steel-blue-color, 10%) !important;
+      background: lighten(#cc0000, 10%) !important;
+      border-color: lighten(#cc0000, 10%) !important;
+      color: white;
+    }
+    &:focus {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    }
+  }
+}
+
+#transferAttachFile {
+  .p-fileupload {
+    .p-fileupload-buttonbar {
+      padding: 0;
+      p-button {
+        display: none;
+      }
+    }
+    .p-fileupload-content {
+      padding: 0 !important;
+      .p-fileupload-files {
+        display: none;
+      }
+    }
+    #transferFileList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      li {
+        margin: 5px 0 0 0;
+        &#fileName {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  .p-button[icon="pi pi-times"] {
+    color: white;
+    // background-color: $steel-blue-color !important;
+    // border-color: $steel-blue-color;
+    width: 20px;
+    height: 20px;
+    background: #cc0000 !important;
+    border-color: #cc0000;
+    &:hover,
+    &:active {
+      // background: lighten($steel-blue-color, 10%) !important;
+      // border-color: lighten($steel-blue-color, 10%) !important;
+      background: lighten(#cc0000, 10%) !important;
+      border-color: lighten(#cc0000, 10%) !important;
+      color: white;
+    }
+    &:focus {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    }
+  }
+}
+
+p-fileupload {
+  .p-fileupload-basic {
+    padding: 1rem;
+  }
+}
+
+.p-fileupload .p-fileupload-row > div {
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.filename {
+  max-width: 250px;
+}
+
+.downloadable {
+  color: blue !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+}

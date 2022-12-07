@@ -1,0 +1,90 @@
+.row-default-margin {
+  margin-top: 10px;
+}
+
+/* ############################################################################ */
+
+/* NGX PAGINATION */
+
+/* ############################################################################ */
+
+.ais-pagination /deep/ .ngx-pagination > li.current {
+  /* padding: 0.1875rem 1rem; */
+  background: #acc955;
+  color: #fefefe;
+  cursor: default;
+  border-radius: 64px;
+  border: 1px solid #acc955;
+  width: auto;
+  min-width: 30px;
+  height: 30px;
+  padding: 1px 10px;
+}
+
+.ais-pagination /deep/ .ngx-pagination > .current > div {
+  position: relative;
+  text-align: center;
+}
+
+.ais-pagination /deep/ .ngx-pagination .pagination-next a::after {
+  /* content: '\f105'; */
+  display: inline-block;
+  margin-left: 0.5rem;
+  font: normal normal normal 14px/1 fontawesome;
+  color: #acc955;
+}
+
+.ais-pagination /deep/ .ngx-pagination .pagination-next.disabled::after {
+  /* content: '\f105'; */
+  display: inline-block;
+  margin-left: 0.5rem;
+  font: normal normal normal 14px/1 fontawesome;
+  color: #cacaca;
+}
+
+.ais-pagination /deep/ .ngx-pagination .pagination-previous a::before {
+  /* content: '\f104' !important; */
+  display: inline-block;
+  margin-right: 0.5rem;
+  font: normal normal normal 14px/1 fontawesome;
+  color: #acc955;
+}
+
+.ais-pagination /deep/ .ngx-pagination .pagination-previous.disabled::before {
+  /* content: '\f104' !important; */
+  display: inline-block;
+  margin-right: 0.5rem;
+  font: normal normal normal 14px/1 fontawesome;
+  color: #cacaca;
+}
+
+.ais-pagination /deep/ .ngx-pagination a,
+.ngx-pagination button {
+  color: #614e47;
+}
+
+span.ais-mynetwork-paginator-total {
+  color: #614e47;
+}
+
+div.dropdownexport-total {
+  width: 10%;
+  padding-right: 0px;
+}
+
+div.dropdownexport-export {
+  padding-left: 0px;
+}
+
+@font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/webfonts/fa-regular-400.eot");
+  src: url("/assets/fonts/webfonts/fa-regular-400.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/webfonts/fa-regular-400.woff2") format("woff2"),
+    url("/assets/fonts/webfonts/fa-regular-400.woff") format("woff"),
+    url("/assets/fonts/webfonts/fa-regular-400.ttf") format("truetype"),
+    url("/assets/fonts/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}

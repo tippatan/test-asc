@@ -1,0 +1,10 @@
+#changeSymptom,
+#picklistModal {
+  .p-listbox {
+    ul {
+      li.p-listbox-item.p-highlight {
+        background: $primary-color !important;
+      }
+    }
+  }
+}

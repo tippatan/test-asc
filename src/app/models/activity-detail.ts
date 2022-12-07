@@ -1,0 +1,30 @@
+export class ActivityDetail {
+  autoAlarmChecking: boolean;
+  alarmCheckingDate: string;
+  autoServiceChecking: boolean;
+  serviceCheckingDate: string;
+  informNoc: string;
+  listAlarmSiteCode: any;
+  listAlarmService: any;
+  listAlarmEnterprise: any;
+  wrStatus: string;
+  controlDetail: any;
+  workerList: any;
+  nocList: any;
+  alarmSite: any;
+  alarmService: any;
+  alarmEDS: any;
+  serviceEDS: any;
+  serviceFBB: any;
+  reason: any;
+  alarmSiteCodeNote: any;
+  alarmServiceNote: any;
+  alarmEnterpriseNote: any;
+  serviceEnterpriseNote: any;
+  serviceFbbNote: any;
+  limitEDS: any;
+  countServiceL3: any;
+  smsType: string;
+  alarmLastCheck: any;
+  serviceLastCheck: any;
+}

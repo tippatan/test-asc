@@ -1,0 +1,32 @@
+.p-breadcrumb {
+  overflow-x: auto;
+}
+
+.p-breadcrumb ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  li.model-item {
+    a:hover {
+      cursor: default;
+    }
+  }
+}
+
+.p-breadcrumb .p-menuitem-text {
+  line-height: 1;
+}
+
+.p-breadcrumb .p-menuitem-link {
+  text-decoration: none;
+}
+
+.link {
+  &:hover {
+    cursor: pointer !important;
+  }
+  text-decoration: underline !important;
+}

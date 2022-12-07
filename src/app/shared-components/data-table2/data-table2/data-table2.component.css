@@ -1,0 +1,300 @@
+/* TABLE */
+
+/* ############################## */
+
+.table {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table thead {
+  background-color: #e9f5db;
+  color: #614e47;
+}
+
+.table thead th {
+  font-weight: bold;
+  cursor: pointer;
+  color: #614e47;
+  border: 1px solid #ddd;
+}
+
+.table tbody {
+  color: #8c7f79;
+  border: 1px solid #ddd;
+}
+
+.table p {
+  margin: 0 0 0px;
+}
+
+.table-btn-action {
+  margin-top: 10px;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  padding: 4px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tr.highlight-warning {
+  background-color: #fbd2d2;
+}
+
+.table > thead > tr > th > span {
+  font-size: small;
+}
+
+/* ############################## */
+
+.w50 {
+  width: 50px;
+}
+
+.w80 {
+  width: 80px;
+}
+
+.w80Max {
+  max-width: 80px !important;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.w100Max {
+  max-width: 100px !important;
+}
+
+.w110 {
+  width: 110px;
+}
+
+.w110Max {
+  max-width: 110px !important;
+}
+
+.w120 {
+  width: 120px;
+}
+
+.w120Max {
+  max-width: 120px !important;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.w300 {
+  width: 300px;
+}
+
+.w400 {
+  width: 400px;
+}
+
+.w500 {
+  width: 50%;
+}
+
+.headerActName {
+  width: 800px;
+}
+
+.black {
+  background-color: black !important;
+}
+
+.headerColumn {
+  vertical-align: inherit;
+  text-align: center;
+  padding: 5px;
+}
+
+.headerColumnNoCursor {
+  vertical-align: inherit;
+  text-align: center;
+  cursor: default;
+  padding: 5px;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.cursorPoint {
+  cursor: pointer;
+}
+
+.cursorDefault {
+  cursor: default;
+}
+
+.notFoundData {
+  color: red;
+  cursor: default;
+}
+
+.greenBtn {
+  background-color: #b1d136;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.color1 {
+  color: #c16500 !important;
+}
+.color2 {
+  color: blue !important;
+}
+.color3 {
+  color: green;
+}
+.color4 {
+  color: chocolate;
+}
+.color5 {
+  color: cornflowerblue;
+}
+
+.bgc1 {
+  background-color: red;
+}
+
+.bgc2 {
+  background-color: blue;
+}
+
+.red {
+  color: red;
+}
+
+/* ### Table style  ### */
+/*.defaultTbl tbody {color: black;}*/ /* if want to change font color in data table*/
+
+.defaultTbl tr:nth-child(even) {
+  background: #ddddddad;
+}
+
+.defaultTbl tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* ### Example #### */
+.redTbl tbody {
+  color: black;
+}
+
+.redTbl tr:nth-child(even) {
+  background: red;
+}
+
+.redTbl tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.customTbl {
+  table-layout: fixed;
+  /* border: 1px solid black; */
+}
+
+.customTbl tr:nth-child(even) {
+  background: #ddddddad;
+}
+
+.customTbl tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.customColumnNoCursor {
+  vertical-align: inherit;
+  text-align: center;
+  cursor: default;
+}
+
+.customTbl th {
+  /* border: 1px solid black; */
+  vertical-align: inherit;
+  background-color: #e9f5db;
+  color: #614e47;
+  font-weight: normal;
+  /* border: 1px solid #ddd; */
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.monitorRequestOrder tr:nth-child(even) {
+  background: #ddddddad;
+}
+
+.monitorRequestOrder tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.monitorRequestOrder td {
+  border: 1px solid #b3b3b3;
+}
+
+.btn-modern {
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn-modern.btn-search {
+  /* width: 210px; */
+  border: 0px none;
+  background-color: #b2d235;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+.btn-modern.btn-search:hover:enabled {
+  background-color: #adc32b;
+}
+
+.btn-modern.btn-search:active:enabled {
+  background-color: #b2d235;
+}
+.font-size-18 {
+  font-size: 18px;
+}
+
+.btn-modern.btn-search:disabled {
+  /* width: 210px; */
+  border: 0px none;
+  background-color: #e0e0e0 !important;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  cursor: default;
+}
+
+.tbl-font-size {
+  font-size: smaller;
+}

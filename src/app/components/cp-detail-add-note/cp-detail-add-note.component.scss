@@ -1,0 +1,52 @@
+@import "../../../style/variable";
+
+.textarea-container {
+  width: 100%;
+  min-height: 100px;
+  height: 100%;
+  resize: vertical;
+  padding: 8px !important;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.note-detail-card {
+  width: 100%;
+  background: $primary-color;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  font-weight: bold;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.note-auto {
+  background: #f6f6f6 !important;
+  color: $primary-color;
+}
+
+.detail-header-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2px 0px 8px;
+}
+
+.detail-description-container {
+  background: #fff;
+  padding: 6px 4px;
+  border: 1px solid #dddd;
+  color: $dark-color;
+}

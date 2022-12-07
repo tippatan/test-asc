@@ -1,0 +1,115 @@
+<app-spinner [loading]="loading"></app-spinner>
+<ng-container>
+  <p-panel *ngIf="titleHeader">
+    <ng-template pTemplate="header">
+      <!-- <span class="font-weight-bold" matTooltip="WR-ID : {{ wrId }}&nbsp;&nbsp;{{ titleHeader }}">
+        &nbsp;&nbsp;WR-ID : {{ wrId }}&nbsp;&nbsp;{{
+        titleHeader.length > 100
+        ? titleHeader.substr(0, 100).slice(0, -3) + "..."
+        : titleHeader
+        }}
+      </span> -->
+
+      <span class="font-weight-bold" matTooltip="WR-ID : {{ wrId }}&nbsp;&nbsp;{{ titleHeader }}">
+        &nbsp;&nbsp;Maintenance 3BB <span *ngIf="dataMaster.controlDetail.planStartDate">
+          [ {{ dataMaster.controlDetail.planStartDate }} - {{ dataMaster.controlDetail.planFinishDate }} ]</span>
+      </span>
+    </ng-template>
+    <ng-template pTemplate="icons">
+      <button pButton icon="fa fa-sync fa-spin-hover" type="button" matTooltip="Reload activity"
+        class="p-button-icon p-button-help btn-style" (click)="doReloadActivity()" disabled>
+      </button>
+    </ng-template>
+    <div class="p-fluid p-formgrid p-grid" *ngIf="dataMaster.controlDetail">
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"><b>Maintenance ID : </b></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+        {{ dataMaster.controlDetail.maintenanceId }}
+      </div>
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"><b>Downtime : </b></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+        <div *ngIf="
+            dataMaster.controlDetail &&
+            (!dataMaster.controlDetail.planDownTime_hr ||
+              dataMaster.controlDetail.planDownTime_hr == '0') &&
+              dataMaster.controlDetail.planDownTimeMin &&
+                dataMaster.controlDetail.planDownTimeMin != '0'
+          ">
+          {{ dataMaster.controlDetail.planDownTimeMin }} Minutes
+        </div>
+        <div *ngIf="
+            dataMaster.controlDetail &&
+            dataMaster.controlDetail.planDownTime_hr &&
+              dataMaster.controlDetail.planDownTime_hr != '0' &&
+              (!dataMaster.controlDetail.planDownTimeMin ||
+                dataMaster.controlDetail.planDownTimeMin == '0')
+          ">
+          {{ dataMaster.controlDetail.planDownTime_hr }} Hours
+        </div>
+        <div *ngIf="
+            dataMaster.controlDetail &&
+            dataMaster.controlDetail.planDownTime_hr &&
+              dataMaster.controlDetail.planDownTime_hr != '0' &&
+              dataMaster.controlDetail.planDownTimeMin &&
+                dataMaster.controlDetail.planDownTimeMin != '0'
+          ">
+          {{ dataMaster.controlDetail.planDownTime_hr }} Hours
+          {{ dataMaster.controlDetail.planDownTimeMin }} Minutes
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"><b>Reason : </b></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+        {{ dataMaster.controlDetail.reason }}
+
+      </div>
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"><b>Status : </b></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+        {{dataMaster.controlDetail.statusActivityDesc}}
+      </div>
+
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"><b>Detail : </b></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+        <textarea class="textarea-desc" pInputTextarea [readonly]="true"
+          [(ngModel)]="dataMaster.controlDetail.description"></textarea>
+      </div>
+      <div class="p-col-12 p-md-2 p-lg-2 right">
+        <label class="text-label"></label>
+      </div>
+      <div class="p-col-12 p-md-4 p-lg-4">
+
+      </div>
+      <div class="p-col-12 p-md-3 p-lg-3">
+
+      </div>
+    </div>
+  </p-panel>
+  <div><b>Customer Effect</b></div>
+  <div class="panel-content">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12 p-lg-12 reset-padding">
+        <app-data-table2 [dataValue]="dataTableFBBValue" [headerStyle]="'header-sticky'"
+          (onCallBackAction)="onCallBackAction($event)" [pagingControlShow]="false"></app-data-table2>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-fluid p-formgrid p-grid" *ngIf="items">
+    <div class="p-col-12 p-md-12 p-lg-12">
+      <app-timeline-horizontal [(items)]="items"></app-timeline-horizontal>
+    </div>
+  </div>
+
+
+</ng-container>
+
+<p-toast position="bottom-right"></p-toast>

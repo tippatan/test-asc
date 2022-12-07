@@ -1,0 +1,25 @@
+@import "./_variable";
+
+.p-breadcrumb {
+  padding: 5px !important;
+  background: none !important;
+  border: none !important;
+  ul {
+    li:first-child .p-menuitem-link .p-menuitem-icon {
+      color: $dark-color;
+    }
+    li:nth-last-child(2) {
+      color: $primary-color !important;
+    }
+    li:last-child .p-menuitem-text {
+      font-weight: bold;
+      font-size: 24px;
+      color: $primary-color !important;
+    }
+    li > a {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
